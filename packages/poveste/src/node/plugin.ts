@@ -1,13 +1,13 @@
 import type {
   BuildEndCallback,
   ChangeViteConfigCallback,
-  PovesteConfig,
   ModuleLoader,
   Plugin,
   PluginApiBase,
   PluginApiBuild,
   PluginApiDev,
   PluginApiDevEvent,
+  PovesteConfig,
   PreviewStoryCallback,
   ServerStory,
 } from '@poveste/shared'

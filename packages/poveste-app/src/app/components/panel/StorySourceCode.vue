@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import type { Highlighter } from 'shiki'
 import type { Story, Variant } from '../../types'
+import { Icon } from '@iconify/vue'
 import { HstCopyIcon } from '@poveste/controls'
 import { unindent } from '@poveste/shared'
-import { Icon } from '@iconify/vue'
 import { createHighlighter } from 'shiki'
 import { clientSupportPlugins } from 'virtual:$histoire-support-plugins-client'
 import { computed, markRaw, nextTick, onMounted, ref, shallowRef, watch, watchEffect } from 'vue'

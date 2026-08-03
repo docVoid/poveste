@@ -1,11 +1,9 @@
 name: Publish Nightlies
+# Disabled until continuous releases are set up for poveste (see #8).
+# `pkg-pr-new publish` needs the pkg.pr.new GitHub App installed on the repo.
+# Re-enable the push/pull_request triggers once that's configured.
 on:
-  pull_request:
-  push:
-    branches:
-      - '**'
-    tags:
-      - '!**'
+  workflow_dispatch:
 
 jobs:
   build:

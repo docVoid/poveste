@@ -122,8 +122,8 @@ Usage of your plugin:
 ```js
 // In your histoire config
 
-import { defineConfig } from 'poveste'
 import { MyHistoirePlugin } from 'my-histoire-plugin'
+import { defineConfig } from 'poveste'
 
 export default defineConfig({
   plugins: [

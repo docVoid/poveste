@@ -28,8 +28,8 @@
   "devDependencies": {
     "@akryum/sheep": "^0.5.2",
     "@antfu/eslint-config": "^3.11.2",
-    "@poveste/vendors": "workspace:*",
     "@iconify/vue": "^4.1.2",
+    "@poveste/vendors": "workspace:*",
     "@vueuse/core": "catalog:",
     "autoprefixer": "catalog:",
     "eslint": "^9.16.0",

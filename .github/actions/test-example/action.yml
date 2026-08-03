@@ -1,5 +1,5 @@
 name: Test example
-description: Build the histoire monorepo and run an example's Playwright suite
+description: Build the poveste monorepo and run an example's Playwright suite
 
 inputs:
   dir:

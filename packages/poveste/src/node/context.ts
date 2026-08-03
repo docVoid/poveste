@@ -1,8 +1,8 @@
 import type {
   ConfigMode,
   FinalSupportPlugin,
-  PovesteConfig,
   PluginCommand,
+  PovesteConfig,
   ServerMarkdownFile,
   ServerStoryFile,
 } from '@poveste/shared'

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { Story, Variant } from '../../types'
-import { applyState, clone, omit } from '@poveste/shared'
 import { Icon } from '@iconify/vue'
+import { applyState, clone, omit } from '@poveste/shared'
 import { onClickOutside, useStorage, useTimeoutFn } from '@vueuse/core'
 import { computed, nextTick, onMounted, ref } from 'vue'
 import { toRawDeep } from '../../util/state'

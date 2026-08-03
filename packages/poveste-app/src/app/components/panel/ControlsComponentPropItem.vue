@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import type { AutoPropComponentDefinition, PropDefinition } from '@poveste/shared'
 import type { Variant } from '../../types'
-import { HstCheckbox, HstJson, HstNumber, HstText } from '@poveste/controls'
 import { Icon } from '@iconify/vue'
+import { HstCheckbox, HstJson, HstNumber, HstText } from '@poveste/controls'
 import { computed } from 'vue'
 
 const props = defineProps<{

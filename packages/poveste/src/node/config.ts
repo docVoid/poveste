@@ -1,7 +1,7 @@
 import type {
   ConfigMode,
-  PovesteConfig,
   Plugin,
+  PovesteConfig,
   SupportMatchPattern,
 } from '@poveste/shared'
 import type { Context } from './context.js'

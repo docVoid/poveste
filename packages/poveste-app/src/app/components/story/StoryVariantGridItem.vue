@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import type { PropType } from 'vue'
 import type { Story, Variant } from '../../types'
-import { HstCopyIcon } from '@poveste/controls'
 import { Icon } from '@iconify/vue'
+import { HstCopyIcon } from '@poveste/controls'
 import { useResizeObserver } from '@vueuse/core'
 import { computed, ref, toRefs } from 'vue'
 import { useRouter } from 'vue-router'
