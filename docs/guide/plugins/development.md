@@ -8,7 +8,7 @@ Create a new npm package. Example `package.json`:
 
 ```json
 {
-  "name": "my-histoire-plugin",
+  "name": "my-poveste-plugin",
   "version": "0.1.0",
   "description": "Poveste plugin",
   "license": "MIT",
@@ -16,9 +16,9 @@ Create a new npm package. Example `package.json`:
     "name": "Guillaume Chau"
   },
   "repository": {
-    "url": "https://github.com/Akryum/my-histoire-plugin.git",
+    "url": "https://github.com/Akryum/my-poveste-plugin.git",
     "type": "git",
-    "directory": "packages/my-histoire-plugin"
+    "directory": "packages/my-poveste-plugin"
   },
   "publishConfig": {
     "access": "public"
@@ -49,7 +49,7 @@ Create a new npm package. Example `package.json`:
 }
 ```
 
-Don't forget to put `histoire` in your `peerDependencies`. We also put it in the `devDependencies` to install it and be able to import things from it.
+Don't forget to put `poveste` in your `peerDependencies`. We also put it in the `devDependencies` to install it and be able to import things from it.
 
 Example `tsconfig.json`:
 
@@ -107,10 +107,10 @@ const defaultOptions: MyPluginOptions = {
   // Default values here
 }
 
-export function MyHistoirePlugin(options: MyPluginOptions = {}): Plugin {
+export function MyPovestePlugin(options: MyPluginOptions = {}): Plugin {
   const finalOptions: MyPluginOptions = defu(options, defaultOptions)
   return {
-    name: 'my-histoire-plugin',
+    name: 'my-poveste-plugin',
 
     // Use the Poveste Plugin API here!
   }
@@ -122,12 +122,12 @@ Usage of your plugin:
 ```js
 // In your histoire config
 
-import { MyHistoirePlugin } from 'my-histoire-plugin'
+import { MyPovestePlugin } from 'my-poveste-plugin'
 import { defineConfig } from 'poveste'
 
 export default defineConfig({
   plugins: [
-    MyHistoirePlugin({
+    MyPovestePlugin({
       // Options here
     }),
   ],

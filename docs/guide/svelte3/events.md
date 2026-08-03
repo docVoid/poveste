@@ -1,6 +1,6 @@
 # Events
 
-Poveste can display a list of events emitted from your story. To register new events, use the `logEvent` function from `histoire/client`.
+Poveste can display a list of events emitted from your story. To register new events, use the `logEvent` function from `poveste/client`.
 
 The first parameter is the name of the event, and the second one is a data object you want to display when clicking on the event.
 

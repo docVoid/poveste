@@ -1,6 +1,6 @@
 # How to write stories?
 
-Stories are svelte files ending with `.story.svelte`. Add a `Hst` prop so histoire can provide its builtin components. You then need to use the `<Hst.Story>` tag at the root of your template.
+Stories are svelte files ending with `.story.svelte`. Add a `Hst` prop so poveste can provide its builtin components. You then need to use the `<Hst.Story>` tag at the root of your template.
 
 ```svelte
 <!-- Meow.story.svelte -->

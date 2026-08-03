@@ -26,17 +26,17 @@ Poveste is an Open-Source project supported by our sponsors - thank you!
 
 ## Installation
 
-Install the `histoire` and `@poveste/plugin-vue` packages into your project:
+Install the `poveste` and `@poveste/plugin-vue` packages into your project:
 
 ```shell
-pnpm i -D histoire @poveste/plugin-vue
+pnpm i -D poveste @poveste/plugin-vue
 # OR
-npm i -D histoire @poveste/plugin-vue
+npm i -D poveste @poveste/plugin-vue
 # OR
-yarn add -D histoire @poveste/plugin-vue
+yarn add -D poveste @poveste/plugin-vue
 ```
 
-Create an `histoire.config.js` or `histoire.config.ts` file in your project root to enable the Vue plugin:
+Create a `poveste.config.js` or `poveste.config.ts` file in your project root to enable the Vue plugin:
 
 ```ts
 import { HstVue } from '@poveste/plugin-vue'
@@ -52,25 +52,25 @@ export default defineConfig({
 ## Command Line Interface
 
 Poveste provides the following commands:
-- `histoire dev`: starts a development server with hot-reload
-- `histoire build`: builds the app for production
-- `histoire preview`: starts an HTTP server that serves the built app
+- `poveste dev`: starts a development server with hot-reload
+- `poveste build`: builds the app for production
+- `poveste preview`: starts an HTTP server that serves the built app
 
 You can add these to your `package.json` like this:
 
 ```json
 {
   "scripts": {
-    "story:dev": "histoire dev",
-    "story:build": "histoire build",
-    "story:preview": "histoire preview"
+    "story:dev": "poveste dev",
+    "story:build": "poveste build",
+    "story:preview": "poveste preview"
   }
 }
 ```
 
 And then run them with `npm run story:dev` or `npm run story:build`.
 
-You can specify additional CLI options like `--port`. For a full list of CLI options, run `npx histoire --help` in your project.
+You can specify additional CLI options like `--port`. For a full list of CLI options, run `npx poveste --help` in your project.
 
 ## TypeScript
 
@@ -115,7 +115,7 @@ Poveste supports Nuxt 3 with the `@poveste/plugin-nuxt` package.
 pnpm add -D @poveste/plugin-nuxt
 ```
 
-Add the plugin in histoire config:
+Add the plugin in poveste config:
 
 ```js
 import { HstNuxt } from '@poveste/plugin-nuxt'

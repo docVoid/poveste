@@ -6,7 +6,7 @@ You need the [Percy CLI](https://docs.percy.io/docs/cli-overview) installed to b
 pnpm add -D @poveste/plugin-percy
 ```
 
-Add the plugin in histoire config:
+Add the plugin in poveste config:
 
 ```js
 import { HstPercy } from '@poveste/plugin-percy'

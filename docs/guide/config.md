@@ -8,19 +8,19 @@ To customize your experience, you can configure several parts of Poveste.
 
 ### Standalone file
 
-The first option is to create a new file at the root of your project called `histoire.config.{js,ts}` or `.histoire.{js,ts}`. The configuration file must export the configuration object as default. Poveste provides a helper function `defineConfig` to enforce TypeScript typing.
+The first option is to create a new file at the root of your project called `poveste.config.{js,ts}` or `.histoire.{js,ts}`. The configuration file must export the configuration object as default. Poveste provides a helper function `defineConfig` to enforce TypeScript typing.
 
 Detected files:
 
-- `histoire.config.ts`
-- `histoire.config.js`
+- `poveste.config.ts`
+- `poveste.config.js`
 - `.histoire.ts`
 - `.histoire.js`
 
 Example:
 
 ```ts
-// histoire.config.js
+// poveste.config.js
 import { defineConfig } from 'poveste'
 
 export default defineConfig({
@@ -58,7 +58,7 @@ You can use the `process.env.HISTOIRE` environment variable in conditions to mod
 Sometimes you need to change some Vite configuration specifically for Poveste. You can do this with the `vite` object inside the Poveste configuration:
 
 ```ts
-// histoire.config.js
+// poveste.config.js
 import { defineConfig } from 'poveste'
 
 export default defineConfig({
@@ -88,7 +88,7 @@ export default defineConfig({
 CommonJS modules must be specified in `vite.optimizeDeps.include` to work in Dev mode.
 
 ```ts
-// histoire.config.js
+// poveste.config.js
 import { defineConfig } from 'poveste'
 
 export default defineConfig({
@@ -121,7 +121,7 @@ export default defineConfig({
 Some Vite plugins may not work well with Poveste - you can disabled them with the `viteIgnorePlugins` option which is an array for Vite plugin **names**:
 
 ```ts
-// histoire.config.js
+// poveste.config.js
 import { defineConfig } from 'poveste'
 
 export default defineConfig({
@@ -139,7 +139,7 @@ You can get the name of the plugins with `console.log(somePlugin().name)` or by 
 Your components may be using globally defined CSS (like CSS frameworks) or JS (like stores or helpers). Poveste provides an easy way to inject anything into each story by linking a setup file.
 
 ```ts
-// histoire.config.ts
+// poveste.config.ts
 
 export default defineConfig({
   setupFile: '/src/histoire.setup.ts'
@@ -183,7 +183,7 @@ export const setupVue3 = defineSetupVue3(({ app, story, variant }) => {
 Poveste can be white-labeled to match your brand guidelines. Here are the available options:
 
 ```ts
-// histoire.config.ts
+// poveste.config.ts
 
 export default defineConfig({
   theme: {
@@ -208,7 +208,7 @@ To better match your colors guidelines, you can customize every colors used in t
 Poveste provides some builtin patterns to easily change the color of the app.
 
 ```ts
-// histoire.config.ts
+// poveste.config.ts
 
 import { defaultColors } from 'poveste'
 
@@ -251,7 +251,7 @@ Available colors patterns:
 You can also define your own colors.
 
 ```ts
-// histoire.config.ts
+// poveste.config.ts
 
 export default defineConfig({
   theme: {

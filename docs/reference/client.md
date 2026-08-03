@@ -1,6 +1,6 @@
 # Client API Reference
 
-You can access various APIs meant to be used inside stories from the `histoire/client` module.
+You can access various APIs meant to be used inside stories from the `poveste/client` module.
 
 ## `logEvent`
 

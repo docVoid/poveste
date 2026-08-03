@@ -152,7 +152,7 @@ Import custom CSS files from this file.
 
 ```ts
 export default defineConfig({
-  setupFile: '/src/histoire-setup.ts',
+  setupFile: '/src/poveste-setup.ts',
 })
 ```
 
@@ -161,8 +161,8 @@ If you need a different version for the NodeJS server (while collecting stories)
 ```ts
 export default defineConfig({
   setupFile: {
-    browser: '/src/histoire-setup.ts',
-    server: '/src/histoire-setup.server.ts',
+    browser: '/src/poveste-setup.ts',
+    server: '/src/poveste-setup.server.ts',
   },
 })
 ```

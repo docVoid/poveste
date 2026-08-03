@@ -49,7 +49,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build histoire
+      - name: Build poveste
         run: npm run story:build
 
       - name: Lost Pixel
