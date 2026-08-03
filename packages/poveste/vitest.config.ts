@@ -1,0 +1,10 @@
+import { defineConfig } from 'vitest/config'
+
+export default defineConfig({
+  test: {
+    // The markdown-collection tests boot a real Vite + jiti pipeline (~2.5s each
+    // locally, more on slow CI runners), which intermittently blew the 5s default.
+    testTimeout: 30000,
+    hookTimeout: 30000,
+  },
+})
