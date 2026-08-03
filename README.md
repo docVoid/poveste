@@ -31,10 +31,6 @@ swapping one dependency — the `<Story>`/`<Variant>` API, `.story.*` files, and
 
 ![screenshot](./screenshot.png)
 
-## Continuous Releases
-
-You can install builds from any commit on the main branch from [here](https://nightly.akryum.dev/histoire-dev/histoire) or from any Pull Request.
-
 ## Contributing
 
 See [Contributing Guide](https://github.com/poveste-dev/poveste/blob/main/CONTRIBUTING.md) to learn more about the repository and how you can contribute.
