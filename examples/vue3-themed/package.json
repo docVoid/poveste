@@ -12,9 +12,9 @@
     "vue": "^3.5.26"
   },
   "devDependencies": {
-    "@histoire/plugin-vue": "workspace:*",
+    "@poveste/plugin-vue": "workspace:*",
     "@vitejs/plugin-vue": "^5.2.1",
-    "histoire": "workspace:*",
+    "poveste": "workspace:*",
     "vite": "catalog:"
   }
 }

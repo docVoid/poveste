@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { logEvent } from 'histoire/client'
+import { logEvent } from 'poveste/client'
 import EventButton from './EventButton.vue'
 </script>
 

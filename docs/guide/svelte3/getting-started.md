@@ -36,21 +36,21 @@ Histoire is an Open-Source project supported by our sponsors - thank you!
 
 ## Installation
 
-Install the `histoire` and `@histoire/plugin-svelte` packages into your project:
+Install the `histoire` and `@poveste/plugin-svelte` packages into your project:
 
 ```shell
-pnpm i -D histoire @histoire/plugin-svelte
+pnpm i -D histoire @poveste/plugin-svelte
 # OR
-npm i -D histoire @histoire/plugin-svelte
+npm i -D histoire @poveste/plugin-svelte
 # OR
-yarn add -D histoire @histoire/plugin-svelte
+yarn add -D histoire @poveste/plugin-svelte
 ```
 
 Create an `histoire.config.js` or `histoire.config.ts` file in your project root to enable the Svelte plugin:
 
 ```ts
-import { HstSvelte } from '@histoire/plugin-svelte'
-import { defineConfig } from 'histoire'
+import { HstSvelte } from '@poveste/plugin-svelte'
+import { defineConfig } from 'poveste'
 
 export default defineConfig({
   plugins: [

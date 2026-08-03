@@ -1,5 +1,5 @@
 import vue from '@vitejs/plugin-vue'
-import { defaultColors } from 'histoire'
+import { defaultColors } from 'poveste'
 import { defineConfig } from 'vite'
 
 export default defineConfig({

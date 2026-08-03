@@ -1,1 +1,1 @@
-/// <reference types="@histoire/plugin-vue/components" />
+/// <reference types="@poveste/plugin-vue/components" />

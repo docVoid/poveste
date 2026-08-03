@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { logEvent } from 'histoire/client'
-  import type { Hst } from '@histoire/plugin-svelte'
+  import { logEvent } from 'poveste/client'
+  import type { Hst } from '@poveste/plugin-svelte'
   import ColorButton from './ColorButton.svelte'
 
   export let Hst: Hst

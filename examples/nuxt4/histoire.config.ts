@@ -1,6 +1,6 @@
-import { HstNuxt } from '@histoire/plugin-nuxt'
-import { HstVue } from '@histoire/plugin-vue'
-import { defineConfig } from 'histoire'
+import { HstNuxt } from '@poveste/plugin-nuxt'
+import { HstVue } from '@poveste/plugin-vue'
+import { defineConfig } from 'poveste'
 
 export default defineConfig({
   plugins: [

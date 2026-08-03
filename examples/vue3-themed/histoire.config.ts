@@ -1,5 +1,5 @@
-import { HstVue } from '@histoire/plugin-vue'
-import { defineConfig } from 'histoire'
+import { HstVue } from '@poveste/plugin-vue'
+import { defineConfig } from 'poveste'
 
 export default defineConfig({
   plugins: [

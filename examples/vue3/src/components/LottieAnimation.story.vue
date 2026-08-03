@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { isCollecting } from 'histoire/client'
+import { isCollecting } from 'poveste/client'
 import { onMounted, ref } from 'vue'
 
 const el = ref(null)

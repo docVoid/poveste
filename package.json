@@ -1,5 +1,5 @@
 {
-  "name": "histoire-monorepo",
+  "name": "poveste-monorepo",
   "version": "1.0.0-beta.1",
   "private": true,
   "packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319",
@@ -28,7 +28,7 @@
   "devDependencies": {
     "@akryum/sheep": "^0.5.2",
     "@antfu/eslint-config": "^3.11.2",
-    "@histoire/vendors": "workspace:*",
+    "@poveste/vendors": "workspace:*",
     "@iconify/vue": "^4.1.2",
     "@vueuse/core": "catalog:",
     "autoprefixer": "catalog:",

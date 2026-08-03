@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { Story, Variant } from 'histoire'
+import type { Story, Variant } from 'poveste'
 
 const props = defineProps<{
   story: Story

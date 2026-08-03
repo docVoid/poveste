@@ -1,6 +1,6 @@
-/// <reference types="histoire" />
+/// <reference types="poveste" />
 
-import { HstSvelte } from '@histoire/plugin-svelte'
+import { HstSvelte } from '@poveste/plugin-svelte'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 import { defineConfig } from 'vite'
 
