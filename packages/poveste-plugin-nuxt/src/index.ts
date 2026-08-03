@@ -155,7 +155,7 @@ async function useNuxtViteConfig() {
       }
     }
     presets.push({
-      from: '#build/histoire/composables.mjs',
+      from: '#build/poveste/composables.mjs',
       imports: stubbedComposables,
     })
   })
@@ -167,7 +167,7 @@ async function useNuxtViteConfig() {
           for (const name of ['NuxtLink']) {
             Object.assign(components.find(c => c.pascalName === name) || {}, {
               export: name,
-              filePath: '#build/histoire/components.mjs',
+              filePath: '#build/poveste/components.mjs',
             })
           }
         })
