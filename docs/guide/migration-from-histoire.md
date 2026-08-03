@@ -42,8 +42,8 @@ Update the imports inside it:
 
 ```ts
 // poveste.config.ts
-import { defineConfig } from 'poveste'          // was: 'histoire'
-import { HstVue } from '@poveste/plugin-vue'     // was: '@histoire/plugin-vue'
+import { HstVue } from '@poveste/plugin-vue' // was: '@histoire/plugin-vue'
+import { defineConfig } from 'poveste' // was: 'histoire'
 
 export default defineConfig({
   plugins: [HstVue()],
@@ -61,8 +61,8 @@ the new name:
 ```jsonc
 {
   "scripts": {
-    "story:dev": "poveste dev",       // was: "histoire dev"
-    "story:build": "poveste build",   // was: "histoire build"
+    "story:dev": "poveste dev", // was: "histoire dev"
+    "story:build": "poveste build", // was: "histoire build"
     "story:preview": "poveste preview"
   }
 }
@@ -76,7 +76,7 @@ the key is now `poveste` — the old `histoire` key still works:
 ```ts
 // vite.config.ts
 export default defineConfig({
-  poveste: {          // was: histoire
+  poveste: { // was: histoire
     // ...
   },
 })
