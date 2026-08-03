@@ -7,7 +7,7 @@
   
 <Hst.Story title="BindThisVsControls">
   <button bind:this={button} {disabled}>
-    Hello Histoire
+    Hello Poveste
   </button>
 
   <section>

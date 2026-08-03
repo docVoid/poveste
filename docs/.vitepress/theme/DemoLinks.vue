@@ -7,7 +7,7 @@ const props = defineProps<{
 
 const allLinks = {
   vue3: {
-    demo: 'https://vue3.examples.histoire.dev/',
+    demo: 'https://vue3.examples.poveste.dev/',
     stackblitz: 'https://stackblitz.com/edit/histoire-vue3-starter',
   },
   nuxt3: {
@@ -15,7 +15,7 @@ const allLinks = {
     stackblitz: 'https://stackblitz.com/edit/histoire-nuxt3-starter',
   },
   svelte3: {
-    demo: 'https://svelte3.examples.histoire.dev/',
+    demo: 'https://svelte3.examples.poveste.dev/',
     stackblitz: 'https://stackblitz.com/edit/histoire-svelte3-starter',
   },
 }

@@ -2,4 +2,4 @@
 
 Builtin controls component
 
-[Docs](https://controls.histoire.dev)
+[Docs](https://controls.poveste.dev)

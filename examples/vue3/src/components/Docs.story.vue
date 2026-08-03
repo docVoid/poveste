@@ -20,7 +20,7 @@
 
 Deserunt nihil nam qui. :cat2: Accusamus ea a voluptatem. Vel veniam non temporibus pariatur cumque aperiam tempora tempora. Assumenda aspernatur qui cum aut tempora rerum. Quisquam quibusdam dignissimos magni et.
 
-[Learn more](https://histoire.dev)
+[Learn more](https://poveste.dev)
 
 ```vue
 <script lang="ts" setup>

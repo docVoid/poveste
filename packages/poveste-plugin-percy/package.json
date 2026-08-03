@@ -2,15 +2,15 @@
   "name": "@poveste/plugin-percy",
   "type": "module",
   "version": "1.0.0-beta.1",
-  "description": "Histoire plugin to take screenshots with Percy for visual regression testing",
+  "description": "Poveste plugin to take screenshots with Percy for visual regression testing",
   "author": {
-    "name": "Guillaume Chau"
+    "name": "Sorin Gitlan"
   },
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/Akryum/histoire.git",
+    "url": "https://github.com/poveste-dev/poveste.git",
     "type": "git",
-    "directory": "packages/histoire-plugin-percy"
+    "directory": "packages/poveste-plugin-percy"
   },
   "publishConfig": {
     "access": "public"

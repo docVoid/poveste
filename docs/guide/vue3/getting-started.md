@@ -8,21 +8,21 @@ function playAudio () {
   <source src="/histoire.mp3" type="audio/mpeg">
 </audio>
 
-# Getting started with Histoire
+# Getting started with Poveste
 
 ## Overview
 
-> Histoire is the French word for "Story" and is pronounced `/is.twaʁ/`, like "is·twar" <button class="btn p-1 leading-none" v-on:click="playAudio"><Icon icon="carbon:volume-up-filled" class="w-4 h-4 align-middle"/></button>
+> Poveste is the French word for "Story" and is pronounced `/is.twaʁ/`, like "is·twar" <button class="btn p-1 leading-none" v-on:click="playAudio"><Icon icon="carbon:volume-up-filled" class="w-4 h-4 align-middle"/></button>
 
-Histoire is a tool to generate stories applications (or "books").
+Poveste is a tool to generate stories applications (or "books").
 
-[Learn more about Histoire here &raquo;](../index.md)
+[Learn more about Poveste here &raquo;](../index.md)
 
 <DemoLinks framework="vue3" />
 
 ## Sponsors
 
-Histoire is an Open-Source project supported by our sponsors - thank you!
+Poveste is an Open-Source project supported by our sponsors - thank you!
 
 <div class="flex justify-center mt-6 mb-12 gap-2">
   <SponsorButton/>
@@ -61,7 +61,7 @@ export default defineConfig({
 
 ## Command Line Interface
 
-Histoire provides the following commands:
+Poveste provides the following commands:
 - `histoire dev`: starts a development server with hot-reload
 - `histoire build`: builds the app for production
 - `histoire preview`: starts an HTTP server that serves the built app
@@ -119,7 +119,7 @@ Example:
 
 <DemoLinks framework="nuxt3" />
 
-Histoire supports Nuxt 3 with the `@poveste/plugin-nuxt` package.
+Poveste supports Nuxt 3 with the `@poveste/plugin-nuxt` package.
 
 ```bash
 pnpm add -D @poveste/plugin-nuxt
@@ -142,8 +142,8 @@ export default defineConfig({
 
 ## Configuration
 
-Learn more about configuring Histoire [here](../config.md).
+Learn more about configuring Poveste [here](../config.md).
 
 ## Community
 
-If you have questions or need help, reach out to the community at [Discord](https://discord.gg/KpCnT72rJk) and [GitHub Discussions](https://github.com/histoire-dev/histoire/discussions).
+If you have questions or need help, reach out to the community at [Discord](https://discord.gg/KpCnT72rJk) and [GitHub Discussions](https://github.com/poveste-dev/poveste/discussions).

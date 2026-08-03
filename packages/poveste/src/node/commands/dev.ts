@@ -27,7 +27,7 @@ export async function devCommand(options: DevOptions) {
     })
     server.printUrls()
 
-    // Histoire config watcher
+    // Poveste config watcher
     let watcher: FSWatcher
     if (viteConfigFile) {
       watcher = chokidar.watch(viteConfigFile, {
@@ -61,7 +61,7 @@ export async function devCommand(options: DevOptions) {
       ignoreInitial: true,
     })
     watcher.on('change', () => {
-      restart('Histoire')
+      restart('Poveste')
     })
   }
 }

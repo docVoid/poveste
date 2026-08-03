@@ -4,7 +4,7 @@
 
 ### Custom block
 
-Histoire lets you write markdown documentation for your stories using Vue custom blocks. Add a `docs` tag in your story file:
+Poveste lets you write markdown documentation for your stories using Vue custom blocks. Add a `docs` tag in your story file:
 
 ```vue{5-9}
 <template>
@@ -52,7 +52,7 @@ This is a demo book using Vue 3.
 
 ---
 
-Learn more about Histoire [here](https://histoire.dev/).
+Learn more about Poveste [here](https://poveste.dev/).
 ```
 
 ### Links
@@ -67,7 +67,7 @@ You can link to other stories using a relative path to the story file:
 
 ## Source code
 
-By default, Histoire will attempt to generate a copyable source code from the story, dynamically from the current state.
+By default, Poveste will attempt to generate a copyable source code from the story, dynamically from the current state.
 
 Currently automatic source code generation is only supported for:
 

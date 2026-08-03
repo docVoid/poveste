@@ -10,7 +10,7 @@ Create a new npm package. Example `package.json`:
 {
   "name": "my-histoire-plugin",
   "version": "0.1.0",
-  "description": "Histoire plugin",
+  "description": "Poveste plugin",
   "license": "MIT",
   "author": {
     "name": "Guillaume Chau"
@@ -112,7 +112,7 @@ export function MyHistoirePlugin(options: MyPluginOptions = {}): Plugin {
   return {
     name: 'my-histoire-plugin',
 
-    // Use the Histoire Plugin API here!
+    // Use the Poveste Plugin API here!
   }
 }
 ```

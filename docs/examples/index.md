@@ -1,3 +1,3 @@
 # Examples
 
-Find more examples [on the repository](https://github.com/histoire-dev/histoire/tree/main/examples)!
+Find more examples [on the repository](https://github.com/poveste-dev/poveste/tree/main/examples)!

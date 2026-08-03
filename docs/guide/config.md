@@ -1,6 +1,6 @@
-# Configuring Histoire
+# Configuring Poveste
 
-To customize your experience, you can configure several parts of Histoire.
+To customize your experience, you can configure several parts of Poveste.
 
 [See the full configuration reference →](../reference/config.md)
 
@@ -8,7 +8,7 @@ To customize your experience, you can configure several parts of Histoire.
 
 ### Standalone file
 
-The first option is to create a new file at the root of your project called `histoire.config.{js,ts}` or `.histoire.{js,ts}`. The configuration file must export the configuration object as default. Histoire provides a helper function `defineConfig` to enforce TypeScript typing.
+The first option is to create a new file at the root of your project called `histoire.config.{js,ts}` or `.histoire.{js,ts}`. The configuration file must export the configuration object as default. Poveste provides a helper function `defineConfig` to enforce TypeScript typing.
 
 Detected files:
 
@@ -24,13 +24,13 @@ Example:
 import { defineConfig } from 'poveste'
 
 export default defineConfig({
-  // your Histoire configuration
+  // your Poveste configuration
 })
 ```
 
 ### Vite config file
 
-The second option is to provide the Histoire config object directly in your Vite config file `vite.config.{js,ts}`. To have the correct TypeScript check, make sure to use this [triple slash directive](https://www.typescriptlang.org/docs/handbook/triple-slash-directives.html) at the very top of your config file:
+The second option is to provide the Poveste config object directly in your Vite config file `vite.config.{js,ts}`. To have the correct TypeScript check, make sure to use this [triple slash directive](https://www.typescriptlang.org/docs/handbook/triple-slash-directives.html) at the very top of your config file:
 
 ```ts
 /// <reference types="poveste" />
@@ -46,16 +46,16 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   histoire: {
-    // your Histoire configuration
+    // your Poveste configuration
   },
 })
 ```
 
-You can use the `process.env.HISTOIRE` environment variable in conditions to modify the vite configuration for Histoire.
+You can use the `process.env.HISTOIRE` environment variable in conditions to modify the vite configuration for Poveste.
 
 ## Overriding Vite configuration
 
-Sometimes you need to change some Vite configuration specifically for Histoire. You can do this with the `vite` object inside the Histoire configuration:
+Sometimes you need to change some Vite configuration specifically for Poveste. You can do this with the `vite` object inside the Poveste configuration:
 
 ```ts
 // histoire.config.js
@@ -118,7 +118,7 @@ export default defineConfig({
 
 ### Ignoring plugins
 
-Some Vite plugins may not work well with Histoire - you can disabled them with the `viteIgnorePlugins` option which is an array for Vite plugin **names**:
+Some Vite plugins may not work well with Poveste - you can disabled them with the `viteIgnorePlugins` option which is an array for Vite plugin **names**:
 
 ```ts
 // histoire.config.js
@@ -136,7 +136,7 @@ You can get the name of the plugins with `console.log(somePlugin().name)` or by 
 
 ## Global JS and CSS
 
-Your components may be using globally defined CSS (like CSS frameworks) or JS (like stores or helpers). Histoire provides an easy way to inject anything into each story by linking a setup file.
+Your components may be using globally defined CSS (like CSS frameworks) or JS (like stores or helpers). Poveste provides an easy way to inject anything into each story by linking a setup file.
 
 ```ts
 // histoire.config.ts
@@ -154,7 +154,7 @@ In this file, you can import global CSS files or JS files.
 import './histoire.css' // Import global CSS
 ```
 
-You can also tell Histoire to configure the sandbox application using the corresponding setup function (more details afterwards).
+You can also tell Poveste to configure the sandbox application using the corresponding setup function (more details afterwards).
 
 | Framework | Setup function |
 | --------- | -------------- |
@@ -162,7 +162,7 @@ You can also tell Histoire to configure the sandbox application using the corres
 
 ### Vue setup
 
-Inside your setup file, you can export a `setupVue3` function that will be called by Histoire allowing you to configure the Vue 3 sandbox application. Histoire provides an optional `defineSetupVue3` helper to have better types in your IDE :
+Inside your setup file, you can export a `setupVue3` function that will be called by Poveste allowing you to configure the Vue 3 sandbox application. Poveste provides an optional `defineSetupVue3` helper to have better types in your IDE :
 
 ```ts
 // src/histoire.setup.ts
@@ -180,7 +180,7 @@ export const setupVue3 = defineSetupVue3(({ app, story, variant }) => {
 
 ## Theming
 
-Histoire can be white-labeled to match your brand guidelines. Here are the available options:
+Poveste can be white-labeled to match your brand guidelines. Here are the available options:
 
 ```ts
 // histoire.config.ts
@@ -201,11 +201,11 @@ export default defineConfig({
 
 ### Colors
 
-To better match your colors guidelines, you can customize every colors used in the app. Note that Histoire uses Tailwind for its UI, so the colors pattern must match the Tailwind pattern.
+To better match your colors guidelines, you can customize every colors used in the app. Note that Poveste uses Tailwind for its UI, so the colors pattern must match the Tailwind pattern.
 
 #### Builtin colors
 
-Histoire provides some builtin patterns to easily change the color of the app.
+Poveste provides some builtin patterns to easily change the color of the app.
 
 ```ts
 // histoire.config.ts

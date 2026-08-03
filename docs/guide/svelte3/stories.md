@@ -14,7 +14,7 @@ Stories are svelte files ending with `.story.svelte`. Add a `Hst` prop so histoi
 ```
 
 ::: tip
-We use a prop instead of an import because Histoire provides different implementations of those components in different situations (for example when collecting the stories).
+We use a prop instead of an import because Poveste provides different implementations of those components in different situations (for example when collecting the stories).
 :::
 
 The title of the story is provided with the (optional) `title` prop:

@@ -11,7 +11,7 @@ SyntaxError: Unexpected token 'export'
 
 # Configuration Reference
 
-Learn more about configuring Histoire [here](../guide/config.md).
+Learn more about configuring Poveste [here](../guide/config.md).
 
 ## `plugins`
 
@@ -365,7 +365,7 @@ export default defineConfig({
 
 `string[]`
 
-List of Vite plugin names to exclude for Histoire.
+List of Vite plugin names to exclude for Poveste.
 
 ```ts
 export default defineConfig({

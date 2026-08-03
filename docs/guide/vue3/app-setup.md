@@ -4,7 +4,7 @@
 
 You can define a setup function globally in your setup file defined by the `setupFile` option in the global configuration ([learn more](../config.md#global-js-and-css)).
 
-For Vue 3, it must be called `setupVue3`. Histoire provides an optional `defineSetupVue3` helper to have better types in your IDE:
+For Vue 3, it must be called `setupVue3`. Poveste provides an optional `defineSetupVue3` helper to have better types in your IDE:
 
 ```ts
 import { defineSetupVue3 } from '@poveste/plugin-vue'
@@ -31,7 +31,7 @@ You can also import global CSS files or JS files in this setup file.
 
 ## Local setup
 
-Inside each story, you can define a `setupApp` prop that will be called by Histoire allowing you to configure the sandbox application as well. It will **not** override the global setup function, but will be called after it. It works the same way with the same parameters.
+Inside each story, you can define a `setupApp` prop that will be called by Poveste allowing you to configure the sandbox application as well. It will **not** override the global setup function, but will be called after it. It works the same way with the same parameters.
 
 ```vue{17}
 <script setup>

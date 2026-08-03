@@ -1,19 +1,19 @@
-# Histoire Contributing Guide
+# Poveste Contributing Guide
 
-Welcome! We are really excited that you are interested in contributing to Histoire. Before submitting your contribution, please make sure to take a moment and read through the following guide:
+Welcome! We are really excited that you are interested in contributing to Poveste. Before submitting your contribution, please make sure to take a moment and read through the following guide:
 
 ## Means of Contributing
 
 Contributing doesn't necessarily mean you need to write code and open Pull Requests. There are many other ways you can help the project!
 
-- Try the [latest version](https://github.com/histoire-dev/histoire/releases) of Histoire and [report bugs](https://github.com/histoire-dev/histoire/issues/new?assignees=&labels=to+triage&template=bug-report.yml).
-- Discuss your ideas with the community on the [discussion board](https://github.com/histoire-dev/histoire/discussions).
+- Try the [latest version](https://github.com/poveste-dev/poveste/releases) of Poveste and [report bugs](https://github.com/histoire-dev/histoire/issues/new?assignees=&labels=to+triage&template=bug-report.yml).
+- Discuss your ideas with the community on the [discussion board](https://github.com/poveste-dev/poveste/discussions).
 - Answer to other people's questions.
 - Report typos or issues of the docs.
 - Support us financially on GitHub sponsors:
   - [Guillaume](https://github.com/sponsors/Akryum)
   - [Hugo](https://github.com/sponsors/hugoattal)
-- Do you like Histoire? Spread the love on social media!
+- Do you like Poveste? Spread the love on social media!
 
 ## Packages
 
@@ -42,7 +42,7 @@ node corepack enable
 pnpm i
 ```
 
-2. Compile Histoire in watch mode:
+2. Compile Poveste in watch mode:
 
 ```sh
 pnpm run watch
@@ -56,14 +56,14 @@ If you do not intend to make changes to the histoire main packages, you can use 
 pnpm run build
 ```
 
-3. In the `examples` directory, you can run `story:dev` scripts to start Histoire on an example project.
+3. In the `examples` directory, you can run `story:dev` scripts to start Poveste on an example project.
 
 ```sh
 cd examples/vue3
 pnpm run story:dev
 ```
 
-> For the `vue3` example, you can use the `pnpm run dev:hst` command to start the app with a special configuration enabling HMR for the Histoire UI. Especially useful when working on the UI!
+> For the `vue3` example, you can use the `pnpm run dev:hst` command to start the app with a special configuration enabling HMR for the Poveste UI. Especially useful when working on the UI!
 
 4. After you have tested your changes in development mode, build the story apps and test them using the `story:build` and `story:preview` scripts:
 

@@ -1,5 +1,5 @@
 name: 🐞 Bug report
-description: Report an issue with Histoire
+description: Report an issue with Poveste
 labels: [to triage]
 body:
   - type: markdown
@@ -48,15 +48,15 @@ body:
       label: Validations
       description: Before submitting the issue, please make sure you do the following
       options:
-        - label: Follow our [Code of Conduct](https://github.com/histoire-dev/histoire/blob/main/CODE_OF_CONDUCT.md)
+        - label: Follow our [Code of Conduct](https://github.com/poveste-dev/poveste/blob/main/CODE_OF_CONDUCT.md)
           required: true
-        - label: Read the [Contributing Guidelines](https://github.com/histoire-dev/histoire/blob/main/CONTRIBUTING.md).
+        - label: Read the [Contributing Guidelines](https://github.com/poveste-dev/poveste/blob/main/CONTRIBUTING.md).
           required: true
-        - label: Read the [docs](https://histoire.dev/guide/).
+        - label: Read the [docs](https://poveste.dev/guide/).
           required: true
-        - label: Check that there isn't [already an issue](https://github.com/histoire-dev/histoire/issues) that reports the same bug to avoid creating a duplicate.
+        - label: Check that there isn't [already an issue](https://github.com/poveste-dev/poveste/issues) that reports the same bug to avoid creating a duplicate.
           required: true
-        - label: Check that this is a concrete bug. For Q&A open a [GitHub Discussion](https://github.com/histoire-dev/histoire/discussions).
+        - label: Check that this is a concrete bug. For Q&A open a [GitHub Discussion](https://github.com/poveste-dev/poveste/discussions).
           required: true
         - label: The provided reproduction is a [minimal reproducible example](https://stackoverflow.com/help/minimal-reproducible-example) of the bug.
           required: true

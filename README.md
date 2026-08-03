@@ -1,21 +1,27 @@
 <p align="center">
-  <img src="./logo.svg" alt="Histoire logo" width="256px" height="256px">
+  <img src="./logo.svg" alt="Poveste logo" width="256px" height="256px">
 </p>
 
 <br>
 
-# Histoire
+# Poveste
 
 > Fast and beautiful interactive component playgrounds
 
-[![Test status](https://github.com/histoire-dev/histoire/actions/workflows/test.yml/badge.svg)](https://github.com/histoire-dev/histoire/actions/workflows/test.yml)
-[![Test status](https://github.com/histoire-dev/histoire/actions/workflows/test-vue3.yml/badge.svg)](https://github.com/histoire-dev/histoire/actions/workflows/test-vue3.yml)
-[![Test status](https://github.com/histoire-dev/histoire/actions/workflows/test-svelte4.yml/badge.svg)](https://github.com/histoire-dev/histoire/actions/workflows/test-svelte4.yml)
-[![Test status](https://github.com/histoire-dev/histoire/actions/workflows/test-sveltekit.yml/badge.svg)](https://github.com/histoire-dev/histoire/actions/workflows/test-sveltekit.yml)
-[![Test status](https://github.com/histoire-dev/histoire/actions/workflows/test-nuxt4.yml/badge.svg)](https://github.com/histoire-dev/histoire/actions/workflows/test-nuxt4.yml)
+**poveste** — /poˈveste/ (_po-VES-teh_), Romanian for "story." A community-maintained,
+**drop-in successor** to [histoire](https://github.com/histoire-dev/histoire) by
+[Guillaume Chau](https://github.com/Akryum). Existing histoire projects migrate by
+swapping one dependency — the `<Story>`/`<Variant>` API, `.story.*` files, and
+`histoire.config.*` all keep working. Say it however you like — we answer to "po-VEST" too. 🙂
 
-[Read the Documentation](https://histoire.dev) |
-[Discord server](https://discord.gg/KpCnT72rJk) | [Discussions board](https://github.com/histoire-dev/histoire/discussions)
+[![Test status](https://github.com/poveste-dev/poveste/actions/workflows/test.yml/badge.svg)](https://github.com/poveste-dev/poveste/actions/workflows/test.yml)
+[![Test status](https://github.com/poveste-dev/poveste/actions/workflows/test-vue3.yml/badge.svg)](https://github.com/poveste-dev/poveste/actions/workflows/test-vue3.yml)
+[![Test status](https://github.com/poveste-dev/poveste/actions/workflows/test-svelte4.yml/badge.svg)](https://github.com/poveste-dev/poveste/actions/workflows/test-svelte4.yml)
+[![Test status](https://github.com/poveste-dev/poveste/actions/workflows/test-sveltekit.yml/badge.svg)](https://github.com/poveste-dev/poveste/actions/workflows/test-sveltekit.yml)
+[![Test status](https://github.com/poveste-dev/poveste/actions/workflows/test-nuxt4.yml/badge.svg)](https://github.com/poveste-dev/poveste/actions/workflows/test-nuxt4.yml)
+
+[Read the Documentation](https://poveste.dev) |
+[Discord server](https://discord.gg/KpCnT72rJk) | [Discussions board](https://github.com/poveste-dev/poveste/discussions)
 
 ⚡️ Lightning fast development and instant HMR thanks to [Vite](http://vitejs.dev)
 👓 Build and visually test your components in isolation
@@ -31,7 +37,7 @@ You can install builds from any commit on the main branch from [here](https://ni
 
 ## Contributing
 
-See [Contributing Guide](https://github.com/Akryum/histoire/blob/main/CONTRIBUTING.md) to learn more about the repository and how you can contribute.
+See [Contributing Guide](https://github.com/poveste-dev/poveste/blob/main/CONTRIBUTING.md) to learn more about the repository and how you can contribute.
 
 ## Sponsors
 

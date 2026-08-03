@@ -11,7 +11,7 @@
 
 # Welcome
 
-This is just a link to [Histoire.dev](https://histoire.dev/){id="link-to-history"}.
+This is just a link to [Poveste.dev](https://poveste.dev/){id="link-to-history"}.
 
 - [Go to Introduction](./Introduction.story.vue)
 - [Go to CodeGen > Slots](./CodeGen.story.vue?variantId=slots)

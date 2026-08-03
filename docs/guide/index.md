@@ -13,16 +13,16 @@ function playAudio () {
 </audio>
 
 <div class="flex justify-center mt-12">
-  <img src="/logo.svg" alt="Histoire logo" class="max-h-[256px]">
+  <img src="/logo.svg" alt="Poveste logo" class="max-h-[256px]">
 </div>
 
-# Why Histoire
+# Why Poveste
 
 ## Overview
 
-> Histoire is the French word for "Story" and is pronounced `/is.twaʁ/`, like "is·twar" <button class="btn p-1 leading-none" v-on:click="playAudio"><Icon icon="carbon:volume-up-filled" class="w-4 h-4 align-middle"/></button>
+> Poveste is the French word for "Story" and is pronounced `/is.twaʁ/`, like "is·twar" <button class="btn p-1 leading-none" v-on:click="playAudio"><Icon icon="carbon:volume-up-filled" class="w-4 h-4 align-middle"/></button>
 
-Histoire is a tool to generate stories applications (or "books").
+Poveste is a tool to generate stories applications (or "books").
 
 <div class="demo-links-box border-green-200 dark:border-green-900">
   <img src="/vue.svg" class="w-10 h-10 mt-3" />
@@ -44,7 +44,7 @@ Stories are useful for several reasons:
 
 It is typically used when building a company's design system or a components library.
 
-In Histoire, Stories contains one or more Variants, which are different use cases around the same topic or around the same components. Stories in Histoire are built this way:
+In Poveste, Stories contains one or more Variants, which are different use cases around the same topic or around the same components. Stories in Poveste are built this way:
 - Create a Story file:
   - Import components
   - Create a Variant:
@@ -60,19 +60,19 @@ It basically gives you:
 - Documentation rendered from Markdown
 - Many other features!
 
-## Why should I use Histoire?
+## Why should I use Poveste?
 
-Histoire is built from the ground up to be a Vite-native Story builder. Our core values when designing Histoire are:
+Poveste is built from the ground up to be a Vite-native Story builder. Our core values when designing Poveste are:
 
 - **Native to Vite projects**: By reusing your Vite config, it takes less time setting up and more time writing stories. Same building pipeline means no duplicate effort and configuration! Out-of-the-box support of TypeScript, JSX, Styles...
 
-- **Idiomatic**: No mandatory JSX-oriented and funky template/args syntax! Write your story naturally in either `.vue` files, `.svelte` files, JSX or whatever feel the most at home with the framework you are using in the rest of your project. We also want to have the least amount of Histoire API leaking into your story code.
+- **Idiomatic**: No mandatory JSX-oriented and funky template/args syntax! Write your story naturally in either `.vue` files, `.svelte` files, JSX or whatever feel the most at home with the framework you are using in the rest of your project. We also want to have the least amount of Poveste API leaking into your story code.
 
-- **Fast and light**: Enjoy writing stories using Vite instant server startup and instant HMR! Books built with Histoire will be fast in production as well thanks to code-splitting and lean bundle sizes.
+- **Fast and light**: Enjoy writing stories using Vite instant server startup and instant HMR! Books built with Poveste will be fast in production as well thanks to code-splitting and lean bundle sizes.
 
-- **Customizable**: You can very easily change the look and feel to match your branding, or install plugins to extend Histoire's features.
+- **Customizable**: You can very easily change the look and feel to match your branding, or install plugins to extend Poveste's features.
 
-- **Great User Experience**: We care about UX and we strive to make the Histoire UI as beautiful and intuitive as possible. It also supports phones!
+- **Great User Experience**: We care about UX and we strive to make the Poveste UI as beautiful and intuitive as possible. It also supports phones!
 
 ## Features
 
@@ -81,7 +81,7 @@ Here are some highlights of our favorite features:
 ### :zap: Dynamic source
 
 The copyable source code is an important part of the documentation purpose of stories.
-For supported frameworks, Histoire can generate the template/JSX/source code that you can one-click-copy and paste in your project.
+For supported frameworks, Poveste can generate the template/JSX/source code that you can one-click-copy and paste in your project.
 
 ### :bento: Variant grids
 
@@ -102,7 +102,7 @@ Resize the preview to test your design on different screen sizes. Customize the 
 
 ### :musical_keyboard: Flexible controls
 
-Put your own components and logic in the story controls pane! Or use the [builtin controls](https://controls.histoire.dev).
+Put your own components and logic in the story controls pane! Or use the [builtin controls](https://controls.poveste.dev).
 
 ### :camera: Visual regression testing
 
@@ -110,7 +110,7 @@ Take snapshots of your stories when your book is built on your CI, with [Percy](
 
 ### :art: Automatic design tokens
 
-Histoire will automatically detect your Tailwind CSS configuration and generate design system stories for you.
+Poveste will automatically detect your Tailwind CSS configuration and generate design system stories for you.
 
 ### :mag: Fast fuzzy search
 

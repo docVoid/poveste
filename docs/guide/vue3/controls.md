@@ -4,7 +4,7 @@ Controls give you the ability to interact with your components arguments.
 
 ## Defining a state
 
-The first step is to define the state that will be shared to your story. Histoire will automatically synchronize the `data` or reactive data returned in your `setup`. Then you can proceed using your state as usual.
+The first step is to define the state that will be shared to your story. Poveste will automatically synchronize the `data` or reactive data returned in your `setup`. Then you can proceed using your state as usual.
 
 Example with Option API:
 
@@ -19,7 +19,7 @@ export default defineComponent({
   },
 
   data () {
-    // Histoire will inspect and synchronize this
+    // Poveste will inspect and synchronize this
     return {
       state: {
         disabled: false,
@@ -64,7 +64,7 @@ export default defineComponent({
 
     const message = ref('Meow!')
 
-    // Histoire will inspect and synchronize this
+    // Poveste will inspect and synchronize this
     return {
       state,
       message,
@@ -147,7 +147,7 @@ const colors = {
 
 ## Controls panel
 
-To create the control panel, Histoire provides a `controls` slot. You are free to render any element or components inside the slot.
+To create the control panel, Poveste provides a `controls` slot. You are free to render any element or components inside the slot.
 
 ```vue{18-21}
 <script lang="ts" setup>
@@ -207,7 +207,7 @@ A variant can then override the slot if needed.
 
 ## Builtin controls
 
-To build a control panel a bit more easily, Histoire provides builtin controls with design that fits the rest of the UI.
+To build a control panel a bit more easily, Poveste provides builtin controls with design that fits the rest of the UI.
 
 ```vue{19-20}
 <script lang="ts" setup>
@@ -236,7 +236,7 @@ const state = reactive({
 </template>
 ```
 
-Check out all the available controls in their book: [controls.histoire.dev](https://controls.histoire.dev/).
+Check out all the available controls in their book: [controls.poveste.dev](https://controls.poveste.dev/).
 
 ## Init state
 

@@ -133,7 +133,7 @@ async function useNuxtViteConfig() {
     },
   })
   if (nuxt.options.builder as string !== '@nuxt/vite-builder') {
-    throw new Error(`Histoire only supports Vite bundler, but Nuxt builder is currently set to '${nuxt.options.builder}'.`)
+    throw new Error(`Poveste only supports Vite bundler, but Nuxt builder is currently set to '${nuxt.options.builder}'.`)
   }
   const runtimeDir = fileURLToPath(new URL('../runtime', import.meta.url))
   nuxt.options.build.templates.push(

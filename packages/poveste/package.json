@@ -4,13 +4,13 @@
   "version": "1.0.0-beta.1",
   "description": "A fast story book powered by Vite",
   "author": {
-    "name": "Guillaume Chau"
+    "name": "Sorin Gitlan"
   },
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/Akryum/histoire.git",
+    "url": "https://github.com/poveste-dev/poveste.git",
     "type": "git",
-    "directory": "packages/histoire"
+    "directory": "packages/poveste"
   },
   "publishConfig": {
     "access": "public"

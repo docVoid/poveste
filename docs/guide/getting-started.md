@@ -8,15 +8,15 @@ function playAudio () {
   <source src="/histoire.mp3" type="audio/mpeg">
 </audio>
 
-# Getting started with Histoire
+# Getting started with Poveste
 
 ## Overview
 
-> Histoire is the French word for "Story" and is pronounced `/is.twaʁ/`, like "is·twar" <button class="btn p-1 leading-none" v-on:click="playAudio"><Icon icon="carbon:volume-up-filled" class="w-4 h-4 align-middle"/></button>
+> Poveste is the French word for "Story" and is pronounced `/is.twaʁ/`, like "is·twar" <button class="btn p-1 leading-none" v-on:click="playAudio"><Icon icon="carbon:volume-up-filled" class="w-4 h-4 align-middle"/></button>
 
-Histoire is a tool to generate stories applications (or "books").
+Poveste is a tool to generate stories applications (or "books").
 
-[Learn more about Histoire here &raquo;](./index.md)
+[Learn more about Poveste here &raquo;](./index.md)
 
 <div class="demo-links-box border-green-200 dark:border-green-900">
   <img src="/vue.svg" class="w-10 h-10 mt-3" />
@@ -30,7 +30,7 @@ Histoire is a tool to generate stories applications (or "books").
 
 ## Sponsors
 
-Histoire is an Open-Source project supported by our sponsors - thank you!
+Poveste is an Open-Source project supported by our sponsors - thank you!
 
 <div class="flex justify-center mt-6 mb-12 gap-2">
   <SponsorButton/>
@@ -70,4 +70,4 @@ Histoire is an Open-Source project supported by our sponsors - thank you!
 
 ## Community
 
-If you have questions or need help, reach out to the community at [Discord](https://discord.gg/KpCnT72rJk) and [GitHub Discussions](https://github.com/histoire-dev/histoire/discussions).
+If you have questions or need help, reach out to the community at [Discord](https://discord.gg/KpCnT72rJk) and [GitHub Discussions](https://github.com/poveste-dev/poveste/discussions).

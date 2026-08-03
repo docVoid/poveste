@@ -5,13 +5,13 @@
   "private": true,
   "description": "Stories for the prebuilt controls components",
   "author": {
-    "name": "Guillaume Chau"
+    "name": "Sorin Gitlan"
   },
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/Akryum/histoire.git",
+    "url": "https://github.com/poveste-dev/poveste.git",
     "type": "git",
-    "directory": "packages/histoire-controls-stories"
+    "directory": "packages/poveste-controls-stories"
   },
   "scripts": {
     "story:dev": "histoire dev",

@@ -4,7 +4,7 @@ Controls give you the ability to interact with your components arguments.
 
 ## Defining state
 
-The first step is to define the state that will be shared to your story. Histoire will automatically synchronize the reactive data of your component. Then you can proceed using your state as usual.
+The first step is to define the state that will be shared to your story. Poveste will automatically synchronize the reactive data of your component. Then you can proceed using your state as usual.
 
 ```svelte{6-8,13,14,17}
 <script lang="ts">
@@ -30,7 +30,7 @@ The first step is to define the state that will be shared to your story. Histoir
 
 ## Controls panel
 
-To create the control panel, Histoire provides a `controls` slot on `<Hst.Variant>` (and `<Hst.Story>`, more on that later). You are free to render any element or components inside the slot.
+To create the control panel, Poveste provides a `controls` slot on `<Hst.Variant>` (and `<Hst.Story>`, more on that later). You are free to render any element or components inside the slot.
 
 ```svelte{16-19}
 <script>
@@ -85,7 +85,7 @@ A variant can then override the slot if needed.
 
 ## Builtin controls
 
-To build a control panel a bit more easily, Histoire provides builtin controls with design that fits the rest of the UI.
+To build a control panel a bit more easily, Poveste provides builtin controls with design that fits the rest of the UI.
 
 ```svelte{17-18}
 <script>
@@ -111,4 +111,4 @@ To build a control panel a bit more easily, Histoire provides builtin controls w
 </Hst.Story>
 ```
 
-Check out all the available controls in their book: [controls.histoire.dev](https://controls.histoire.dev/).
+Check out all the available controls in their book: [controls.poveste.dev](https://controls.poveste.dev/).

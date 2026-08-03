@@ -4,7 +4,7 @@ You can customize the story explorer tree.
 
 ## Using the title
 
-By default, Histoire uses the title of your stories to create the hierarchy. If you want to put a story in a specific folder or subfolder, just write the path as the title of your Story.
+By default, Poveste uses the title of your stories to create the hierarchy. If you want to put a story in a specific folder or subfolder, just write the path as the title of your Story.
 
 ```vue{2}
 <template>
@@ -16,7 +16,7 @@ By default, Histoire uses the title of your stories to create the hierarchy. If 
 
 ## Using the file path
 
-If you want to use the real path of your story files, you can change that in your [Histoire configuration file](/guide/config).
+If you want to use the real path of your story files, you can change that in your [Poveste configuration file](/guide/config).
 
 ```ts{5}
 // histoire.config.ts
@@ -58,7 +58,7 @@ export default defineConfig({
 
 ## Groups
 
-Sometimes, you might have additional organization needs for the stories. Besides folders, Histoire also provides groups, which are little different:
+Sometimes, you might have additional organization needs for the stories. Besides folders, Poveste also provides groups, which are little different:
 
 - expanded by default
 - only root level

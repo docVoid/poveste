@@ -4,7 +4,7 @@ Lost Pixel is a [modern open-source visual regression testing tool](https://gith
 
 ## Setting up self-hosted visual testing
 
-Lost Pixel has first-class Histoire support meaning that you don't need to do much to add visual tests to your app if you have your Histoire book ready!
+Lost Pixel has first-class Poveste support meaning that you don't need to do much to add visual tests to your app if you have your Poveste book ready!
 
 Start with installing lost-pixel by `npm install lost-pixel` and creating a `lostpixel.config.js|ts` file with following contents.
 
@@ -19,7 +19,7 @@ export const config: CustomProjectConfig = {
   failOnDifference: true
 }
 ```
-**Before running visual tests you need to have your Histoire book built first**.
+**Before running visual tests you need to have your Poveste book built first**.
 
 This setup allows you to run visual tests locally. To test your stories run `npx lost-pixel`
 

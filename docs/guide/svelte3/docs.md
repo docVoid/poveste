@@ -34,7 +34,7 @@ This is a demo book using Svelte.
 
 ---
 
-Learn more about Histoire [here](https://histoire.dev/).
+Learn more about Poveste [here](https://poveste.dev/).
 ```
 
 ### Links

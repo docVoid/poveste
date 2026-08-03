@@ -1,4 +1,4 @@
-# Histoire + Nuxt 3
+# Poveste + Nuxt 3
 
 ```bash
 pnpm add -D @poveste/plugin-nuxt

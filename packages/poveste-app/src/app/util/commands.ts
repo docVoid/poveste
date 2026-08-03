@@ -28,10 +28,10 @@ export const builtinCommands: ClientCommand[] = [
   },
   {
     id: 'builtin:histoire-docs',
-    label: 'Open Histoire Documentation',
+    label: 'Open Poveste Documentation',
     icon: 'carbon:help',
     clientAction: () => {
-      window.open('https://histoire.dev/guide/getting-started.html', '_blank')
+      window.open('https://poveste.dev/guide/getting-started.html', '_blank')
     },
   },
 ]

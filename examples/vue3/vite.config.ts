@@ -47,7 +47,7 @@ export default defineConfig({
         config() {
           return {
             theme: {
-              logoHref: 'http://histoire.dev',
+              logoHref: 'http://poveste.dev',
               favicon: 'histoire.svg',
             },
           }
@@ -59,7 +59,7 @@ export default defineConfig({
     setupFile: '/src/histoire.setup.ts',
 
     // theme: {
-    //   logoHref: 'http://histoire.dev',
+    //   logoHref: 'http://poveste.dev',
     // },
 
     tree: {

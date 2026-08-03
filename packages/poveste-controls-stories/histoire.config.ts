@@ -14,7 +14,7 @@ export default defineConfig({
   setupFile: '/histoire-setup.ts',
 
   theme: {
-    title: 'Histoire controls',
+    title: 'Poveste controls',
     favicon: 'histoire.svg',
   },
 

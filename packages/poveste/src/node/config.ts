@@ -43,7 +43,7 @@ export function getDefaultConfig(): PovesteConfig {
       order: 'asc',
     },
     theme: {
-      title: 'Histoire',
+      title: 'Poveste',
       colors: {
         primary: defaultColors.emerald,
         gray: defaultColors.zinc,
@@ -311,7 +311,7 @@ export async function processConfig(ctx: Context) {
 
   const fileCheck = (file: string, resolvedFile: string, configPathForError: string) => {
     if (!file.startsWith('http') && !file.startsWith('@') && !fs.existsSync(resolvedFile)) {
-      console.warn(pc.yellow(`Histoire config: ${configPathForError} file ${file} does not exist (resolved to ${resolvedFile}), check for typos in the path`))
+      console.warn(pc.yellow(`Poveste config: ${configPathForError} file ${file} does not exist (resolved to ${resolvedFile}), check for typos in the path`))
     }
   }
 
@@ -349,10 +349,10 @@ export async function processConfig(ctx: Context) {
         const resolvedFile = resolveFsPath(file, true)
         const relativeFile = path.relative(publicDir, resolvedFile)
         if (relativeFile.startsWith('..')) {
-          throw new Error(pc.red(`Histoire config: theme.favicon seems to target a file that is not in the vite 'public' directory: ${file} (resolved as ${resolvedFile})`))
+          throw new Error(pc.red(`Poveste config: theme.favicon seems to target a file that is not in the vite 'public' directory: ${file} (resolved as ${resolvedFile})`))
         }
         if (!fs.existsSync(resolvedFile)) {
-          throw new Error(pc.red(`Histoire config: theme.favicon seems to target a file that does not exist: ${file} (resolved as ${resolvedFile})`))
+          throw new Error(pc.red(`Poveste config: theme.favicon seems to target a file that does not exist: ${file} (resolved as ${resolvedFile})`))
         }
         config.theme.favicon = relativeFile
       }
@@ -360,7 +360,7 @@ export async function processConfig(ctx: Context) {
         // Check if URL path is valid
         const resolvedFile = path.resolve(publicDir, file)
         if (!fs.existsSync(resolvedFile)) {
-          throw new Error(pc.red(`Histoire config: theme.favicon seems to target a file that does not exist: ${file} (resolved as ${resolvedFile}).\nThe favicon file should be placed in the vite 'public' directory.\nExample: if the file is in <project>/public/img/favicon.ico, you can put 'img/favicon.ico' or './public/img/favicon.ico'.`))
+          throw new Error(pc.red(`Poveste config: theme.favicon seems to target a file that does not exist: ${file} (resolved as ${resolvedFile}).\nThe favicon file should be placed in the vite 'public' directory.\nExample: if the file is in <project>/public/img/favicon.ico, you can put 'img/favicon.ico' or './public/img/favicon.ico'.`))
         }
       }
     }

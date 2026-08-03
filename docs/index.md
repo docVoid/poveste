@@ -2,22 +2,22 @@
 layout: home
 
 hero:
-  name: Histoire
+  name: Poveste
   text: A new way to write stories
   tagline: Powered by Vite
   image:
     src: /logo.svg
-    alt: Histoire logo
+    alt: Poveste logo
   actions:
     - theme: brand
       text: Get Started
       link: /guide/getting-started
     - theme: alt
-      text: Why Histoire?
+      text: Why Poveste?
       link: /guide/
     - theme: alt
       text: View on GitHub
-      link: https://github.com/histoire-dev/histoire
+      link: https://github.com/poveste-dev/poveste
 
 features:
   - title: 📖 Stories

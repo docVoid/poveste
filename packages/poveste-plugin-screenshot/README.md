@@ -1,4 +1,4 @@
-# Histoire Screenshot visual regression testing
+# Poveste Screenshot visual regression testing
 
 ```
 pnpm add -D @poveste/plugin-screenshot

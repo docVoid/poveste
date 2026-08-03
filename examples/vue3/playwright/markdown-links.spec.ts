@@ -11,7 +11,7 @@ test.describe('markdown links', () => {
   test('opens external links in a new tab', async ({ page }) => {
     await page.goto('/story/src-components-markdownlinks-story-vue?variantId=_default')
     const link = page.locator('#link-to-history')
-    await expect(link).toHaveAttribute('href', 'https://histoire.dev/')
+    await expect(link).toHaveAttribute('href', 'https://poveste.dev/')
     await expect(link).toHaveAttribute('target', '_blank')
   })
 })
