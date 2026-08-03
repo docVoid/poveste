@@ -136,4 +136,4 @@ Learn more about configuring Poveste [here](../config.md).
 
 ## Community
 
-If you have questions or need help, reach out to the community at [Discord](https://discord.gg/KpCnT72rJk) and [GitHub Discussions](https://github.com/poveste-dev/poveste/discussions).
+If you have questions or need help, reach out to the community on [GitHub Discussions](https://github.com/poveste-dev/poveste/discussions).
