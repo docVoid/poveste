@@ -7,7 +7,7 @@ export default {
 <script lang="ts" setup>
 import type { StoryFile, Tree } from './types'
 import { useTitle } from '@vueuse/core'
-import { onUpdate, files as rawFiles, tree as rawTree } from 'virtual:$histoire-stories'
+import { onUpdate, files as rawFiles, tree as rawTree } from 'virtual:$poveste-stories'
 import { computed, onMounted, ref, watch } from 'vue'
 import AppHeader from './components/app/AppHeader.vue'
 import Breadcrumb from './components/app/Breadcrumb.vue'

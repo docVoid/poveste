@@ -2,9 +2,9 @@ import type { Story, Variant } from '@poveste/shared'
 import type { App, Component, PropType, VNode } from 'vue'
 import type { Vue3StorySetupApi, Vue3StorySetupHandler } from '../../helpers.js'
 // @ts-expect-error virtual module id
-import * as generatedSetup from 'virtual:$histoire-generated-global-setup'
+import * as generatedSetup from 'virtual:$poveste-generated-global-setup'
 // @ts-expect-error virtual module id
-import * as setup from 'virtual:$histoire-setup'
+import * as setup from 'virtual:$poveste-setup'
 import {
   createApp,
   defineComponent,

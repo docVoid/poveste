@@ -54,7 +54,7 @@ export default defineConfig({
     },
     rollupOptions: {
       external: [
-        /\$histoire/,
+        /\$poveste/,
         /@poveste/,
         // eslint-disable-next-line ts/no-require-imports
         ...Object.keys(require('./package.json').dependencies),

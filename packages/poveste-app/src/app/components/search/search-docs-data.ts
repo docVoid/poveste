@@ -1,5 +1,5 @@
 import type { SearchData } from './types.js'
-import { onUpdate as _onUpdate, searchData as _searchData } from 'virtual:$histoire-search-docs-data'
+import { onUpdate as _onUpdate, searchData as _searchData } from 'virtual:$poveste-search-docs-data'
 import { markRaw } from 'vue'
 
 export const searchData: SearchData = markRaw(_searchData)

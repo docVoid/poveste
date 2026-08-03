@@ -4,7 +4,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import { setupPluginApi } from './plugin.js'
 import { router } from './router'
-import 'virtual:$histoire-theme'
+import 'virtual:$poveste-theme'
 
 export async function mountMainApp() {
   const app = createApp(App)

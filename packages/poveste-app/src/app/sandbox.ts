@@ -1,7 +1,7 @@
 import type { StoryFile } from './types'
 import { applyState } from '@poveste/shared'
 import { createPinia } from 'pinia'
-import { files } from 'virtual:$histoire-stories'
+import { files } from 'virtual:$poveste-stories'
 import { computed, createApp, h, onMounted, ref, watch } from 'vue'
 import { parseQuery } from 'vue-router'
 import GenericMountStory from './components/story/GenericMountStory.vue'

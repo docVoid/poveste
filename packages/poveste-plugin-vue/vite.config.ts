@@ -40,7 +40,7 @@ export default defineConfig({
     },
     rollupOptions: {
       external: [
-        /\$histoire/,
+        /\$poveste/,
         /@poveste/,
         'vue',
       ],

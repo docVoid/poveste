@@ -1,6 +1,6 @@
 import type { Story, Variant } from '../types'
 import { unindent } from '@poveste/shared'
-import { clientSupportPlugins } from 'virtual:$histoire-support-plugins-client'
+import { clientSupportPlugins } from 'virtual:$poveste-support-plugins-client'
 
 export async function getSourceCode(story: Story, variant: Variant) {
   if (variant.source) {

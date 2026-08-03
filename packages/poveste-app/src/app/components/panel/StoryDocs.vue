@@ -2,7 +2,7 @@
 import type { PropType, Ref } from 'vue'
 import type { Story } from '../../types'
 import { Icon } from '@iconify/vue'
-import { markdownFiles } from 'virtual:$histoire-markdown-files'
+import { markdownFiles } from 'virtual:$poveste-markdown-files'
 import { computed, nextTick, ref, toRefs, watch, watchEffect } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { histoireConfig } from '../../util/config.js'

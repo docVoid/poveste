@@ -2,9 +2,9 @@ import type { ServerRunPayload } from '@poveste/shared'
 import type { SvelteStorySetupApi } from '../helpers.js'
 import { tick } from 'svelte'
 // @ts-expect-error virtual module id
-import * as generatedSetup from 'virtual:$histoire-generated-global-setup'
+import * as generatedSetup from 'virtual:$poveste-generated-global-setup'
 // @ts-expect-error virtual module id
-import * as setup from 'virtual:$histoire-setup'
+import * as setup from 'virtual:$poveste-setup'
 import {
   callSetupFunctions,
   mountSvelteComponent,

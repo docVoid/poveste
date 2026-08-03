@@ -1,6 +1,6 @@
 import type { ServerRunPayload } from '@poveste/shared'
 // @ts-expect-error virtual module
-import { collectSupportPlugins } from 'virtual:$histoire-support-plugins-collect'
+import { collectSupportPlugins } from 'virtual:$poveste-support-plugins-collect'
 
 export async function run(payload: ServerRunPayload) {
   const { run } = await collectSupportPlugins[payload.file.supportPluginId]()
