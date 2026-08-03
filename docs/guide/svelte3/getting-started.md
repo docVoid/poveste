@@ -1,18 +1,8 @@
-<script setup>
-function playAudio () {
-  document.querySelector('#histoire-audio').play()
-}
-</script>
-
-<audio id="histoire-audio">
-  <source src="/histoire.mp3" type="audio/mpeg">
-</audio>
-
 # Getting started with Poveste
 
 ## Overview
 
-> Poveste is the French word for "Story" and is pronounced `/is.twaʁ/`, like "is·twar" <button class="btn p-1 leading-none" v-on:click="playAudio"><Icon icon="carbon:volume-up-filled" class="w-4 h-4 align-middle"/></button>
+> **poveste** is the Romanian word for "story", pronounced `/poˈveste/` (_po-VES-teh_). Coming from histoire? See the [migration guide](/guide/migration-from-histoire).
 
 Poveste is a tool to generate stories applications (or "books").
 

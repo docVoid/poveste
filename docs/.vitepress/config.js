@@ -59,6 +59,10 @@ module.exports = {
                 link: '/guide/getting-started',
               },
               {
+                text: 'Migrating from Histoire',
+                link: '/guide/migration-from-histoire',
+              },
+              {
                 text: 'Configuration',
                 link: '/guide/config',
               },
