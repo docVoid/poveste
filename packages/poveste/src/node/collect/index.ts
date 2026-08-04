@@ -26,9 +26,15 @@ export function useCollectStories(options: UseCollectStoriesOptions, ctx: Contex
   const node = new ViteNodeServer(server as any, {
     deps: {
       inline: [
-        /histoire\/dist/,
-        /histoire\/client/,
-        /@histoire\/[\w-]+\/dist/,
+        // Published layout: `poveste` and scoped `@poveste/*` packages. These
+        // MUST be inlined so vite-node transforms them and resolves their
+        // `virtual:` imports; otherwise they're loaded via native Node ESM,
+        // which throws ERR_UNSUPPORTED_ESM_URL_SCHEME on `virtual:` and breaks
+        // story collection for any fresh npm install.
+        /\/poveste\/dist/,
+        /\/poveste\/client/,
+        /@poveste\/[\w-]+\/dist/,
+        // Workspace layout: packages/poveste-<name>/dist (dev / monorepo).
         /poveste-[\w-]+\/dist/,
         /@vue\/devtools-api/,
         /vuetify/,
