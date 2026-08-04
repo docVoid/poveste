@@ -1,61 +1,28 @@
 <script lang="ts" setup>
-import { computed } from 'vue'
+import { launchStackBlitz } from './stackblitz'
 
-const props = defineProps<{
+defineProps<{
   framework: string
 }>()
 
-// Demo + StackBlitz links are intentionally empty for now: the
-// *.examples.poveste.dev demo subdomains aren't deployed yet, and the old
-// histoire-*-starter StackBlitz projects belong to histoire. Re-enable once
-// the poveste demos + poveste-*-starter projects exist (tracked in #14).
-// The `v-if` guards below hide the buttons while these are empty.
-const allLinks = {
-  vue3: {
-    demo: '',
-    stackblitz: '',
-  },
-  nuxt3: {
-    demo: '',
-    stackblitz: '',
-  },
-  svelte3: {
-    demo: '',
-    stackblitz: '',
-  },
-}
-
-const links = computed(() => allLinks[props.framework])
+// The online-demo buttons (*.examples.poveste.dev) are omitted until those
+// subdomains are deployed (tracked in #14). "Try it in a live editor" builds a
+// fresh Poveste book in StackBlitz in-memory via the SDK — see ./stackblitz.ts.
 </script>
 
 <template>
   <div class="demo-links space-y-2">
-    <a
-      v-if="links.demo"
-      :href="links.demo"
-      target="_blank"
-      class="btn flex items-center gap-4 p-4 hover:no-underline"
-    >
-      <img
-        src="/logo.svg"
-        alt="Logo"
-        class="w-8 h-8"
-      >
-      Online demo
-    </a>
-
-    <a
-      v-if="links.stackblitz"
-      :href="links.stackblitz"
-      target="_blank"
-      class="btn-blue flex items-center gap-4 p-4 hover:no-underline"
+    <button
+      type="button"
+      class="btn-blue flex items-center gap-4 p-4 hover:no-underline w-full text-left"
+      @click="launchStackBlitz(framework)"
     >
       <img
         src="/stackblitz.png"
-        alt="Logo"
+        alt="StackBlitz"
         class="w-8 h-8"
       >
       Try it in a live editor
-    </a>
+    </button>
   </div>
 </template>
