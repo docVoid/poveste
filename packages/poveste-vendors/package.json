@@ -15,10 +15,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": [
-    "dist",
-    "src"
-  ],
   "sideEffects": false,
   "exports": {
     "./floating-vue": "./dist/client/b-floating-vue.js",
@@ -30,6 +26,10 @@
     "./vue": "./dist/client/b-vue.js",
     "./*": "./*"
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "build": "rimraf dist && rollup -c rollup.config.mjs"
   },

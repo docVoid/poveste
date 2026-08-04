@@ -15,10 +15,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": [
-    "dist",
-    "src"
-  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -27,6 +23,10 @@
     "./*": "./*"
   },
   "types": "./src/index.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "build": "rimraf dist && vite build && pnpm run build:css && node ./scripts/copy.mjs",
     "build:css": "tailwindcss -i src/app/style/main.pcss -o ./dist/style.css -c tailwind.config.cjs --postcss postcss.config.cjs",
