@@ -14,10 +14,6 @@
 swapping one dependency — the `<Story>`/`<Variant>` API, `.story.*` files, and
 `histoire.config.*` all keep working. Say it however you like — we answer to "po-VEST" too. 🙂
 
-[![npm version](https://img.shields.io/npm/v/poveste?color=10b981&label=npm)](https://www.npmjs.com/package/poveste)
-[![npm downloads](https://img.shields.io/npm/dm/poveste?color=10b981)](https://www.npmjs.com/package/poveste)
-[![license](https://img.shields.io/npm/l/poveste?color=10b981)](https://github.com/poveste-dev/poveste/blob/main/LICENSE)
-
 [![Test status](https://github.com/poveste-dev/poveste/actions/workflows/test.yml/badge.svg)](https://github.com/poveste-dev/poveste/actions/workflows/test.yml)
 [![Test status](https://github.com/poveste-dev/poveste/actions/workflows/test-vue3.yml/badge.svg)](https://github.com/poveste-dev/poveste/actions/workflows/test-vue3.yml)
 [![Test status](https://github.com/poveste-dev/poveste/actions/workflows/test-svelte4.yml/badge.svg)](https://github.com/poveste-dev/poveste/actions/workflows/test-svelte4.yml)
@@ -35,14 +31,14 @@ swapping one dependency — the `<Story>`/`<Variant>` API, `.story.*` files, and
 
 ## Packages
 
-| Package | Version | Description |
-| --- | --- | --- |
-| [`poveste`](https://www.npmjs.com/package/poveste) | [![npm](https://img.shields.io/npm/v/poveste?label=&color=10b981)](https://www.npmjs.com/package/poveste) | Core CLI, config, and builder |
-| [`@poveste/plugin-vue`](https://www.npmjs.com/package/@poveste/plugin-vue) | [![npm](https://img.shields.io/npm/v/@poveste/plugin-vue?label=&color=10b981)](https://www.npmjs.com/package/@poveste/plugin-vue) | Vue 3 |
-| [`@poveste/plugin-svelte`](https://www.npmjs.com/package/@poveste/plugin-svelte) | [![npm](https://img.shields.io/npm/v/@poveste/plugin-svelte?label=&color=10b981)](https://www.npmjs.com/package/@poveste/plugin-svelte) | Svelte 4/5 and SvelteKit |
-| [`@poveste/plugin-nuxt`](https://www.npmjs.com/package/@poveste/plugin-nuxt) | [![npm](https://img.shields.io/npm/v/@poveste/plugin-nuxt?label=&color=10b981)](https://www.npmjs.com/package/@poveste/plugin-nuxt) | Nuxt |
-| [`@poveste/plugin-percy`](https://www.npmjs.com/package/@poveste/plugin-percy) | [![npm](https://img.shields.io/npm/v/@poveste/plugin-percy?label=&color=10b981)](https://www.npmjs.com/package/@poveste/plugin-percy) | Visual regression testing with Percy |
-| [`@poveste/plugin-screenshot`](https://www.npmjs.com/package/@poveste/plugin-screenshot) | [![npm](https://img.shields.io/npm/v/@poveste/plugin-screenshot?label=&color=10b981)](https://www.npmjs.com/package/@poveste/plugin-screenshot) | Visual regression testing with screenshots |
+| Package | Description | Version | Downloads |
+| --- | --- | --- | --- |
+| [`poveste`](packages/poveste) | Core CLI, config, and builder | <a href="https://npmx.dev/package/poveste"><img src="https://npmx.dev/api/registry/badge/version/poveste" alt="Version"></a> | <a href="https://npmx.dev/package/poveste"><img src="https://npmx.dev/api/registry/badge/downloads/poveste" alt="Downloads"></a> |
+| [`@poveste/plugin-vue`](packages/poveste-plugin-vue) | Vue 3 | <a href="https://npmx.dev/package/@poveste/plugin-vue"><img src="https://npmx.dev/api/registry/badge/version/@poveste/plugin-vue" alt="Version"></a> | <a href="https://npmx.dev/package/@poveste/plugin-vue"><img src="https://npmx.dev/api/registry/badge/downloads/@poveste/plugin-vue" alt="Downloads"></a> |
+| [`@poveste/plugin-svelte`](packages/poveste-plugin-svelte) | Svelte 4/5 and SvelteKit | <a href="https://npmx.dev/package/@poveste/plugin-svelte"><img src="https://npmx.dev/api/registry/badge/version/@poveste/plugin-svelte" alt="Version"></a> | <a href="https://npmx.dev/package/@poveste/plugin-svelte"><img src="https://npmx.dev/api/registry/badge/downloads/@poveste/plugin-svelte" alt="Downloads"></a> |
+| [`@poveste/plugin-nuxt`](packages/poveste-plugin-nuxt) | Nuxt | <a href="https://npmx.dev/package/@poveste/plugin-nuxt"><img src="https://npmx.dev/api/registry/badge/version/@poveste/plugin-nuxt" alt="Version"></a> | <a href="https://npmx.dev/package/@poveste/plugin-nuxt"><img src="https://npmx.dev/api/registry/badge/downloads/@poveste/plugin-nuxt" alt="Downloads"></a> |
+| [`@poveste/plugin-percy`](packages/poveste-plugin-percy) | Visual regression testing with Percy | <a href="https://npmx.dev/package/@poveste/plugin-percy"><img src="https://npmx.dev/api/registry/badge/version/@poveste/plugin-percy" alt="Version"></a> | <a href="https://npmx.dev/package/@poveste/plugin-percy"><img src="https://npmx.dev/api/registry/badge/downloads/@poveste/plugin-percy" alt="Downloads"></a> |
+| [`@poveste/plugin-screenshot`](packages/poveste-plugin-screenshot) | Visual regression testing with screenshots | <a href="https://npmx.dev/package/@poveste/plugin-screenshot"><img src="https://npmx.dev/api/registry/badge/version/@poveste/plugin-screenshot" alt="Version"></a> | <a href="https://npmx.dev/package/@poveste/plugin-screenshot"><img src="https://npmx.dev/api/registry/badge/downloads/@poveste/plugin-screenshot" alt="Downloads"></a> |
 
 ## Contributing
 
