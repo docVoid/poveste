@@ -1,6 +1,6 @@
 import type { PreviewSettings } from '../types'
 import { reactive } from 'vue'
-import { histoireConfig } from './config'
+import { povesteConfig } from './config'
 
 export const receivedSettings = reactive<PreviewSettings>({} as PreviewSettings)
 
@@ -13,11 +13,11 @@ export function applyPreviewSettings(settings: PreviewSettings) {
   // Contrast color
   const contrastColor = getContrastColor(settings)
   document.documentElement.style.setProperty('--histoire-contrast-color', contrastColor)
-  if (histoireConfig.autoApplyContrastColor) {
+  if (povesteConfig.autoApplyContrastColor) {
     document.documentElement.style.color = contrastColor
   }
 }
 
 export function getContrastColor(setting: PreviewSettings) {
-  return histoireConfig.backgroundPresets.find(preset => preset.color === setting.backgroundColor)?.contrastColor ?? 'unset'
+  return povesteConfig.backgroundPresets.find(preset => preset.color === setting.backgroundColor)?.contrastColor ?? 'unset'
 }

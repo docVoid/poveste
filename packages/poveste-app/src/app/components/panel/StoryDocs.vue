@@ -5,7 +5,7 @@ import { Icon } from '@iconify/vue'
 import { markdownFiles } from 'virtual:$poveste-markdown-files'
 import { computed, nextTick, ref, toRefs, watch, watchEffect } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { histoireConfig } from '../../util/config.js'
+import { povesteConfig } from '../../util/config.js'
 import BaseEmpty from '../base/BaseEmpty.vue'
 import DevOnlyToolbarOpenInEditor from '../toolbar/DevOnlyToolbarOpenInEditor.vue'
 
@@ -103,7 +103,7 @@ function onClick(e: MouseEvent) {
 
 function getHash() {
   const hash = location.hash
-  if (histoireConfig.routerMode === 'hash') {
+  if (povesteConfig.routerMode === 'hash') {
     const index = hash.indexOf('#', 1)
     if (index !== -1) {
       return hash.slice(index)
@@ -141,7 +141,7 @@ const route = useRoute()
 
 async function patchAnchorLinks() {
   await nextTick()
-  if (histoireConfig.routerMode === 'hash' && renderedEl.value) {
+  if (povesteConfig.routerMode === 'hash' && renderedEl.value) {
     const links = renderedEl.value.querySelectorAll('a.header-anchor')
     for (const link of links) {
       const href = link.getAttribute('href')

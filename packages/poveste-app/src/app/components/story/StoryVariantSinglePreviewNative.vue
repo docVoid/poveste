@@ -2,7 +2,7 @@
 import type { Story, Variant } from '../../types'
 import { computed } from 'vue'
 import { usePreviewSettingsStore } from '../../stores/preview-settings'
-import { histoireConfig } from '../../util/config'
+import { povesteConfig } from '../../util/config'
 import { isDark } from '../../util/dark'
 import { getContrastColor } from '../../util/preview-settings'
 import GenericRenderStory from './GenericRenderStory.vue'
@@ -26,7 +26,7 @@ function onReady() {
 const settings = usePreviewSettingsStore().currentSettings
 
 const contrastColor = computed(() => getContrastColor(settings))
-const autoApplyContrastColor = computed(() => !!histoireConfig.autoApplyContrastColor)
+const autoApplyContrastColor = computed(() => !!povesteConfig.autoApplyContrastColor)
 </script>
 
 <template>
@@ -55,8 +55,8 @@ const autoApplyContrastColor = computed(() => !!histoireConfig.autoApplyContrast
         :story="story"
         class="htw-h-full"
         :class="{
-          [histoireConfig.sandboxDarkClass]: isDark, // @TODO remove
-          [histoireConfig.theme.darkClass]: isDark,
+          [povesteConfig.sandboxDarkClass]: isDark, // @TODO remove
+          [povesteConfig.theme.darkClass]: isDark,
         }"
         :dir="settings.textDirection"
         @ready="onReady"

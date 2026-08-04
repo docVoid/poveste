@@ -7,7 +7,7 @@ import { useResizeObserver } from '@vueuse/core'
 import { computed, ref, toRefs } from 'vue'
 import { useRouter } from 'vue-router'
 import { usePreviewSettingsStore } from '../../stores/preview-settings'
-import { histoireConfig } from '../../util/config'
+import { povesteConfig } from '../../util/config'
 import { isDark } from '../../util/dark'
 import { getSourceCode } from '../../util/docs'
 import { getContrastColor } from '../../util/preview-settings'
@@ -67,7 +67,7 @@ useResizeObserver(el, () => {
 const settings = usePreviewSettingsStore().currentSettings
 
 const contrastColor = computed(() => getContrastColor(settings))
-const autoApplyContrastColor = computed(() => !!histoireConfig.autoApplyContrastColor)
+const autoApplyContrastColor = computed(() => !!povesteConfig.autoApplyContrastColor)
 </script>
 
 <template>
@@ -143,7 +143,7 @@ const autoApplyContrastColor = computed(() => !!histoireConfig.autoApplyContrast
           :story="story"
           :dir="settings.textDirection"
           :class="{
-            [histoireConfig.theme.darkClass]: isDark,
+            [povesteConfig.theme.darkClass]: isDark,
           }"
           @ready="onReady"
         />

@@ -2,10 +2,10 @@
 import { computed } from 'vue'
 import PovesteLogo from '../assets/histoire.svg'
 import { useStoryStore } from '../stores/story'
-import { customLogos, histoireConfig } from '../util/config'
+import { customLogos, povesteConfig } from '../util/config'
 import HomeCounter from './app/HomeCounter.vue'
 
-const logoUrl = computed(() => histoireConfig.theme?.logo?.square ? customLogos.square : PovesteLogo)
+const logoUrl = computed(() => povesteConfig.theme?.logo?.square ? customLogos.square : PovesteLogo)
 const storyStore = useStoryStore()
 
 const stats = computed(() => {

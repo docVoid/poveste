@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { Icon } from '@iconify/vue'
 import { usePreviewSettingsStore } from '../../stores/preview-settings'
-import { histoireConfig } from '../../util/config'
+import { povesteConfig } from '../../util/config'
 import BaseCheckbox from '../base/BaseCheckbox.vue'
 
 const settings = usePreviewSettingsStore().currentSettings
@@ -12,14 +12,14 @@ const settings = usePreviewSettingsStore().currentSettings
   <VDropdown
     placement="bottom-end"
     :skidding="6"
-    :disabled="!histoireConfig.responsivePresets?.length"
+    :disabled="!povesteConfig.responsivePresets?.length"
     class="histoire-toolbar-responsive-size htw-h-full htw-flex-none"
   >
     <div
       v-tooltip="'Responsive sizes'"
       class="htw-flex htw-items-center htw-gap-1 htw-h-full htw-px-2 htw-group"
       :class="{
-        'htw-cursor-pointer hover:htw-text-primary-500': histoireConfig.responsivePresets?.length,
+        'htw-cursor-pointer hover:htw-text-primary-500': povesteConfig.responsivePresets?.length,
       }"
     >
       <Icon
@@ -59,7 +59,7 @@ const settings = usePreviewSettingsStore().currentSettings
         </div>
 
         <button
-          v-for="(preset, index) in histoireConfig.responsivePresets"
+          v-for="(preset, index) in povesteConfig.responsivePresets"
           :key="index"
           class="htw-px-4 htw-py-3 htw-cursor-pointer htw-text-left htw-flex htw-gap-4"
           :class="[

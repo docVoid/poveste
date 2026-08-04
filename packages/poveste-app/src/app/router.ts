@@ -1,10 +1,10 @@
 import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
-import { histoireConfig } from './util/config'
+import { povesteConfig } from './util/config'
 
 export const base = import.meta.env.BASE_URL as string
 
 function createRouterHistory() {
-  switch (histoireConfig.routerMode) {
+  switch (povesteConfig.routerMode) {
     case 'hash': return createWebHashHistory(base)
     case 'history':
     default:

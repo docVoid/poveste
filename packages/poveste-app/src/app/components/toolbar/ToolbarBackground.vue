@@ -2,7 +2,7 @@
 import { Icon } from '@iconify/vue'
 import { computed } from 'vue'
 import { usePreviewSettingsStore } from '../../stores/preview-settings'
-import { histoireConfig } from '../../util/config'
+import { povesteConfig } from '../../util/config'
 import { getContrastColor } from '../../util/preview-settings'
 import BaseCheckbox from '../base/BaseCheckbox.vue'
 
@@ -13,7 +13,7 @@ const contrastColor = computed(() => getContrastColor(settings))
 
 <template>
   <VDropdown
-    v-if="histoireConfig.backgroundPresets.length"
+    v-if="povesteConfig.backgroundPresets.length"
     placement="bottom-end"
     :skidding="6"
     class="histoire-toolbar-background htw-h-full htw-flex-none"
@@ -44,7 +44,7 @@ const contrastColor = computed(() => getContrastColor(settings))
         </BaseCheckbox>
 
         <button
-          v-for="(option, index) in histoireConfig.backgroundPresets"
+          v-for="(option, index) in povesteConfig.backgroundPresets"
           :key="index"
           class="htw-px-4 htw-py-3 htw-cursor-pointer htw-text-left htw-flex htw-items-baseline htw-gap-4"
           :class="[

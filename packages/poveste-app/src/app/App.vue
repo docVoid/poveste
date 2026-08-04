@@ -19,7 +19,7 @@ import GenericMountStory from './components/story/GenericMountStory.vue'
 import StoryList from './components/tree/StoryList.vue'
 import { useCommandStore } from './stores/command'
 import { useStoryStore } from './stores/story'
-import { histoireConfig } from './util/config'
+import { povesteConfig } from './util/config'
 import { onKeyboardShortcut } from './util/keyboard'
 import { mapFile } from './util/mapping'
 import { isMobile } from './util/responsive'
@@ -56,9 +56,9 @@ useTitle(computed(() => {
     if (storyStore.currentVariant) {
       title += ` › ${storyStore.currentVariant.title}`
     }
-    return `${title} | ${histoireConfig.theme.title}`
+    return `${title} | ${povesteConfig.theme.title}`
   }
-  return histoireConfig.theme.title
+  return povesteConfig.theme.title
 }))
 
 // Search

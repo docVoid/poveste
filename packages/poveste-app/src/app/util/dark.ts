@@ -1,12 +1,12 @@
 import { useDark, useToggle } from '@vueuse/core'
 import { watch } from 'vue'
-import { histoireConfig } from './config.js'
+import { povesteConfig } from './config.js'
 
 export const isDark = useDark({
   valueDark: 'htw-dark',
-  initialValue: histoireConfig.theme.defaultColorScheme,
+  initialValue: povesteConfig.theme.defaultColorScheme,
   storageKey: 'histoire-color-scheme',
-  storage: histoireConfig.theme.storeColorScheme ? localStorage : sessionStorage,
+  storage: povesteConfig.theme.storeColorScheme ? localStorage : sessionStorage,
 })
 export const toggleDark = useToggle(isDark)
 

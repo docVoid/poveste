@@ -7,7 +7,7 @@ import { parseQuery } from 'vue-router'
 import GenericMountStory from './components/story/GenericMountStory.vue'
 import GenericRenderStory from './components/story/GenericRenderStory.vue'
 import { setupPluginApi } from './plugin.js'
-import { histoireConfig } from './util/config.js'
+import { povesteConfig } from './util/config.js'
 import { PREVIEW_SETTINGS_SYNC, SANDBOX_READY, STATE_SYNC } from './util/const.js'
 import { isDark } from './util/dark.js'
 import { mapFile } from './util/mapping'
@@ -85,12 +85,12 @@ app.mount('#app')
 
 watch(isDark, (value) => {
   if (value) {
-    document.documentElement.classList.add(histoireConfig.sandboxDarkClass) // @TODO remove
-    document.documentElement.classList.add(histoireConfig.theme.darkClass)
+    document.documentElement.classList.add(povesteConfig.sandboxDarkClass) // @TODO remove
+    document.documentElement.classList.add(povesteConfig.theme.darkClass)
   }
   else {
-    document.documentElement.classList.remove(histoireConfig.sandboxDarkClass) // @TODO remove
-    document.documentElement.classList.remove(histoireConfig.theme.darkClass)
+    document.documentElement.classList.remove(povesteConfig.sandboxDarkClass) // @TODO remove
+    document.documentElement.classList.remove(povesteConfig.theme.darkClass)
   }
 }, {
   immediate: true,

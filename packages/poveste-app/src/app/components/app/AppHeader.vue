@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
 import { computed } from 'vue'
-import { histoireConfig } from '../../util/config'
+import { povesteConfig } from '../../util/config'
 import { isDark, toggleDark } from '../../util/dark'
 import { onKeyboardShortcut } from '../../util/keyboard'
 import { makeTooltip } from '../../util/tooltip'
@@ -27,7 +27,7 @@ onKeyboardShortcut(['ctrl+shift+d', 'meta+shift+d'], (event) => {
   >
     <div class="htw-py-3 sm:htw-py-4 htw-flex-1 htw-h-full htw-flex htw-items-center htw-pr-2">
       <a
-        :href="histoireConfig.theme?.logoHref"
+        :href="povesteConfig.theme?.logoHref"
         target="_blank"
         class="htw-w-full htw-h-full htw-flex htw-items-center"
       >
@@ -50,7 +50,7 @@ onKeyboardShortcut(['ctrl+shift+d', 'meta+shift+d'], (event) => {
       </a>
 
       <a
-        v-if="!histoireConfig.theme.hideColorSchemeSwitch"
+        v-if="!povesteConfig.theme.hideColorSchemeSwitch"
         v-tooltip="makeTooltip('Toggle dark mode', ({ isMac }) => isMac ? 'meta+shift+d' : 'ctrl+shift+d')"
         class="htw-p-2 sm:htw-p-1 hover:htw-text-primary-500 dark:hover:htw-text-primary-400 htw-cursor-pointer htw-text-gray-900 dark:htw-text-gray-100"
         @click="toggleDark()"
