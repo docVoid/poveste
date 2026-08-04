@@ -13,6 +13,6 @@ export default defineConfig({
   ],
 
   poveste: {
-    setupFile: 'src/histoire.setup.ts',
+    setupFile: 'src/poveste.setup.ts',
   },
 })

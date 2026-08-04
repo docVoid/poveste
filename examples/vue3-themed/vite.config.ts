@@ -20,7 +20,7 @@ export default defineConfig({
         primary: defaultColors.cyan,
       },
     },
-    setupFile: './src/histoire-setup.ts',
+    setupFile: './src/poveste-setup.ts',
     // vite: {
     //   server: {
     //     port: 3042,

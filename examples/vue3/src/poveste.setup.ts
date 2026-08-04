@@ -2,7 +2,7 @@ import { defineSetupVue3 } from '@poveste/plugin-vue'
 import { createPinia } from 'pinia'
 import GlobalComp from './components/GlobalComp.vue'
 import WrapperGlobal from './components/WrapperGlobal.vue'
-import './histoire.css'
+import './poveste.css'
 
 declare module 'poveste' {
   // Extend the story `meta` prop

@@ -10,9 +10,9 @@
     "sk:preview": "vite preview",
     "sk:check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "sk:check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "story:dev": "histoire dev",
-    "story:build": "histoire build",
-    "story:preview": "histoire preview --port 4567"
+    "story:dev": "poveste dev",
+    "story:build": "poveste build",
+    "story:preview": "poveste preview --port 4567"
   },
   "dependencies": {
     "@fontsource/fira-mono": "^5.1.0",

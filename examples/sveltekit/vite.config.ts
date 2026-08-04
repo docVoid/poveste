@@ -12,7 +12,7 @@ export default defineConfig({
     plugins: [
       HstSvelte(),
     ],
-    setupFile: './src/histoire.setup.ts',
+    setupFile: './src/poveste.setup.ts',
     tree: {
       groups: [
         {

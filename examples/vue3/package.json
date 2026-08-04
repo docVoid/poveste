@@ -4,10 +4,10 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev:hst": "nodemon --watch ../../packages/poveste/dist --watch ../../packages/poveste-plugin-vue/dist --exec \"rm -rf ./node_modules/.hst* && POVESTE_DEV=true histoire dev\"",
-    "story:dev": "histoire dev",
-    "story:build": "histoire build",
-    "story:preview": "histoire preview --port 4567",
+    "dev:hst": "nodemon --watch ../../packages/poveste/dist --watch ../../packages/poveste-plugin-vue/dist --exec \"rm -rf ./node_modules/.hst* && POVESTE_DEV=true poveste dev\"",
+    "story:dev": "poveste dev",
+    "story:build": "poveste build",
+    "story:preview": "poveste preview --port 4567",
     "test": "playwright test",
     "test:dev": "playwright test --ui",
     "test:examples": "pnpm run story:build && pnpm run test"

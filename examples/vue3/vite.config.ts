@@ -56,7 +56,7 @@ export default defineConfig({
     ],
 
     // Alternative way of specifying histoire config
-    setupFile: '/src/histoire.setup.ts',
+    setupFile: '/src/poveste.setup.ts',
 
     // theme: {
     //   logoHref: 'http://poveste.dev',
