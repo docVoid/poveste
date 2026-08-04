@@ -1,8 +1,17 @@
-[build.environment]
-NODE_VERSION = "24"
-NPM_FLAGS = "--version" # prevent Netlify npm install
+# VitePress docs deploy for poveste.dev.
+# Netlify detects pnpm from pnpm-lock.yaml and runs `pnpm install` before the
+# build command below.
+[build]
+  command = "pnpm docs:build"
+  publish = "docs/.vitepress/dist"
 
+[build.environment]
+  # Node 24 LTS — VitePress builds fine on it and it's reliably available on
+  # Netlify's build image. (The repo/CI run Node 26; the docs don't need it.)
+  NODE_VERSION = "24"
+
+# Fallback for any path with no generated file (real pages are served directly).
 [[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
+  from = "/*"
+  to = "/index.html"
+  status = 200
