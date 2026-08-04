@@ -5,18 +5,23 @@ const props = defineProps<{
   framework: string
 }>()
 
+// Demo + StackBlitz links are intentionally empty for now: the
+// *.examples.poveste.dev demo subdomains aren't deployed yet, and the old
+// histoire-*-starter StackBlitz projects belong to histoire. Re-enable once
+// the poveste demos + poveste-*-starter projects exist (tracked in #14).
+// The `v-if` guards below hide the buttons while these are empty.
 const allLinks = {
   vue3: {
-    demo: 'https://vue3.examples.poveste.dev/',
-    stackblitz: 'https://stackblitz.com/edit/histoire-vue3-starter',
+    demo: '',
+    stackblitz: '',
   },
   nuxt3: {
     demo: '',
-    stackblitz: 'https://stackblitz.com/edit/histoire-nuxt3-starter',
+    stackblitz: '',
   },
   svelte3: {
-    demo: 'https://svelte3.examples.poveste.dev/',
-    stackblitz: 'https://stackblitz.com/edit/histoire-svelte3-starter',
+    demo: '',
+    stackblitz: '',
   },
 }
 

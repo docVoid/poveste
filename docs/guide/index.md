@@ -92,7 +92,7 @@ Resize the preview to test your design on different screen sizes. Customize the 
 
 ### :musical_keyboard: Flexible controls
 
-Put your own components and logic in the story controls pane! Or use the [builtin controls](https://controls.poveste.dev).
+Put your own components and logic in the story controls pane! Or use the [builtin controls](https://github.com/poveste-dev/poveste/tree/main/packages/poveste-controls).
 
 ### :camera: Visual regression testing
 

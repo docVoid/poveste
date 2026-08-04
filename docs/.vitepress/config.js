@@ -72,7 +72,7 @@ module.exports = {
               },
               {
                 text: 'Builtin controls',
-                link: 'https://controls.poveste.dev/',
+                link: 'https://github.com/poveste-dev/poveste/tree/main/packages/poveste-controls',
               },
             ],
           },

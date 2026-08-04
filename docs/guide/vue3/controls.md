@@ -236,7 +236,7 @@ const state = reactive({
 </template>
 ```
 
-Check out all the available controls in their book: [controls.poveste.dev](https://controls.poveste.dev/).
+Check out all the available controls in the [`@poveste/controls` package](https://github.com/poveste-dev/poveste/tree/main/packages/poveste-controls).
 
 ## Init state
 

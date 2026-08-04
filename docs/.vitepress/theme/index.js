@@ -2,7 +2,6 @@ import { Icon } from '@iconify/vue'
 import FloatingVue from 'floating-vue'
 import DefaultTheme from 'vitepress/theme'
 import DemoLinks from './DemoLinks.vue'
-import DemoPreview from './DemoPreview.vue'
 import 'floating-vue/dist/style.css'
 import './style/vars.pcss'
 import './style/index.pcss'
@@ -18,7 +17,6 @@ export default {
       },
     })
     app.component('Icon', Icon)
-    app.component('DemoPreview', DemoPreview)
     app.component('DemoLinks', DemoLinks)
   },
 }
