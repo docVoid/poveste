@@ -7,7 +7,10 @@ configuration format — so migrating is mostly a matter of swapping dependencie
 
 ::: tip TL;DR
 Replace `histoire` → `poveste` and `@histoire/*` → `@poveste/*` in your
-`package.json`, reinstall, and you're done. Everything else keeps working.
+`package.json`, reinstall, and you're done. The API, story files, config, CLI,
+CSS variables, and render classes all keep working. The **one** thing that moves
+is the build output directory (`.histoire/dist` → `.poveste/dist`) — update it
+only if you deploy or ignore that path (see step 5).
 :::
 
 ## 1. Swap the dependencies
@@ -82,6 +85,35 @@ export default defineConfig({
 })
 ```
 
+## 5. Build output directory (action needed if you deploy it)
+
+The default output directory was renamed from `.histoire/dist` to `.poveste/dist`
+(and the story-data manifest from `histoire.json` to `poveste.json`, screenshots
+from `.histoire/screenshots` to `.poveste/screenshots`). This is the only default
+that changed. If you **explicitly set `outDir`** in your config, you're unaffected.
+
+Otherwise, update anywhere that references the old path:
+
+```diff
+# .gitignore
+- .histoire/dist/
++ .poveste/dist/
+```
+
+```diff
+# deploy config (Netlify, Vercel, CI artifact path, Lost Pixel, …)
+- publish = ".histoire/dist"
++ publish = ".poveste/dist"
+```
+
+Prefer zero changes? Pin the old path explicitly in your config:
+
+```ts
+export default defineConfig({
+  outDir: '.histoire/dist',
+})
+```
+
 ## What you do NOT need to change
 
 - **Story files** — the `.story.vue` / `.story.svelte` convention is unchanged.
@@ -98,6 +130,9 @@ export default defineConfig({
 | `histoire` key in Vite config | ✅ still works (deprecated) |
 | `HistoireConfig` type | ✅ still exported (deprecated alias) |
 | `<Story>` / `<Variant>` API | ✅ identical |
+| `--histoire-contrast-color` CSS var | ✅ still set (alongside `--poveste-contrast-color`) |
+| `.histoire-generic-render-story` / `.histoire-wrapper` render classes | ✅ still emitted (for visual-regression selectors) |
+| `.histoire/dist` output dir default | ⚠️ renamed to `.poveste/dist` (see step 5) |
 
 These compatibility shims are kept to make migration painless. They may be
 removed in a future major version, so adopting the `poveste.*` names is recommended.

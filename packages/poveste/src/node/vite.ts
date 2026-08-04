@@ -151,7 +151,7 @@ export async function getViteConfigWithPlugins(isServer: boolean, ctx: Context):
             ],
           },
           watch: {
-            ignored: [`!**/node_modules/.histoire/**`, '**/vite.config.*'],
+            ignored: [`!**/node_modules/.poveste/**`, '**/vite.config.*'],
           },
           hmr: command === 'build' ? false : !isServer,
         },

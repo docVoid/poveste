@@ -1,7 +1,7 @@
 node_modules/
 dist/
-histoire-dist/
-.histoire/dist/
+poveste-dist/
+.poveste/dist/
 .idea
 **/test-results/
 **/playwright-report/

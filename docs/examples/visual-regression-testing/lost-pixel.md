@@ -13,7 +13,7 @@ import { CustomProjectConfig } from 'lost-pixel'
 
 export const config: CustomProjectConfig = {
   histoireShots: {
-    histoireUrl: './.histoire/dist',
+    histoireUrl: './.poveste/dist',
   },
   generateOnly: true,
   failOnDifference: true

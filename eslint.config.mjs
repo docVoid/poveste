@@ -2,7 +2,7 @@ import antfu from '@antfu/eslint-config'
 
 export default antfu({
   ignores: [
-    '**/histoire-dist/',
+    '**/poveste-dist/',
     '**/generated/',
     '**/public/',
     '**/.svelte-kit/',

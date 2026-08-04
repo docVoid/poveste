@@ -209,7 +209,7 @@ export async function build(ctx: Context) {
   const sandboxHtml = generateEntryHtml(sandboxOutput.fileName, styleOutput.fileName, {}, ctx)
   await writeFile('__sandbox.html', sandboxHtml, ctx)
 
-  await writeFile('histoire.json', JSON.stringify(getSerializedStoryData(ctx), null, 2), ctx)
+  await writeFile('poveste.json', JSON.stringify(getSerializedStoryData(ctx), null, 2), ctx)
 
   const duration = performance.now() - startTime
   if (emptyStoryCount) {

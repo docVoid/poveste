@@ -35,7 +35,7 @@ export interface ScreenshotPluginOptions {
 }
 
 const defaultOptions: ScreenshotPluginOptions = {
-  saveFolder: '.histoire/screenshots',
+  saveFolder: '.poveste/screenshots',
   presets: [],
 }
 

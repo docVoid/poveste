@@ -28,7 +28,7 @@ export function getDefaultConfig(): PovesteConfig {
       vanillaSupport(),
       tailwindTokens(),
     ],
-    outDir: '.histoire/dist',
+    outDir: '.poveste/dist',
     storyMatch: [
       '**/*.story.vue',
       '**/*.story.svelte',

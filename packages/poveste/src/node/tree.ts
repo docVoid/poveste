@@ -16,7 +16,7 @@ export function createPath(config: PovesteConfig, file: ServerTreeFile) {
     const paths = file.path.split('/').slice(0, -1)
 
     // check if tree file path is a plugin
-    const index = paths.findIndex(p => p.includes('.histoire'))
+    const index = paths.findIndex(p => p.includes('.poveste'))
 
     if (index !== -1) {
       return ['plugins', file.title]
