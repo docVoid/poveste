@@ -6,7 +6,7 @@ Welcome! We are really excited that you are interested in contributing to Povest
 
 Contributing doesn't necessarily mean you need to write code and open Pull Requests. There are many other ways you can help the project!
 
-- Try the [latest version](https://github.com/poveste-dev/poveste/releases) of Poveste and [report bugs](https://github.com/histoire-dev/histoire/issues/new?assignees=&labels=to+triage&template=bug-report.yml).
+- Try the [latest version](https://github.com/poveste-dev/poveste/releases) of Poveste and [report bugs](https://github.com/poveste-dev/poveste/issues/new?assignees=&labels=to+triage&template=bug-report.yml).
 - Discuss your ideas with the community on the [discussion board](https://github.com/poveste-dev/poveste/discussions).
 - Answer to other people's questions.
 - Report typos or issues of the docs.
@@ -51,7 +51,7 @@ pnpm run watch
 
 Wait before the initial build is done and the terminal output stabilizes.
 
-If you do not intend to make changes to the histoire main packages, you can use this script instead:
+If you do not intend to make changes to the poveste main packages, you can use this script instead:
 
 ```sh
 pnpm run build
