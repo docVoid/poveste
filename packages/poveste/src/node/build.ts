@@ -98,7 +98,7 @@ export async function build(ctx: Context) {
         ],
         plugins: [
           {
-            name: 'histoire-build-rollup-options-override',
+            name: 'poveste-build-rollup-options-override',
             enforce: 'post',
             options(options) {
               // Don't externalize
@@ -115,7 +115,7 @@ export async function build(ctx: Context) {
   // (so that we no longer need defineExpose)
   // Nuxt: replaces the Nuxt vite dev server
   buildViteConfig.plugins.push({
-    name: 'histoire-vue-plugin-override',
+    name: 'poveste-vue-plugin-override',
     config(config) {
       const vuePlugin = config.plugins.find((p: any) => p.name === 'vite:vue') as VitePlugin
       if (vuePlugin) {
@@ -140,7 +140,7 @@ export async function build(ctx: Context) {
   })
 
   buildViteConfig.plugins.push({
-    name: 'histoire-build-config-override',
+    name: 'poveste-build-config-override',
     enforce: 'post',
     config(config) {
       // Don't externalize

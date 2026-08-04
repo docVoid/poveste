@@ -143,7 +143,7 @@ export interface PovesteConfig {
    *
    * Import custom CSS files from this file.
    *
-   * Example: `'/src/histoire-setup.ts'`
+   * Example: `'/src/poveste-setup.ts'`
    */
   setupFile?: string | {
     /**

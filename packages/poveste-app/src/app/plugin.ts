@@ -5,7 +5,7 @@ export function setupPluginApi() {
 
   const listeners: Record<string, Set<(result: any) => unknown>> = {}
 
-  import.meta.hot.on('histoire:dev-event-result', ({ event, result }) => {
+  import.meta.hot.on('poveste:dev-event-result', ({ event, result }) => {
     const set = listeners[event]
     if (set) {
       for (const listener of set) {
@@ -36,7 +36,7 @@ export function setupPluginApi() {
   window.__HST_PLUGIN_API__ = {
     sendEvent: (event: string, payload?: any) => {
       return new Promise((resolve) => {
-        import.meta.hot.send(`histoire:dev-event`, {
+        import.meta.hot.send(`poveste:dev-event`, {
           event,
           payload,
         })

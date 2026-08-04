@@ -7,7 +7,7 @@ import { ID_SEPARATOR } from './util.js'
 
 export function createVirtualFilesPlugin(ctx: Context, isServer: boolean) {
   return {
-    name: 'histoire-virtual-files',
+    name: 'poveste-virtual-files',
 
     async resolveId(id, importer) {
       if (id.startsWith(VirtualFiles.STORIES_ID)) {

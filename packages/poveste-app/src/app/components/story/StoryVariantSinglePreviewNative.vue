@@ -32,7 +32,7 @@ const autoApplyContrastColor = computed(() => !!povesteConfig.autoApplyContrastC
 <template>
   <StoryResponsivePreview
     v-slot="{ isResponsiveEnabled, finalWidth, finalHeight }"
-    class="histoire-story-variant-single-preview-native"
+    class="poveste-story-variant-single-preview-native"
     :variant="variant"
   >
     <div
@@ -42,6 +42,8 @@ const autoApplyContrastColor = computed(() => !!povesteConfig.autoApplyContrastC
           height: finalHeight ? `${finalHeight}px` : '100%',
         } : { width: '100%', height: '100%' },
         {
+          '--poveste-contrast-color': contrastColor,
+          // Deprecated alias — keep so stories referencing `var(--histoire-contrast-color)` still work.
           '--histoire-contrast-color': contrastColor,
           'color': autoApplyContrastColor ? contrastColor : undefined,
         },

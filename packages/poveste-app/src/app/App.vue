@@ -81,7 +81,7 @@ const loading = ref(false)
 
 if (import.meta.hot && !rawFiles.length) {
   loading.value = true
-  import.meta.hot.on('histoire:all-stories-loaded', () => {
+  import.meta.hot.on('poveste:all-stories-loaded', () => {
     loading.value = false
   })
 }
@@ -97,7 +97,7 @@ const commandStore = useCommandStore()
 <template>
   <div
     v-if="storyStore.currentStory"
-    class="histoire-app htw-hidden"
+    class="poveste-app htw-hidden"
   >
     <GenericMountStory
       :key="storyStore.currentStory.id"
@@ -133,7 +133,7 @@ const commandStore = useCommandStore()
       class="htw-h-full"
     >
       <template #first>
-        <div class="htw-flex htw-flex-col htw-h-full htw-bg-gray-100 dark:htw-bg-gray-750 __histoire-pane-shadow-from-right">
+        <div class="htw-flex htw-flex-col htw-h-full htw-bg-gray-100 dark:htw-bg-gray-750 __poveste-pane-shadow-from-right">
           <AppHeader
             class="htw-flex-none"
             @search="isSearchOpen = true"
@@ -158,13 +158,13 @@ const commandStore = useCommandStore()
     />
 
     <CommandPromptsModal
-      v-if="__HISTOIRE_DEV__"
+      v-if="__POVESTE_DEV__"
       :shown="commandStore.showPromptsModal"
       @close="commandStore.showPromptsModal = false"
     />
   </div>
 
-  <transition name="__histoire-fade">
+  <transition name="__poveste-fade">
     <InitialLoading
       v-if="loading"
     />

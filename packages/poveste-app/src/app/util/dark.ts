@@ -5,7 +5,7 @@ import { povesteConfig } from './config.js'
 export const isDark = useDark({
   valueDark: 'htw-dark',
   initialValue: povesteConfig.theme.defaultColorScheme,
-  storageKey: 'histoire-color-scheme',
+  storageKey: 'poveste-color-scheme',
   storage: povesteConfig.theme.storeColorScheme ? localStorage : sessionStorage,
 })
 export const toggleDark = useToggle(isDark)

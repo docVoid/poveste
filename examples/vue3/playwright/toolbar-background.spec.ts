@@ -47,7 +47,7 @@ test.describe('background color', () => {
     for (let i = 0; i < presets.length; i++) {
       await buttons.nth(i).click()
       await expect(page.getByTestId('responsive-preview-bg')).toHaveCSS('background-color', presets[i].bg)
-      await expect(page.locator('.histoire-generic-render-story .text')).toHaveCSS('color', presets[i].contrast)
+      await expect(page.locator('.poveste-generic-render-story .text')).toHaveCSS('color', presets[i].contrast)
       await page.getByTestId('toolbar-background').click()
     }
   })

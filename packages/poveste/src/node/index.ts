@@ -5,7 +5,7 @@ export * from '@poveste/shared'
 
 declare module 'rollup' {
   interface PluginContextMeta {
-    histoire: {
+    poveste: {
       isCollecting: boolean
     }
   }

@@ -21,7 +21,7 @@ export default defineComponent({
 <template>
   <router-link
     v-slot="{ isActive, isExactActive, href, navigate }"
-    class="histoire-base-overflow-tab"
+    class="poveste-base-overflow-tab"
     v-bind="$attrs"
     custom
   >
@@ -36,7 +36,7 @@ export default defineComponent({
     >
       <slot />
 
-      <transition name="__histoire-scale-y">
+      <transition name="__poveste-scale-y">
         <div
           v-if="matched != null ? matched : (exact && isExactActive) || (!exact && isActive)"
           class="htw-absolute htw-top-0 htw-left-0 htw-h-full htw-w-[2px] htw-bg-primary-500 dark:htw-bg-primary-400"

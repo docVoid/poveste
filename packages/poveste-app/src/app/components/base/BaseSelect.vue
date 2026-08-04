@@ -32,7 +32,7 @@ function selectValue(value: string, hide: () => void) {
 
 <template>
   <VDropdown
-    class="histoire-base-select"
+    class="poveste-base-select"
     auto-size
     auto-boundary-max-size
   >

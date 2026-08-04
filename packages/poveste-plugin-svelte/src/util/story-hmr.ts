@@ -20,7 +20,7 @@ interface SvelteConfigPlugin {
 
 export function disableStoryComponentHmr() {
   return {
-    name: 'histoire:svelte-story-hmr',
+    name: 'poveste:svelte-story-hmr',
     apply: 'serve' as const,
     configResolved(config: { readonly plugins: readonly unknown[] }) {
       for (const plugin of config.plugins as SvelteConfigPlugin[]) {

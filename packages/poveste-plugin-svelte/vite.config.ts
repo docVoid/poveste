@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [
     svelte(),
     {
-      name: 'histoire:preserve:import.dynamic',
+      name: 'poveste:preserve:import.dynamic',
       enforce: 'pre',
       transform(code) {
         if (code.includes('import(')) {

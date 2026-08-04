@@ -1,9 +1,9 @@
 <template>
-  <div class="__histoire-hatched-pattern" />
+  <div class="__poveste-hatched-pattern" />
 </template>
 
 <style scoped>
-.__histoire-hatched-pattern {
+.__poveste-hatched-pattern {
   background: repeating-linear-gradient(135deg,
   transparent 0px,
   transparent 32px,

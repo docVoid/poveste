@@ -18,7 +18,7 @@ const grayKeys = [...colorKeys, 750, 850, 950]
 const themedColors = ['primary', 'gray'].reduce((acc, color) => {
   const keys = (color === 'gray' ? grayKeys : colorKeys)
   for (const key of keys) {
-    acc[`${color}-${key}`] = withOpacityValue(`--_histoire-color-${color}-${key}`)
+    acc[`${color}-${key}`] = withOpacityValue(`--_poveste-color-${color}-${key}`)
   }
   return acc
 }, {})
@@ -59,7 +59,7 @@ module.exports = {
   content: [
     path.resolve(__dirname, './src/**/*.{vue,js,ts,jsx,tsx,md}'),
     // Include controls CSS directly
-    path.resolve(__dirname, '../histoire-controls/src/**/*.{vue,js,ts,jsx,tsx,md}'),
+    path.resolve(__dirname, '../poveste-controls/src/**/*.{vue,js,ts,jsx,tsx,md}'),
   ],
   corePlugins: {
     preflight: false,

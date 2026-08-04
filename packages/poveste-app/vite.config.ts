@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [
     vue(),
     {
-      name: 'histoire:preserve:import.meta',
+      name: 'poveste:preserve:import.meta',
       enforce: 'pre',
       transform(code) {
         if (code.includes('import.meta')) {

@@ -39,7 +39,7 @@ const hasInitState = computed(() => Object
 <template>
   <div
     data-test-id="story-controls"
-    class="histoire-story-controls htw-flex htw-flex-col htw-divide-y htw-divide-gray-100 dark:htw-divide-gray-750"
+    class="poveste-story-controls htw-flex htw-flex-col htw-divide-y htw-divide-gray-100 dark:htw-divide-gray-750"
   >
     <!-- Toolbar -->
     <div
@@ -59,7 +59,7 @@ const hasInitState = computed(() => Object
       slot-name="controls"
       :variant="variant"
       :story="story"
-      class="__histoire-render-custom-controls htw-flex-none"
+      class="__poveste-render-custom-controls __histoire-render-custom-controls htw-flex-none"
       @ready="ready = true"
     />
 

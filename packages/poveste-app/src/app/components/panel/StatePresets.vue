@@ -21,12 +21,12 @@ const omitKeys = ['_hPropDefs']
 const defaultState = clone(omit(toRawDeep(props.variant.state), omitKeys))
 
 const selectedOption = useStorage<string>(
-  `_histoire-presets/${saveId.value}/selected`,
+  `_poveste-presets/${saveId.value}/selected`,
   DEFAULT_ID,
 )
 
 const presetStates = useStorage<Map<string, { state: Record<string, unknown>, label: string }>>(
-  `_histoire-presets/${saveId.value}/states`,
+  `_poveste-presets/${saveId.value}/states`,
   new Map(),
 )
 
@@ -118,7 +118,7 @@ onClickOutside(select, stopEditing)
 </script>
 
 <template>
-  <div class="histoire-state-presets htw-flex htw-gap-2 htw-w-full htw-items-center">
+  <div class="poveste-state-presets htw-flex htw-gap-2 htw-w-full htw-items-center">
     <div
       ref="select"
       class="htw-flex-1 htw-min-w-0"

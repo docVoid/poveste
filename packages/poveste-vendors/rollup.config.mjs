@@ -38,14 +38,14 @@ export default defineConfig({
       closeBundle() {
         try {
           const pkg = fs.readJsonSync('./package.json')
-          const tempDir = path.resolve('./node_modules/.temp/histoire-vendors')
+          const tempDir = path.resolve('./node_modules/.temp/poveste-vendors')
           fs.ensureDirSync(tempDir)
           fs.emptyDirSync(tempDir)
           const targetDtsDir = path.resolve('./dist/client/node_modules')
           fs.ensureDirSync(targetDtsDir)
           fs.emptyDirSync(targetDtsDir)
           const tempPkg = {
-            name: 'histoire-vendors-temp',
+            name: 'poveste-vendors-temp',
             version: '0.0.0',
             dependencies: {},
           }

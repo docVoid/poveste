@@ -66,13 +66,13 @@ export async function createServer(ctx: Context, options: CreateServerOptions = 
   }
 
   // Custom dev events
-  server.ws.on(`histoire:dev-event`, async ({ event, payload }) => {
+  server.ws.on(`poveste:dev-event`, async ({ event, payload }) => {
     for (const plugin of ctx.config.plugins) {
       if (plugin.onDevEvent) {
         const api = new DevEventPluginApi(ctx, plugin, moduleLoader, event, payload)
         const result = await plugin.onDevEvent(api)
         if (!event.startsWith('on') && result !== undefined) {
-          server.ws.send(`histoire:dev-event-result`, { event, result })
+          server.ws.send(`poveste:dev-event-result`, { event, result })
           break
         }
       }
@@ -177,7 +177,7 @@ export async function createServer(ctx: Context, options: CreateServerOptions = 
       const fileCount = ctx.storyFiles.length
       let loadedFilesCount = 0
       const sendProgress = () => {
-        server.ws.send('histoire:stories-loading-progress', {
+        server.ws.send('poveste:stories-loading-progress', {
           loadedFileCount: loadedFilesCount,
           totalFileCount: fileCount,
         })
@@ -192,7 +192,7 @@ export async function createServer(ctx: Context, options: CreateServerOptions = 
       }))
 
       didAllStoriesYet = true
-      server.ws.send('histoire:all-stories-loaded', {})
+      server.ws.send('poveste:all-stories-loaded', {})
     }
     console.log(`Collect stories end ${pc.bold(pc.blue(Math.round(performance.now() - time)))}ms`)
 

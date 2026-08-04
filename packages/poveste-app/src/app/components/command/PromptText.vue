@@ -45,7 +45,7 @@ watch(defaultValue, (value) => {
 </script>
 
 <template>
-  <div class="histoire-prompt-text">
+  <div class="poveste-prompt-text">
     <label class="htw-flex htw-flex-col htw-gap-2 htw-p-2">
       <span class="htw-px-2">
         <span>{{ prompt.label }}</span>

@@ -27,7 +27,7 @@ export const builtinCommands: ClientCommand[] = [
     },
   },
   {
-    id: 'builtin:histoire-docs',
+    id: 'builtin:poveste-docs',
     label: 'Open Poveste Documentation',
     icon: 'carbon:help',
     clientAction: () => {
@@ -38,7 +38,7 @@ export const builtinCommands: ClientCommand[] = [
 
 export function executeCommand(command: ClientCommand, params: Record<string, any>) {
   if (import.meta.hot) {
-    import.meta.hot.send('histoire:dev-command', {
+    import.meta.hot.send('poveste:dev-command', {
       id: command.id,
       params,
     })

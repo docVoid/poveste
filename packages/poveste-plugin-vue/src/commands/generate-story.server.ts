@@ -4,7 +4,7 @@ import launchEditor from 'launch-editor'
 import path from 'pathe'
 
 export default {
-  id: 'histoire:plugin-vue:generate-story',
+  id: 'poveste:plugin-vue:generate-story',
   label: 'Generate Vue 3 story from component',
   icon: 'https://vuejs.org/logo.svg',
   searchText: 'generate create',

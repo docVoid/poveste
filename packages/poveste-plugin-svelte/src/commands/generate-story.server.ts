@@ -4,7 +4,7 @@ import launchEditor from 'launch-editor'
 import path from 'pathe'
 
 export default {
-  id: 'histoire:plugin-svelte:generate-story',
+  id: 'poveste:plugin-svelte:generate-story',
   label: 'Generate Svelte story from component',
   icon: 'https://svelte.dev/favicon.png',
   searchText: 'generate create',

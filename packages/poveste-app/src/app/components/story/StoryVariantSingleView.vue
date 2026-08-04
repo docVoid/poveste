@@ -18,7 +18,7 @@ defineProps<{
 
 <template>
   <div
-    class="histoire-story-variant-single-view htw-h-full htw-flex htw-flex-col"
+    class="poveste-story-variant-single-view htw-h-full htw-flex htw-flex-col"
     data-test-id="story-variant-single-view"
   >
     <!-- Toolbar -->
@@ -40,7 +40,7 @@ defineProps<{
       />
 
       <DevOnlyToolbarOpenInEditor
-        v-if="__HISTOIRE_DEV__"
+        v-if="__POVESTE_DEV__"
         :file="story.file?.filePath"
         tooltip="Edit story in editor"
       />

@@ -49,7 +49,7 @@ function toggleOption(value: string) {
   <HstWrapper
     role="group"
     :title="title"
-    class="histoire-checkbox-list htw-cursor-text"
+    class="poveste-checkbox-list htw-cursor-text"
     :class="$attrs.class"
     :style="$attrs.style"
   >

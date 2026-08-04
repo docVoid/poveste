@@ -64,7 +64,7 @@ function processChange(inp) {
 <template>
   <HstWrapper
     :title="title"
-    class="histoire-select htw-cursor-text htw-items-center"
+    class="poveste-select htw-cursor-text htw-items-center"
     :class="$attrs.class"
     :style="$attrs.style"
   >

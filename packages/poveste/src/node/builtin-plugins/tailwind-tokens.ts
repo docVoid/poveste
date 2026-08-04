@@ -85,7 +85,7 @@ export function tailwindTokens(options: TailwindTokensOptions = {}): Plugin {
 
 function storyTemplate(tailwindConfig: any) {
   return `
-import 'histoire-style'
+import 'poveste-style'
 import './style.css'
 import { createApp, h, markRaw, ref } from ${getInjectedImport('@poveste/vendors/vue')}
 import {

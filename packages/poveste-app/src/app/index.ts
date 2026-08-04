@@ -26,7 +26,7 @@ export async function mountMainApp() {
   app.mount('#app')
 
   if (import.meta.hot) {
-    import.meta.hot.send('histoire:mount', {})
+    import.meta.hot.send('poveste:mount', {})
 
     /* #__PURE__ */ setupPluginApi()
   }

@@ -222,7 +222,7 @@ const allCommands = [
 ]
 
 const commandResults = computed(() => {
-  if (__HISTOIRE_DEV__) {
+  if (__POVESTE_DEV__) {
     const commandCtx = getCommandContext()
     const searchText = searchInputText.value.toLowerCase()
     return allCommands
@@ -278,7 +278,7 @@ const {
 
 <template>
   <div
-    class="histoire-search-pane htw-flex htw-items-center htw-gap-4 htw-pl-6 htw-border htw-border-transparent focus-visible:htw-border-primary-500"
+    class="poveste-search-pane htw-flex htw-items-center htw-gap-4 htw-pl-6 htw-border htw-border-transparent focus-visible:htw-border-primary-500"
     @click="focused = true"
   >
     <Icon

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
-import PovesteLogoDark from '../../assets/histoire-text-dark.svg'
-import PovesteLogoLight from '../../assets/histoire-text.svg'
+import PovesteLogoDark from '../../assets/poveste-text-dark.svg'
+import PovesteLogoLight from '../../assets/poveste-text.svg'
 
 import { customLogos, povesteConfig } from '../../util/config'
 import { isDark } from '../../util/dark'
@@ -18,7 +18,7 @@ const altText = computed(() => `${povesteConfig.theme.title} logo`)
 
 <template>
   <img
-    class="histoire-app-logo"
+    class="poveste-app-logo"
     :src="logoUrl"
     :alt="altText"
   >

@@ -12,6 +12,8 @@ export function applyPreviewSettings(settings: PreviewSettings) {
 
   // Contrast color
   const contrastColor = getContrastColor(settings)
+  document.documentElement.style.setProperty('--poveste-contrast-color', contrastColor)
+  // Deprecated alias — keep so stories that reference `var(--histoire-contrast-color)` still work.
   document.documentElement.style.setProperty('--histoire-contrast-color', contrastColor)
   if (povesteConfig.autoApplyContrastColor) {
     document.documentElement.style.color = contrastColor

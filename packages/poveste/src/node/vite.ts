@@ -100,7 +100,7 @@ export async function getViteConfigWithPlugins(isServer: boolean, ctx: Context):
   }
 
   plugins.push({
-    name: 'histoire-vite-plugin',
+    name: 'poveste-vite-plugin',
 
     config(_, { command }) {
       return {
@@ -109,7 +109,7 @@ export async function getViteConfigWithPlugins(isServer: boolean, ctx: Context):
             'vue',
           ],
           alias: {
-            'histoire-style': join(APP_PATH, process.env.HISTOIRE_DEV ? 'app/style/main.pcss' : 'style.css'),
+            'poveste-style': join(APP_PATH, process.env.POVESTE_DEV ? 'app/style/main.pcss' : 'style.css'),
           },
           ...(isServer
             ? {
@@ -143,7 +143,7 @@ export async function getViteConfigWithPlugins(isServer: boolean, ctx: Context):
               ctx.resolvedViteConfig.root,
               process.cwd(),
               ...supportPluginAllowPaths,
-              ...process.env.HISTOIRE_DEV
+              ...process.env.POVESTE_DEV
                 ? [
                     '../../packages/poveste-vendors',
                   ]
@@ -173,7 +173,7 @@ export async function getViteConfigWithPlugins(isServer: boolean, ctx: Context):
     },
 
     options() {
-      (this.meta as any).histoire = {
+      (this.meta as any).poveste = {
         isCollecting: isServer,
       }
     },
@@ -187,7 +187,7 @@ export async function getViteConfigWithPlugins(isServer: boolean, ctx: Context):
 
     configureServer(server) {
       let firstMount = true
-      server.ws.on('histoire:mount', () => {
+      server.ws.on('poveste:mount', () => {
         if (!firstMount) {
           notifyStoryChange()
         }
@@ -217,7 +217,7 @@ export async function getViteConfigWithPlugins(isServer: boolean, ctx: Context):
     }
   }
   </script>
-  <script type="module" src="/@fs/${APP_PATH}/bundle-sandbox${process.env.HISTOIRE_DEV ? '-dev' : ''}.js"></script>
+  <script type="module" src="/@fs/${APP_PATH}/bundle-sandbox${process.env.POVESTE_DEV ? '-dev' : ''}.js"></script>
 </body>
 </html>`
           // Apply Vite HTML transforms. This injects the Vite HMR client, and
@@ -249,7 +249,7 @@ export async function getViteConfigWithPlugins(isServer: boolean, ctx: Context):
   </head>
   <body>
     <div id="app"></div>
-    <script type="module" src="/@fs/${APP_PATH}/bundle-main${process.env.HISTOIRE_DEV ? '-dev' : ''}.js"></script>
+    <script type="module" src="/@fs/${APP_PATH}/bundle-main${process.env.POVESTE_DEV ? '-dev' : ''}.js"></script>
   </body>
 </html>`
             // Apply Vite HTML transforms. This injects the Vite HMR client, and
@@ -269,11 +269,11 @@ export async function getViteConfigWithPlugins(isServer: boolean, ctx: Context):
 
   // Replace dev flag
   const flags = {
-    '_ctx.__HISTOIRE_DEV__': JSON.stringify(ctx.mode === 'dev'),
-    '__HISTOIRE_DEV__': JSON.stringify(ctx.mode === 'dev'),
+    '_ctx.__POVESTE_DEV__': JSON.stringify(ctx.mode === 'dev'),
+    '__POVESTE_DEV__': JSON.stringify(ctx.mode === 'dev'),
   }
   plugins.push({
-    name: 'histoire:flags',
+    name: 'poveste:flags',
     enforce: 'pre',
     transform(code, id) {
       if (id.match(/\.(vue|js)($|\?)/)) {
@@ -289,9 +289,9 @@ export async function getViteConfigWithPlugins(isServer: boolean, ctx: Context):
   if (ctx.mode === 'dev') {
     // Dev commands
     plugins.push({
-      name: 'histoire:dev-commands',
+      name: 'poveste:dev-commands',
       configureServer(server) {
-        server.ws.on('histoire:dev-command', ({ id, params }) => {
+        server.ws.on('poveste:dev-command', ({ id, params }) => {
           const command = ctx.registeredCommands.find(c => c.id === id)
           if (command?.serverAction) {
             command.serverAction(params)
@@ -309,7 +309,7 @@ export async function getViteConfigWithPlugins(isServer: boolean, ctx: Context):
     const include = [/\.vue$/]
     const exclude = [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/, /[\\/]\.nuxt[\\/]/]
     plugins.push({
-      name: 'histoire-file-name-plugin',
+      name: 'poveste-file-name-plugin',
       enforce: 'post',
 
       transform(code, id) {
@@ -324,9 +324,9 @@ export async function getViteConfigWithPlugins(isServer: boolean, ctx: Context):
     })
   }
 
-  if (process.env.HISTOIRE_DEV && !isServer) {
+  if (process.env.POVESTE_DEV && !isServer) {
     plugins.push({
-      name: 'histoire-dev-plugin',
+      name: 'poveste-dev-plugin',
       config() {
         // Examples context
         return {

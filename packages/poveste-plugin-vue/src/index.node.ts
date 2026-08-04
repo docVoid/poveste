@@ -24,11 +24,11 @@ export function HstVue(): Plugin {
         vite: {
           plugins: [
             {
-              name: 'histoire-plugin-vue',
+              name: 'poveste-plugin-vue',
               enforce: 'post',
               transform(code, id) {
                 // Remove vue warnings about unknown components
-                if ((this.meta as any).histoire?.isCollecting && id.endsWith('.vue')) {
+                if ((this.meta as any).poveste?.isCollecting && id.endsWith('.vue')) {
                   return `const _stubComponent = (name) => ['Story','Variant'].some(validName => name.toLowerCase() === validName.toLowerCase()) ? _resolveComponent(name) : ({ render: () => null });${code?.replaceAll('_resolveComponent(', '_stubComponent(') ?? ''}`
                 }
               },

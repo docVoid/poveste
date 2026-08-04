@@ -29,7 +29,7 @@ export function useCollectStories(options: UseCollectStoriesOptions, ctx: Contex
         /histoire\/dist/,
         /histoire\/client/,
         /@histoire\/[\w-]+\/dist/,
-        /histoire-[\w-]+\/dist/,
+        /poveste-[\w-]+\/dist/,
         /@vue\/devtools-api/,
         /vuetify/,
         // @TODO temporary fix for https://github.com/histoire-dev/histoire/issues/409

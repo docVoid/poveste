@@ -40,7 +40,7 @@ export default defineConfig({
     vue(),
   ],
 
-  histoire: {
+  poveste: {
     plugins: [
       {
         name: 'test',

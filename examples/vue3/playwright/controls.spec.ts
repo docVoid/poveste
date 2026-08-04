@@ -11,7 +11,7 @@ test.describe('controls', () => {
     const controls = page.getByTestId('story-controls')
 
     await expect(iframe.locator('.state-output')).toContainText('"text": "Hello"')
-    await controls.locator('.histoire-wrapper').filter({ hasText: 'HstText' }).locator('input').fill('Foo')
+    await controls.locator('.poveste-wrapper').filter({ hasText: 'HstText' }).locator('input').fill('Foo')
     await expect(iframe.locator('.state-output')).toContainText('"text": "Foo"')
   })
 
@@ -49,7 +49,7 @@ test.describe('controls', () => {
     const controls = page.getByTestId('story-controls')
 
     await expect(iframe.locator('.state-output')).toContainText('"colorselect": "#000000"')
-    await controls.locator('.histoire-wrapper').filter({ hasText: 'HstColorSelect' }).locator('input[type="text"]').fill('#ffffff')
+    await controls.locator('.poveste-wrapper').filter({ hasText: 'HstColorSelect' }).locator('input[type="text"]').fill('#ffffff')
     await expect(iframe.locator('.state-output')).toContainText('"colorselect": "#ffffff"')
   })
 })

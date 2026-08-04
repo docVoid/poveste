@@ -1,7 +1,7 @@
 import { EVENT_SEND } from './const'
 
 export async function logEvent(name: string, argument) {
-  console.log('[histoire] Event fired', { name, argument })
+  console.log('[poveste] Event fired', { name, argument })
   const event = {
     name,
     argument: JSON.parse(stringifyEvent(argument)), // Needed for HTMLEvent that can't be cloned

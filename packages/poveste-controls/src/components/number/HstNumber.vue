@@ -67,7 +67,7 @@ onUnmounted(() => {
 
 <template>
   <HstWrapper
-    class="histoire-number htw-cursor-ew-resize htw-items-center"
+    class="poveste-number htw-cursor-ew-resize htw-items-center"
     :title="title"
     :class="[
       $attrs.class,

@@ -12,7 +12,7 @@ export default defineConfig({
     }),
   ],
 
-  histoire: {
+  poveste: {
     setupFile: 'src/histoire.setup.ts',
   },
 })

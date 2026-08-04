@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [
     sveltekit(),
   ],
-  histoire: {
+  poveste: {
     plugins: [
       HstSvelte(),
     ],

@@ -11,7 +11,7 @@ export default defineConfig({
     vue(),
   ],
 
-  histoire: {
+  poveste: {
     // plugins: [
     //   HstScreenshot(),
     // ],

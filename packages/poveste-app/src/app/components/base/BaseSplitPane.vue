@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed, onUnmounted, ref, watch } from 'vue'
 
-const SAVE_PREFIX = '__histoire'
+const SAVE_PREFIX = '__poveste'
 
 const props = defineProps({
   orientation: {
@@ -165,7 +165,7 @@ onUnmounted(() => {
 <template>
   <div
     ref="el"
-    class="histoire-base-split-pane htw-flex htw-h-full htw-isolate htw-overflow-auto"
+    class="poveste-base-split-pane htw-flex htw-h-full htw-isolate htw-overflow-auto"
     :class="{
       'htw-flex-col': orientation === 'portrait',
       'htw-cursor-ew-resize': dragging && orientation === 'landscape',

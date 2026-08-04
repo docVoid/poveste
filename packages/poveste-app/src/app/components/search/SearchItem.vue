@@ -51,7 +51,7 @@ function action(fromClick = false) {
 <template>
   <div
     ref="el"
-    class="histoire-search-item"
+    class="poveste-search-item"
     data-test-id="search-item"
     :data-selected="selected ? '' : undefined"
   >

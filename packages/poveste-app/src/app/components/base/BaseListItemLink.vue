@@ -31,7 +31,7 @@ export default defineComponent({
 <template>
   <RouterLink
     v-slot="{ isActive: linkIsActive, href, navigate }"
-    class="histoire-base-list-item-link"
+    class="poveste-base-list-item-link"
     v-bind="$attrs"
     custom
   >

@@ -73,7 +73,7 @@ const autoApplyContrastColor = computed(() => !!povesteConfig.autoApplyContrastC
 <template>
   <div
     ref="el"
-    class="histoire-story-variant-grid-item htw-cursor-default htw-flex htw-flex-col htw-gap-y-1 htw-group"
+    class="poveste-story-variant-grid-item htw-cursor-default htw-flex htw-flex-col htw-gap-y-1 htw-group"
   >
     <!-- Header -->
     <div class="htw-flex-none htw-flex htw-items-center">
@@ -133,6 +133,8 @@ const autoApplyContrastColor = computed(() => !!povesteConfig.autoApplyContrastC
       <div
         class="htw-relative htw-h-full"
         :style="{
+          '--poveste-contrast-color': contrastColor,
+          // Deprecated alias — keep so stories referencing `var(--histoire-contrast-color)` still work.
           '--histoire-contrast-color': contrastColor,
           'color': autoApplyContrastColor ? contrastColor : undefined,
         }"

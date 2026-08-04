@@ -12,7 +12,7 @@ export interface PreviewRenderContext {
   }
 }
 
-const previewRenderContextKey: InjectionKey<PreviewRenderContext> = Symbol('histoire-preview-render-context')
+const previewRenderContextKey: InjectionKey<PreviewRenderContext> = Symbol('poveste-preview-render-context')
 
 export function provideRenderContext(value: PreviewRenderContext) {
   provide(previewRenderContextKey, value)

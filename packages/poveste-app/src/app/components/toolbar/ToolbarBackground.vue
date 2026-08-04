@@ -16,7 +16,7 @@ const contrastColor = computed(() => getContrastColor(settings))
     v-if="povesteConfig.backgroundPresets.length"
     placement="bottom-end"
     :skidding="6"
-    class="histoire-toolbar-background htw-h-full htw-flex-none"
+    class="poveste-toolbar-background htw-h-full htw-flex-none"
     data-test-id="toolbar-background"
   >
     <div

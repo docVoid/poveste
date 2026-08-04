@@ -9,9 +9,9 @@ export default defineConfig({
     },
   ],
 
-  storyMatch: ['../histoire-controls/src/**/*.story.vue'],
+  storyMatch: ['../poveste-controls/src/**/*.story.vue'],
 
-  setupFile: '/histoire-setup.ts',
+  setupFile: '/poveste-setup.ts',
 
   theme: {
     title: 'Poveste controls',
@@ -39,7 +39,7 @@ export default defineConfig({
     server: {
       fs: {
         allow: [
-          '../histoire-controls/src',
+          '../poveste-controls/src',
         ],
       },
     },

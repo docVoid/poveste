@@ -119,7 +119,7 @@ const columnCount = computed(() => Math.min(storyStore.currentStory.variants.len
 </script>
 
 <template>
-  <div class="histoire-story-variant-grid htw-flex htw-flex-col htw-items-stretch htw-h-full __histoire-pane-shadow-from-right">
+  <div class="poveste-story-variant-grid htw-flex htw-flex-col htw-items-stretch htw-h-full __poveste-pane-shadow-from-right">
     <!-- Toolbar -->
     <div
       v-if="!isMobile"
@@ -129,7 +129,7 @@ const columnCount = computed(() => Math.min(storyStore.currentStory.variants.len
       <ToolbarTextDirection />
 
       <DevOnlyToolbarOpenInEditor
-        v-if="__HISTOIRE_DEV__"
+        v-if="__POVESTE_DEV__"
         :file="storyStore.currentStory.file?.filePath"
         tooltip="Edit story in editor"
       />

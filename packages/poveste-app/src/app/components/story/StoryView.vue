@@ -63,7 +63,7 @@ function scrollDocsToTop() {
 <template>
   <BaseEmpty
     v-if="!storyStore.currentStory"
-    class="histoire-story-view histoire-no-story"
+    class="poveste-story-view poveste-no-story"
   >
     <Icon
       icon="carbon:software-resource-resource"
@@ -73,7 +73,7 @@ function scrollDocsToTop() {
 
   <div
     v-else
-    class="histoire-story-view histoire-with-story htw-h-full"
+    class="poveste-story-view poveste-with-story htw-h-full"
   >
     <div
       v-if="storyStore.currentStory.docsOnly"

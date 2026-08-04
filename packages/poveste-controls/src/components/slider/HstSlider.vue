@@ -50,7 +50,7 @@ const tooltipStyle = computed<CSSProperties>(() => {
 
 <template>
   <HstWrapper
-    class="histoire-slider htw-items-center"
+    class="poveste-slider htw-items-center"
     :title="title"
     :class="$attrs.class"
     :style="$attrs.style"

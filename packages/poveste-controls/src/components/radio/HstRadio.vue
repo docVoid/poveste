@@ -47,7 +47,7 @@ const animationEnabled = ref(false)
   <HstWrapper
     role="group"
     :title="title"
-    class="histoire-radio htw-cursor-text"
+    class="poveste-radio htw-cursor-text"
     :class="$attrs.class"
     :style="$attrs.style"
   >

@@ -27,7 +27,7 @@ function close() {
 <template>
   <div
     v-show="shown"
-    class="histoire-search-modal htw-fixed htw-inset-0 htw-bg-white/80 dark:htw-bg-gray-900/80 htw-z-20"
+    class="poveste-search-modal htw-fixed htw-inset-0 htw-bg-white/80 dark:htw-bg-gray-900/80 htw-z-20"
     data-test-id="search-modal"
   >
     <div

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
-import PovesteLogo from '../assets/histoire.svg'
+import PovesteLogo from '../assets/poveste.svg'
 import { useStoryStore } from '../stores/story'
 import { customLogos, povesteConfig } from '../util/config'
 import HomeCounter from './app/HomeCounter.vue'
@@ -34,7 +34,7 @@ const stats = computed(() => {
 </script>
 
 <template>
-  <div class="histoire-home-view htw-flex md:htw-flex-col htw-gap-12 htw-items-center htw-justify-center htw-h-full">
+  <div class="poveste-home-view htw-flex md:htw-flex-col htw-gap-12 htw-items-center htw-justify-center htw-h-full">
     <img
       :src="logoUrl"
       alt="Logo"

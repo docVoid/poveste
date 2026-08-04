@@ -165,11 +165,11 @@ const filePath = computed(() => story.value.file?.docsFilePath ?? (props.standal
 
 <template>
   <div
-    class="histoire-story-docs"
+    class="poveste-story-docs"
     @click.capture="onClick"
   >
     <div
-      v-if="__HISTOIRE_DEV__ && renderedDoc && filePath"
+      v-if="__POVESTE_DEV__ && renderedDoc && filePath"
       class="htw-flex htw-items-center htw-gap-2 htw-p-2"
       :class="{
         'htw-pt-4': !standalone,

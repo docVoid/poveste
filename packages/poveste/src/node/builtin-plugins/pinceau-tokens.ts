@@ -71,7 +71,7 @@ export function pinceauTokens(_options: PinceauTokensOptions = {}): Plugin {
 function storyTemplate(pinceauConfig: any) {
   pinceauConfig = pinceauConfig?.theme || pinceauConfig?.default?.theme || {}
 
-  return `import 'histoire-style'
+  return `import 'poveste-style'
 import './style.css'
 import { createApp, h, markRaw, ref } from ${getInjectedImport('@poveste/vendors/vue')}
 import {

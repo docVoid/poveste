@@ -56,12 +56,12 @@ export interface PreviewSettings {
 
 declare module 'vue' {
   interface ComponentCustomProperties {
-    __HISTOIRE_DEV__: boolean
+    __POVESTE_DEV__: boolean
   }
 }
 
 declare global {
-  const __HISTOIRE_DEV__: boolean
+  const __POVESTE_DEV__: boolean
 
   interface Window {
     __HST_PLUGIN_API__: {

@@ -1,4 +1,4 @@
-module.exports = process.env.HISTOIRE_DEV
+module.exports = process.env.POVESTE_DEV
   ? {
       plugins: [
         require('postcss-import'),

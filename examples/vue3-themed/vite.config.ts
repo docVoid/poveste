@@ -7,7 +7,7 @@ export default defineConfig({
     vue(),
   ],
 
-  histoire: {
+  poveste: {
     theme: {
       title: 'Acme Design System',
       favicon: './public/my-favicon.svg',

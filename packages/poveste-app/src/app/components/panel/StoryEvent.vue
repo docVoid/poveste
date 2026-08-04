@@ -20,7 +20,7 @@ const formattedArgument = computed(() => {
 
 <template>
   <VDropdown
-    class="histoire-story-event htw-group"
+    class="poveste-story-event htw-group"
     placement="right"
     data-test-id="event-item"
   >

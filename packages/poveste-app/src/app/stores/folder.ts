@@ -5,7 +5,7 @@ import { useStoryStore } from './story'
 
 export const useFolderStore = defineStore('folder', () => {
   const openedFolders = useStorage<Map<string, boolean>>(
-    '_histoire-tree-state',
+    '_poveste-tree-state',
     new Map(),
   )
 

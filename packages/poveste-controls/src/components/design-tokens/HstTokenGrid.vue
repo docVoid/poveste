@@ -38,9 +38,9 @@ const hover = ref<string>(null)
 
 <template>
   <div
-    class="histoire-token-grid htw-bind-col-size htw-grid htw-gap-4 htw-m-4"
+    class="poveste-token-grid htw-bind-col-size htw-grid htw-gap-4 htw-m-4"
     :style="{
-      '--histoire-col-size': colSizePx,
+      '--poveste-col-size': colSizePx,
     }"
   >
     <div
@@ -83,6 +83,6 @@ const hover = ref<string>(null)
 
 <style>
 .htw-bind-col-size {
-  grid-template-columns: repeat(auto-fill, minmax(var(--histoire-col-size), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(var(--poveste-col-size), 1fr));
 }
 </style>

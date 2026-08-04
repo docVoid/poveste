@@ -5,7 +5,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [
     {
-      name: 'histoire:preserve:import.dynamic',
+      name: 'poveste:preserve:import.dynamic',
       enforce: 'pre',
       transform(code) {
         if (code.includes('import(')) {

@@ -133,7 +133,7 @@ watch(sourceHtml, async () => {
 
 <template>
   <div
-    class="histoire-story-source-code htw-bg-gray-50 dark:htw-bg-gray-750 htw-h-full htw-overflow-hidden htw-flex htw-flex-col"
+    class="poveste-story-source-code htw-bg-gray-50 dark:htw-bg-gray-750 htw-h-full htw-overflow-hidden htw-flex htw-flex-col"
   >
     <!-- Toolbar -->
     <div
@@ -217,7 +217,7 @@ watch(sourceHtml, async () => {
     <textarea
       v-else-if="!sourceHtml"
       ref="scroller"
-      class="__histoire-code-placeholder htw-w-full htw-h-full htw-p-4 htw-outline-none htw-bg-transparent htw-resize-none htw-m-0"
+      class="__poveste-code-placeholder htw-w-full htw-h-full htw-p-4 htw-outline-none htw-bg-transparent htw-resize-none htw-m-0"
       :value="displayedSourceCode"
       readonly
       data-test-id="story-source-code"
@@ -232,7 +232,7 @@ watch(sourceHtml, async () => {
       @scroll="onScroll"
     >
       <div
-        class="__histoire-code htw-p-4 htw-w-fit"
+        class="__poveste-code htw-p-4 htw-w-fit"
         v-html="sourceHtml"
       />
     </div>
@@ -241,7 +241,7 @@ watch(sourceHtml, async () => {
 </template>
 
 <style scoped>
-.__histoire-code-placeholder {
+.__poveste-code-placeholder {
   color: inherit;
   font-size: inherit;
 }

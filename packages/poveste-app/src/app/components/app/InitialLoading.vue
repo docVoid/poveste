@@ -9,7 +9,7 @@ const progress = reactive({
 const maxCols = window.innerWidth / 20
 
 if (import.meta.hot) {
-  import.meta.hot.on('histoire:stories-loading-progress', (data) => {
+  import.meta.hot.on('poveste:stories-loading-progress', (data) => {
     progress.loaded = data.loadedFileCount
     progress.total = data.totalFileCount
   })
@@ -17,8 +17,8 @@ if (import.meta.hot) {
 </script>
 
 <template>
-  <div class="histoire-initial-loading htw-fixed htw-inset-0 htw-bg-white dark:htw-bg-gray-700 htw-flex htw-flex-col htw-gap-6 htw-items-center htw-justify-center">
-    <transition name="__histoire-fade">
+  <div class="poveste-initial-loading htw-fixed htw-inset-0 htw-bg-white dark:htw-bg-gray-700 htw-flex htw-flex-col htw-gap-6 htw-items-center htw-justify-center">
+    <transition name="__poveste-fade">
       <div
         v-if="progress.total > 0"
         class="htw-grid htw-gap-2"

@@ -55,7 +55,7 @@ const canReset = computed(() => props.variant.state?._hPropState?.[props.compone
     v-if="comp"
     v-model="model"
     :placeholder="model === undefined ? definition?.default : null"
-    class="histoire-controls-component-prop-item"
+    class="poveste-controls-component-prop-item"
     :title="`${definition.name}${canReset ? ' *' : ''}`"
   >
     <template #actions>

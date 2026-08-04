@@ -50,7 +50,7 @@ function selectOption(value: string) {
     tag="div"
     role="group"
     :title="title"
-    class="histoire-button-group htw-flex-nowrap htw-items-center"
+    class="poveste-button-group htw-flex-nowrap htw-items-center"
   >
     <div class="htw-flex htw-gap-px htw-border htw-border-solid htw-border-black/25 dark:htw-border-white/25 htw-rounded-sm htw-p-px">
       <HstButton

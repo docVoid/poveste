@@ -38,7 +38,7 @@ const model = computed({
     :is="comp"
     v-if="comp"
     v-model="model"
-    class="histoire-controls-component-prop-item"
+    class="poveste-controls-component-prop-item"
     :title="props.item"
   />
 </template>

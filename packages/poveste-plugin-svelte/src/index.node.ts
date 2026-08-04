@@ -27,9 +27,9 @@ export function HstSvelte(): Plugin {
             primary: defaultColors.orange,
           },
           logo: {
-            square: '@poveste/plugin-svelte/assets/histoire-svelte.svg',
-            light: '@poveste/plugin-svelte/assets/histoire-svelte-text.svg',
-            dark: '@poveste/plugin-svelte/assets/histoire-svelte-text.svg',
+            square: '@poveste/plugin-svelte/assets/poveste-svelte.svg',
+            light: '@poveste/plugin-svelte/assets/poveste-svelte-text.svg',
+            dark: '@poveste/plugin-svelte/assets/poveste-svelte-text.svg',
           },
         },
         viteIgnorePlugins: [
