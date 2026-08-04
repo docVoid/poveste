@@ -12,6 +12,9 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    # v0.1.0 was published manually and exists only as the changelog baseline —
+    # never auto-release it (would republish 0.1.0 and emit full-history notes).
+    if: github.ref_name != 'v0.1.0'
     steps:
       - uses: actions/checkout@v4
         with:
