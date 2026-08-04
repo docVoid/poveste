@@ -232,7 +232,7 @@ watch(sourceHtml, async () => {
       @scroll="onScroll"
     >
       <div
-        class="__poveste-code htw-p-4 htw-w-fit"
+        class="__poveste-code __histoire-code htw-p-4 htw-w-fit"
         v-html="sourceHtml"
       />
     </div>

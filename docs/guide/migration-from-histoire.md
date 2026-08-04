@@ -137,6 +137,18 @@ export default defineConfig({
 These compatibility shims are kept to make migration painless. They may be
 removed in a future major version, so adopting the `poveste.*` names is recommended.
 
+### Custom theme CSS
+
+The app's internal CSS classes were renamed from `histoire-*` to `poveste-*`. The
+classes you're most likely to target keep **both** names, so existing theme/test
+CSS keeps working:
+
+- Story render/mount wrappers: `.poveste-generic-render-story` (+ `.histoire-generic-render-story`), `.poveste-wrapper` (+ `.histoire-wrapper`)
+- Code blocks: `.__poveste-code` (+ `.__histoire-code`)
+
+If your theme targets other app-chrome classes directly (e.g. `.histoire-app-header`),
+update them to the `poveste-` prefix.
+
 ## Something broke?
 
 If you hit a migration issue that isn't covered here, please
