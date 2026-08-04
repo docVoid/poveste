@@ -4,11 +4,10 @@ import sdk, { type OpenFileOption, type Project, type ProjectFiles } from '@stac
 // in-memory (no pre-created projects or starter repos to maintain — same
 // approach as unovis). The starters always install the latest published
 // packages from npm.
+// StackBlitz WebContainer projects always boot with npm (the SDK has no
+// package-manager control), so the starters are plain npm — no packageManager
+// field, to avoid a misleading claim or a corepack conflict.
 const POVESTE = 'latest'
-
-// Use pnpm (via corepack in the WebContainer) to match the docs, which are
-// pnpm-first. Node stays on StackBlitz's default runtime.
-const PNPM = 'pnpm@11.20.0'
 
 type Framework = 'vue3' | 'svelte3' | 'nuxt3'
 
@@ -23,7 +22,6 @@ function pkg(name: string, extraDev: Record<string, string>, deps: Record<string
       name,
       private: true,
       type: 'module',
-      packageManager: PNPM,
       scripts: {
         dev: 'poveste dev',
         build: 'poveste build',
