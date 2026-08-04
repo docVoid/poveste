@@ -47,8 +47,8 @@ export default defineConfig({
         config() {
           return {
             theme: {
-              logoHref: 'http://poveste.dev',
-              favicon: 'histoire.svg',
+              logoHref: 'https://poveste.dev',
+              favicon: 'poveste.svg',
             },
           }
         },

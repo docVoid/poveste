@@ -15,7 +15,7 @@ export default defineConfig({
 
   theme: {
     title: 'Poveste controls',
-    favicon: 'histoire.svg',
+    favicon: 'poveste.svg',
   },
 
   tree: {
