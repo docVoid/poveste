@@ -48,10 +48,10 @@ function vue3Starter(): Starter {
         'poveste-vue3-starter',
         {
           '@poveste/plugin-vue': POVESTE,
-          '@vitejs/plugin-vue': '^5.0.0',
-          'vite': '^5.0.0',
+          '@vitejs/plugin-vue': '^6.0.0',
+          'vite': '^7.3.0',
         },
-        { vue: '^3.5.0' },
+        { vue: '^3.5.26' },
       ),
       'vite.config.ts': `import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
@@ -114,9 +114,9 @@ function svelte3Starter(): Starter {
     files: {
       'package.json': pkg('poveste-svelte-starter', {
         '@poveste/plugin-svelte': POVESTE,
-        '@sveltejs/vite-plugin-svelte': '^3.0.0',
-        'svelte': '^4.2.0',
-        'vite': '^5.0.0',
+        '@sveltejs/vite-plugin-svelte': '^6.0.0',
+        'svelte': '^5.0.0',
+        'vite': '^7.3.0',
       }),
       'vite.config.ts': `/// <reference types="poveste" />
 import { HstSvelte } from '@poveste/plugin-svelte'
@@ -174,8 +174,9 @@ function nuxt3Starter(): Starter {
       'package.json': pkg('poveste-nuxt-starter', {
         '@poveste/plugin-nuxt': POVESTE,
         '@poveste/plugin-vue': POVESTE,
-        'nuxt': '^4.0.0',
-        'vue': '^3.5.0',
+        'nuxt': '^4.2.2',
+        'vite': '^7.3.0',
+        'vue': '^3.5.26',
       }),
       'nuxt.config.ts': `export default defineNuxtConfig({
   compatibilityDate: '2024-12-20',
