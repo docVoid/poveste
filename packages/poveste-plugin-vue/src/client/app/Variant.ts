@@ -11,7 +11,7 @@ import { syncStateBundledAndExternal, toRawDeep } from './util.js'
 export default defineComponent({
 
   name: 'Variant',
-  __histoireType: 'variant',
+  __povesteType: 'variant',
 
   props: {
     initState: {

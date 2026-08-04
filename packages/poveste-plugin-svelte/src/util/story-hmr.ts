@@ -15,7 +15,7 @@ interface SveltePluginApi {
 interface SvelteConfigPlugin {
   name: string
   api?: SveltePluginApi
-  __histoireStoryHmrPatched?: boolean
+  __povesteStoryHmrPatched?: boolean
 }
 
 export function disableStoryComponentHmr() {
@@ -24,7 +24,7 @@ export function disableStoryComponentHmr() {
     apply: 'serve' as const,
     configResolved(config: { readonly plugins: readonly unknown[] }) {
       for (const plugin of config.plugins as SvelteConfigPlugin[]) {
-        if (plugin.name !== 'vite-plugin-svelte:config' || plugin.__histoireStoryHmrPatched) {
+        if (plugin.name !== 'vite-plugin-svelte:config' || plugin.__povesteStoryHmrPatched) {
           continue
         }
 
@@ -45,7 +45,7 @@ export function disableStoryComponentHmr() {
             hmr: false,
           }
         }
-        plugin.__histoireStoryHmrPatched = true
+        plugin.__povesteStoryHmrPatched = true
       }
     },
   }

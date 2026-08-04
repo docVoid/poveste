@@ -120,7 +120,7 @@ export function MyPovestePlugin(options: MyPluginOptions = {}): Plugin {
 Usage of your plugin:
 
 ```js
-// In your histoire config
+// In your poveste config
 
 import { MyPovestePlugin } from 'my-poveste-plugin'
 import { defineConfig } from 'poveste'

@@ -8,14 +8,14 @@ To customize your experience, you can configure several parts of Poveste.
 
 ### Standalone file
 
-The first option is to create a new file at the root of your project called `poveste.config.{js,ts}` or `.histoire.{js,ts}`. The configuration file must export the configuration object as default. Poveste provides a helper function `defineConfig` to enforce TypeScript typing.
+The first option is to create a new file at the root of your project called `poveste.config.{js,ts}` or `.poveste.{js,ts}`. The configuration file must export the configuration object as default. Poveste provides a helper function `defineConfig` to enforce TypeScript typing.
 
 Detected files:
 
 - `poveste.config.ts`
 - `poveste.config.js`
-- `.histoire.ts`
-- `.histoire.js`
+- `.poveste.ts`
+- `.poveste.js`
 
 Example:
 
@@ -45,7 +45,7 @@ Here's what your vite config file should look like:
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  histoire: {
+  poveste: {
     // your Poveste configuration
   },
 })
@@ -76,7 +76,7 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   // ...
-  histoire: {
+  poveste: {
     vite: {
       // Any Vite configuration
     },
@@ -142,16 +142,16 @@ Your components may be using globally defined CSS (like CSS frameworks) or JS (l
 // poveste.config.ts
 
 export default defineConfig({
-  setupFile: '/src/histoire.setup.ts'
+  setupFile: '/src/poveste.setup.ts'
 })
 ```
 
 In this file, you can import global CSS files or JS files.
 
 ```ts
-// src/histoire.setup.ts
+// src/poveste.setup.ts
 
-import './histoire.css' // Import global CSS
+import './poveste.css' // Import global CSS
 ```
 
 You can also tell Poveste to configure the sandbox application using the corresponding setup function (more details afterwards).
@@ -165,7 +165,7 @@ You can also tell Poveste to configure the sandbox application using the corresp
 Inside your setup file, you can export a `setupVue3` function that will be called by Poveste allowing you to configure the Vue 3 sandbox application. Poveste provides an optional `defineSetupVue3` helper to have better types in your IDE :
 
 ```ts
-// src/histoire.setup.ts
+// src/poveste.setup.ts
 
 import { defineSetupVue3 } from '@poveste/plugin-vue'
 import { createPinia } from 'pinia'

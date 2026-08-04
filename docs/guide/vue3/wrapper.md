@@ -6,7 +6,7 @@ In your [setup file](./app-setup.md), you can add wrapper components with `addWr
 
 ```ts
 import { defineSetupVue3 } from '@poveste/plugin-vue'
-import WrapperGlobal from './histoire/GlobalWrapper.vue'
+import WrapperGlobal from './poveste/GlobalWrapper.vue'
 
 export const setupVue3 = defineSetupVue3(({ addWrapper }) => {
   addWrapper(WrapperGlobal)

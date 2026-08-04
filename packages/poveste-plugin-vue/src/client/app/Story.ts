@@ -8,7 +8,7 @@ import Variant from './Variant'
 export default defineComponent({
 
   name: 'Story',
-  __histoireType: 'story',
+  __povesteType: 'story',
 
   inheritAttrs: false,
 
@@ -120,7 +120,7 @@ export default defineComponent({
 
         for (const vnode of vnodes) {
           // @ts-expect-error custom option
-          if (vnode.type?.__histoireType === 'variant') {
+          if (vnode.type?.__povesteType === 'variant') {
             const variant = attrs.story.variants[index]
             index++
 
