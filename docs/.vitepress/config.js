@@ -27,7 +27,7 @@ module.exports = {
 
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2022-present Guillaume Chau',
+      copyright: 'Copyright © 2022-present Guillaume Chau & poveste contributors',
     },
 
     nav: [
