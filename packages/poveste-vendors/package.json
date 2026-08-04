@@ -15,6 +15,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "sideEffects": false,
   "exports": {
     "./floating-vue": "./dist/client/b-floating-vue.js",
