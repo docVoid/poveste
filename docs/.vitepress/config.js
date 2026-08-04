@@ -2,6 +2,7 @@ module.exports = {
   title: 'Poveste',
   description: 'Fast stories powered by Vite',
   head: [
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
     ['meta', { property: 'og:title', content: 'Poveste' }],
     ['meta', { property: 'og:site_name', content: 'Poveste' }],
     ['meta', { property: 'og:type', content: 'website' }],
