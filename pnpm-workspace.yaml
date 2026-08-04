@@ -9,3 +9,28 @@ catalog:
   tailwindcss: ^3.4.16
   typescript: 5.6.3
   vite: ^7.3.0
+
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - esbuild
+  - puppeteer
+  - svelte-preprocess
+  - unrs-resolver
+  - vue-demi
+
+peerDependencyRules:
+  ignoreMissing:
+    - '@algolia/client-search'
+    - '@types/react'
+    - eslint
+    - react
+    - react-dom
+    - vue
+    - vue-template-compiler
+    - webpack
+  allowedVersions:
+    eslint: '*'
+    eslint-plugin-promise: '*'
+    eslint-plugin-vue: '*'
+    vite: ^7.0.0 || ^8.0.0
+    vue: '*'
