@@ -1,8 +1,18 @@
+<script setup>
+function playAudio () {
+  document.querySelector('#poveste-audio').play()
+}
+</script>
+
+<audio id="poveste-audio">
+  <source src="/poveste.m4a" type="audio/mp4">
+</audio>
+
 # Getting started with Poveste
 
 ## Overview
 
-> **poveste** is the Romanian word for "story", pronounced `/poˈveste/` (_po-VES-teh_). Coming from histoire? See the [migration guide](/guide/migration-from-histoire).
+> **poveste** is the Romanian word for "story", pronounced `/poˈveste/` (_po-VES-teh_) <button class="btn p-1 leading-none" v-on:click="playAudio"><Icon icon="carbon:volume-up-filled" class="w-4 h-4 align-middle"/></button>. Coming from histoire? See the [migration guide](/guide/migration-from-histoire).
 
 Poveste is a tool to generate stories applications (or "books").
 
