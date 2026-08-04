@@ -6,6 +6,10 @@ import sdk, { type OpenFileOption, type Project, type ProjectFiles } from '@stac
 // packages from npm.
 const POVESTE = 'latest'
 
+// Use pnpm (via corepack in the WebContainer) to match the docs, which are
+// pnpm-first. Node stays on StackBlitz's default runtime.
+const PNPM = 'pnpm@11.20.0'
+
 type Framework = 'vue3' | 'svelte3' | 'nuxt3'
 
 interface Starter {
@@ -19,6 +23,7 @@ function pkg(name: string, extraDev: Record<string, string>, deps: Record<string
       name,
       private: true,
       type: 'module',
+      packageManager: PNPM,
       scripts: {
         dev: 'poveste dev',
         build: 'poveste build',
