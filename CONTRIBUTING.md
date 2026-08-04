@@ -10,9 +10,6 @@ Contributing doesn't necessarily mean you need to write code and open Pull Reque
 - Discuss your ideas with the community on the [discussion board](https://github.com/poveste-dev/poveste/discussions).
 - Answer to other people's questions.
 - Report typos or issues of the docs.
-- Support us financially on GitHub sponsors:
-  - [Guillaume](https://github.com/sponsors/Akryum)
-  - [Hugo](https://github.com/sponsors/hugoattal)
 - Do you like Poveste? Spread the love on social media!
 
 ## Packages

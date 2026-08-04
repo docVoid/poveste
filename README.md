@@ -35,23 +35,6 @@ swapping one dependency — the `<Story>`/`<Variant>` API, `.story.*` files, and
 
 See [Contributing Guide](https://github.com/poveste-dev/poveste/blob/main/CONTRIBUTING.md) to learn more about the repository and how you can contribute.
 
-## Sponsors
-
-Become a sponsor!
-
-- [Guillaume Chau](https://github.com/sponsors/Akryum)
-- [Hugo Attal](https://github.com/sponsors/hugoattal)
-
-We are very grateful to all our sponsors for their support:
-
-### [Guillaume Chau](https://github.com/sponsors/Akryum)
-
-<p align="center">
-  <a href="https://guillaume-chau.info/sponsors/" target="_blank">
-    <img src='https://akryum.netlify.app/sponsors.svg'/>
-  </a>
-</p>
-
 ## License
 
 MIT

@@ -83,19 +83,6 @@ module.exports = {
         text: 'Changelog',
         link: 'https://github.com/poveste-dev/poveste/blob/main/CHANGELOG.md',
       },
-      {
-        text: 'Sponsor',
-        items: [
-          {
-            text: 'Guillaume Chau',
-            link: 'https://github.com/sponsors/Akryum',
-          },
-          {
-            text: 'Hugo Attal',
-            link: 'https://github.com/sponsors/hugoattal',
-          },
-        ],
-      },
     ],
 
     socialLinks: [

@@ -105,25 +105,3 @@ Poveste will automatically detect your Tailwind CSS configuration and generate d
 ### :mag: Fast fuzzy search
 
 A real search index is built in your book! Search for your stories or even text in your documentation without the need for an external service. Plus it's really fast!
-
-## Meet the team
-
-<MeetTeam class="mb-24" />
-
-## Sponsors
-
-<p align="center">
-  <a href="https://guillaume-chau.info/sponsors/" target="_blank">
-    <img src='https://akryum.netlify.app/sponsors.svg'/>
-  </a>
-</p>
-
-<div class="flex justify-center mb-12">
-  <SponsorButton/>
-</div>
-
-<div class="text-center my-4">
-  <a href="https://www.netlify.com">
-    <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" />
-  </a>
-</div>

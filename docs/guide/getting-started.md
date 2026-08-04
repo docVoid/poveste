@@ -18,20 +18,6 @@ Poveste is a tool to generate stories applications (or "books").
   <DemoLinks framework="svelte3" />
 </div>
 
-## Sponsors
-
-Poveste is an Open-Source project supported by our sponsors - thank you!
-
-<div class="flex justify-center mt-6 mb-12 gap-2">
-  <SponsorButton/>
-  <a
-    href="./index.html#sponsors"
-    class="px-4 py-2 btn inline-flex items-center gap-2 !font-normal"
-  >
-    See our sponsors &raquo;
-  </a>
-</div>
-
 ## Supported frameworks
 
 [Vite](https://vitejs.dev) currently supported versions:
