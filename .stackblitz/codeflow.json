@@ -1,12 +1,12 @@
 {
   "pnpm": {
     "overrides": {
-      "poveste": "./packages/histoire",
-      "@poveste/plugin-vue": "./packages/historie-plugin-vue",
-      "@poveste/plugin-svelte": "./packages/historie-plugin-svelte",
-      "@poveste/plugin-nuxt": "./packages/historie-plugin-nuxt",
-      "@poveste/plugin-percy": "./packages/historie-plugin-percy",
-      "@poveste/plugin-screenshot": "./packages/historie-plugin-screenshot"
+      "poveste": "./packages/poveste",
+      "@poveste/plugin-vue": "./packages/poveste-plugin-vue",
+      "@poveste/plugin-svelte": "./packages/poveste-plugin-svelte",
+      "@poveste/plugin-nuxt": "./packages/poveste-plugin-nuxt",
+      "@poveste/plugin-percy": "./packages/poveste-plugin-percy",
+      "@poveste/plugin-screenshot": "./packages/poveste-plugin-screenshot"
     }
   }
 }

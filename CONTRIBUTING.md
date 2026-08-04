@@ -21,17 +21,18 @@ This mono-repo contains the following packages:
 
 | Package | Description |
 | ------- | ----------- |
-| [histoire](./packages/histoire) | Main package |
-| [@poveste/app](./packages/histoire-app) | Pre-bundled UI |
-| [@poveste/controls](./packages/histoire-controls) | Builtin controls components |
-| [@poveste/controls-stories](./packages/histoire-controls) | Stories for builtin controls |
-| [@poveste/plugin-vue](./packages/histoire-plugin-vue) | Vue 3 integration |
-| [@poveste/plugin-vue2](./packages/histoire-plugin-vue) | Vue 2 integration |
-| [@poveste/plugin-nuxt](./packages/histoire-plugin-nuxt) | Nuxt 3 integration |
-| [@poveste/plugin-percy](./packages/histoire-plugin-percy) | Visual regression testing with Percy |
-| [@poveste/plugin-screenshot](./packages/histoire-plugin-screenshot) | Visual regression testing with simple screenshots |
-| [@poveste/shared](./packages/histoire-shared) | Shared utilities |
-| [@poveste/vendors](./packages/histoire-vendors) | Pre-bundled dependencies |
+| [poveste](./packages/poveste) | Main package |
+| [@poveste/app](./packages/poveste-app) | Pre-bundled UI |
+| [@poveste/controls](./packages/poveste-controls) | Builtin controls components |
+| [@poveste/controls-stories](./packages/poveste-controls-stories) | Stories for builtin controls |
+| [@poveste/plugin-vue](./packages/poveste-plugin-vue) | Vue 3 integration |
+| [@poveste/plugin-vue2](./packages/poveste-plugin-vue2) | Vue 2 integration |
+| [@poveste/plugin-nuxt](./packages/poveste-plugin-nuxt) | Nuxt 3 integration |
+| [@poveste/plugin-svelte](./packages/poveste-plugin-svelte) | Svelte 4/5 and SvelteKit integration |
+| [@poveste/plugin-percy](./packages/poveste-plugin-percy) | Visual regression testing with Percy |
+| [@poveste/plugin-screenshot](./packages/poveste-plugin-screenshot) | Visual regression testing with simple screenshots |
+| [@poveste/shared](./packages/poveste-shared) | Shared utilities |
+| [@poveste/vendors](./packages/poveste-vendors) | Pre-bundled dependencies |
 
 ## Local dev setup
 

@@ -1,8 +1,8 @@
 {
   "tailwindCSS.experimental.configFile": {
     "tailwind.config.cjs": "docs/**",
-    "packages/histoire-app/tailwind.config.cjs": "packages/histoire-app/**",
-    "packages/histoire-controls/tailwind.config.cjs": "packages/histoire-controls/**"
+    "packages/poveste-app/tailwind.config.cjs": "packages/poveste-app/**",
+    "packages/poveste-controls/tailwind.config.cjs": "packages/poveste-controls/**"
   },
 
   // Enable the ESlint flat config support

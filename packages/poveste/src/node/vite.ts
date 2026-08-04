@@ -145,7 +145,7 @@ export async function getViteConfigWithPlugins(isServer: boolean, ctx: Context):
               ...supportPluginAllowPaths,
               ...process.env.HISTOIRE_DEV
                 ? [
-                    '../../packages/histoire-vendors',
+                    '../../packages/poveste-vendors',
                   ]
                 : [],
             ],

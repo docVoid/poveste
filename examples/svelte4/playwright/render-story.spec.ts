@@ -24,7 +24,7 @@ test.describe('story render', () => {
 test.describe('controls render', () => {
   // Hst.Checkbox / Hst.Select stay as the literal placeholder string
   // ("HstCheckbox" / "HstSelect") instead of mounting the Vue control.
-  // The bridge in `packages/histoire-plugin-svelte/src/client/Wrap.svelte`
+  // The bridge in `packages/poveste-plugin-svelte/src/client/Wrap.svelte`
   // expects `app.mount(el)` to wipe the placeholder during Svelte's onMount,
   // but the Vue mount is no-op'ing under the Svelte 5 compat path.
   // Cypress fails identically — same translation, same coverage.
