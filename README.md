@@ -23,11 +23,11 @@ swapping one dependency — the `<Story>`/`<Variant>` API, `.story.*` files, and
 [Read the Documentation](https://poveste.dev) |
 [Discussions board](https://github.com/poveste-dev/poveste/discussions)
 
-⚡️ Lightning fast development and instant HMR thanks to [Vite](http://vitejs.dev)
-👓 Build and visually test your components in isolation
-📚 Document your components with stories and variants
-📝 Generate source code examples automatically
-🎨 Beautiful and customizable interface
+- ⚡️ Lightning fast development and instant HMR thanks to [Vite](http://vitejs.dev)
+- 👓 Build and visually test your components in isolation
+- 📚 Document your components with stories and variants
+- 📝 Generate source code examples automatically
+- 🎨 Beautiful and customizable interface
 
 ![screenshot](./screenshot.png)
 
