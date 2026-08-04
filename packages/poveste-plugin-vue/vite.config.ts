@@ -2,6 +2,13 @@ import fs from 'node:fs'
 import { globbySync } from 'globby'
 import { defineConfig } from 'vite'
 
+// Externalize every declared dependency/peer so the lib build emits bare
+// specifiers (e.g. `import 'change-case'`) instead of resolved node_modules
+// paths. With preserveModules, an un-externalized npm dep leaks its pnpm-store
+// path (`../node_modules/.pnpm/change-case@x/...`) which only exists in the
+// workspace and breaks every published/fresh install.
+const pkg = JSON.parse(fs.readFileSync(new URL('./package.json', import.meta.url), 'utf-8'))
+
 export default defineConfig({
   plugins: [
     {
@@ -43,6 +50,8 @@ export default defineConfig({
         /\$poveste/,
         /@poveste/,
         'vue',
+        ...Object.keys(pkg.dependencies ?? {}),
+        ...Object.keys(pkg.peerDependencies ?? {}),
       ],
 
       input: [
