@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import { useLayoutStore } from '../../stores/layout'
 import { useStoryStore } from '../../stores/story'
 
 import BaseEmpty from '../base/BaseEmpty.vue'
@@ -12,6 +13,11 @@ import StoryEvents from './StoryEvents.vue'
 import StorySourceCode from './StorySourceCode.vue'
 
 const storyStore = useStoryStore()
+const layoutStore = useLayoutStore()
+
+const innerOrientation = computed(() =>
+  layoutStore.settings.storyOptionsPlacement === 'bottom' ? 'landscape' : 'portrait',
+)
 
 const route = useRoute()
 
@@ -28,49 +34,53 @@ const panelContentComponent = computed(() => {
 </script>
 
 <template>
-  <BaseEmpty
-    v-if="!storyStore.currentVariant"
-    class="poveste-story-side-panel poveste-selection"
-  >
-    <span>Select a variant</span>
-  </BaseEmpty>
+  <div class="ptw-h-full ptw-w-full ptw-p-2">
+    <div class="ptw-h-full ptw-w-full ptw-rounded-lg ptw-border ptw-border-gray-200 dark:ptw-border-gray-700 ptw-overflow-hidden ptw-bg-white dark:ptw-bg-gray-700">
+      <BaseEmpty
+        v-if="!storyStore.currentVariant"
+        class="poveste-story-side-panel poveste-selection"
+      >
+        <span>Select a variant</span>
+      </BaseEmpty>
 
-  <BaseEmpty
-    v-else-if="!storyStore.currentVariant.configReady || !storyStore.currentVariant.previewReady"
-    class="poveste-story-side-panel poveste-loading"
-  >
-    <span>Loading...</span>
-  </BaseEmpty>
+      <BaseEmpty
+        v-else-if="!storyStore.currentVariant.configReady || !storyStore.currentVariant.previewReady"
+        class="poveste-story-side-panel poveste-loading"
+      >
+        <span>Loading...</span>
+      </BaseEmpty>
 
-  <BaseSplitPane
-    v-else
-    save-id="story-sidepane"
-    orientation="portrait"
-    class="poveste-story-side-panel poveste-loaded ptw-h-full"
-    data-test-id="story-side-panel"
-  >
-    <template #first>
-      <div class="ptw-flex ptw-flex-col ptw-h-full">
-        <PaneTabs
-          :story="storyStore.currentStory"
-          :variant="storyStore.currentVariant"
-        />
+      <BaseSplitPane
+        v-else
+        :save-id="`story-sidepane-${innerOrientation}`"
+        :orientation="innerOrientation"
+        class="poveste-story-side-panel poveste-loaded ptw-h-full"
+        data-test-id="story-side-panel"
+      >
+        <template #first>
+          <div class="ptw-flex ptw-flex-col ptw-h-full">
+            <PaneTabs
+              :story="storyStore.currentStory"
+              :variant="storyStore.currentVariant"
+            />
 
-        <component
-          :is="panelContentComponent"
-          :story="storyStore.currentStory"
-          :variant="storyStore.currentVariant"
-          class="ptw-h-full ptw-overflow-auto"
-        />
-      </div>
-    </template>
+            <component
+              :is="panelContentComponent"
+              :story="storyStore.currentStory"
+              :variant="storyStore.currentVariant"
+              class="ptw-h-full ptw-overflow-auto"
+            />
+          </div>
+        </template>
 
-    <template #last>
-      <StorySourceCode
-        :story="storyStore.currentStory"
-        :variant="storyStore.currentVariant"
-        class="ptw-h-full"
-      />
-    </template>
-  </BaseSplitPane>
+        <template #last>
+          <StorySourceCode
+            :story="storyStore.currentStory"
+            :variant="storyStore.currentVariant"
+            class="ptw-h-full"
+          />
+        </template>
+      </BaseSplitPane>
+    </div>
+  </div>
 </template>

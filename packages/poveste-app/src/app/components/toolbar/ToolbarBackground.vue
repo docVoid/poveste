@@ -1,14 +1,10 @@
 <script lang="ts" setup>
 import { Icon } from '@iconify/vue'
-import { computed } from 'vue'
 import { usePreviewSettingsStore } from '../../stores/preview-settings'
 import { povesteConfig } from '../../util/config'
-import { getContrastColor } from '../../util/preview-settings'
 import BaseCheckbox from '../base/BaseCheckbox.vue'
 
 const settings = usePreviewSettingsStore().currentSettings
-
-const contrastColor = computed(() => getContrastColor(settings))
 </script>
 
 <template>
@@ -16,21 +12,20 @@ const contrastColor = computed(() => getContrastColor(settings))
     v-if="povesteConfig.backgroundPresets.length"
     placement="bottom-end"
     :skidding="6"
-    class="poveste-toolbar-background ptw-h-full ptw-flex-none"
+    class="poveste-toolbar-background ptw-flex-none"
     data-test-id="toolbar-background"
   >
     <div
       v-tooltip="'Background color'"
-      class="ptw-cursor-pointer hover:ptw-text-primary-500 ptw-flex ptw-items-center ptw-gap-1 ptw-h-full ptw-px-2 ptw-group"
+      class="ptw-flex ptw-items-center ptw-gap-1 ptw-px-2.5 ptw-py-1.5 hover:ptw-bg-white/50 dark:hover:ptw-bg-white/10 hover:ptw-text-primary-500 dark:hover:ptw-text-primary-400 ptw-cursor-pointer ptw-text-gray-900 dark:ptw-text-gray-100 ptw-transition-colors ptw-group"
     >
-      <div
-        class="bind-preview-bg ptw-w-4 ptw-h-4 ptw-rounded-full ptw-border ptw-border-black/50 dark:ptw-border-white/50 ptw-flex ptw-items-center ptw-justify-center ptw-text-xs"
-      >
-        <span v-if="contrastColor">a</span>
-      </div>
       <Icon
-        icon="carbon:caret-down"
-        class="ptw-w-4 ptw-h-4 ptw-opacity-50 group-hover:ptw-opacity-100"
+        icon="carbon:color-palette"
+        class="ptw-w-4 ptw-h-4"
+      />
+      <Icon
+        icon="carbon:chevron-down"
+        class="ptw-w-3 ptw-h-3 ptw-opacity-40 group-hover:ptw-opacity-70"
       />
     </div>
 

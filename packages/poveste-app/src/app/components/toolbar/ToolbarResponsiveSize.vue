@@ -13,22 +13,22 @@ const settings = usePreviewSettingsStore().currentSettings
     placement="bottom-end"
     :skidding="6"
     :disabled="!povesteConfig.responsivePresets?.length"
-    class="poveste-toolbar-responsive-size ptw-h-full ptw-flex-none"
+    class="poveste-toolbar-responsive-size ptw-flex-none"
   >
     <div
       v-tooltip="'Responsive sizes'"
-      class="ptw-flex ptw-items-center ptw-gap-1 ptw-h-full ptw-px-2 ptw-group"
+      class="ptw-flex ptw-items-center ptw-gap-1 ptw-px-2.5 ptw-py-1.5 ptw-text-gray-900 dark:ptw-text-gray-100 ptw-transition-colors ptw-group"
       :class="{
-        'ptw-cursor-pointer hover:ptw-text-primary-500': povesteConfig.responsivePresets?.length,
+        'hover:ptw-bg-white/50 dark:hover:ptw-bg-white/10 hover:ptw-text-primary-500 dark:hover:ptw-text-primary-400 ptw-cursor-pointer': povesteConfig.responsivePresets?.length,
       }"
     >
       <Icon
         icon="carbon:devices"
-        class="ptw-w-4 ptw-h-4 ptw-opacity-50 group-hover:ptw-opacity-100"
+        class="ptw-w-4 ptw-h-4"
       />
       <Icon
-        icon="carbon:caret-down"
-        class="ptw-w-4 ptw-h-4 ptw-opacity-50 group-hover:ptw-opacity-100"
+        icon="carbon:chevron-down"
+        class="ptw-w-3 ptw-h-3 ptw-opacity-40 group-hover:ptw-opacity-70"
       />
     </div>
 
