@@ -59,12 +59,16 @@ module.exports = {
                 link: '/guide/getting-started',
               },
               {
-                text: 'Migrating from Histoire',
+                text: 'Migrating from Poveste',
                 link: '/guide/migration-from-histoire',
               },
               {
                 text: 'Configuration',
                 link: '/guide/config',
+              },
+              {
+                text: 'Styles & CSS',
+                link: '/guide/css',
               },
               {
                 text: 'Plugins',
@@ -261,6 +265,10 @@ module.exports = {
             {
               text: 'Configuration',
               link: '/guide/config',
+            },
+            {
+              text: 'Styles & CSS',
+              link: '/guide/css',
             },
           ],
         },

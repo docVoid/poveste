@@ -15,6 +15,11 @@ import {
 import { APP_PATH, TEMP_PATH } from './alias.js'
 import { createMarkdownPlugins } from './markdown.js'
 import { notifyStoryChange } from './stories.js'
+import {
+  chromeCssScopePlugin,
+  globalStylesPlugin,
+  userCssScopePlugin,
+} from './style-isolation/index.js'
 import { createVirtualFilesPlugin } from './virtual/vite-plugin.js'
 
 const require = createRequire(import.meta.url)
@@ -270,6 +275,7 @@ export async function getViteConfigWithPlugins(isServer: boolean, ctx: Context):
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="">
     ${ctx.config.theme?.favicon ? `<link rel="icon" type="${lookupMime(ctx.config.theme.favicon)}" href="${server.config.base}${ctx.config.theme.favicon}"/>` : ''}
+    <style>html,body{margin:0;padding:0}</style>
   </head>
   <body>
     <div id="app"></div>
@@ -290,6 +296,21 @@ export async function getViteConfigWithPlugins(isServer: boolean, ctx: Context):
   })
 
   plugins.push(createVirtualFilesPlugin(ctx, isServer))
+  plugins.push(globalStylesPlugin({
+    files: ctx.config.globalStyles ?? [],
+    rootDir: ctx.root,
+  }))
+
+  // Dev-mode isolation. User CSS is wrapped in `@scope (.__poveste-render-story)`
+  // so it cannot leak into chrome (popovers, tooltips, dropdowns). The build
+  // path emits stronger per-bundle isolation that ALSO keeps the user's
+  // teleporting-component styling working inside the sandbox iframe — in dev
+  // that case is a known trade-off, see docs/guide/css.md.
+  const isolate = ctx.config.isolateStyles !== false
+  if (ctx.mode === 'dev' && !isServer) {
+    plugins.push(userCssScopePlugin({ enabled: isolate, mode: 'wrap' }))
+    plugins.push(chromeCssScopePlugin({ enabled: isolate }))
+  }
 
   // Replace dev flag
   const flags = {
