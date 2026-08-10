@@ -1,10 +1,12 @@
-# Poveste + Nuxt 3
+# Poveste + Nuxt 4
+
+Requires `nuxt@^4.5.0` — the first Nuxt whose `@nuxt/vite-builder` runs on Vite 8.
 
 ```bash
 pnpm add -D @poveste/plugin-nuxt
 ```
 
-Add the plugin in histoire config:
+Add the plugin in poveste config:
 
 ```js
 import { HstNuxt } from '@poveste/plugin-nuxt'
