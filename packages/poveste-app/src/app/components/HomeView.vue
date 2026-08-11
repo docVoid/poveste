@@ -40,7 +40,12 @@ const stats = computed(() => {
       alt="Logo"
       class="w-64 h-64 opacity-25 mb-8 hidden md:block"
     >
-    <div class="flex !md:flex-col flex-wrap justify-evenly gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-750 rounded border border-gray-500/30">
+    <!-- Not a live region: counts move repeatedly while stories are collected. -->
+    <div
+      role="group"
+      aria-label="Book contents"
+      class="flex !md:flex-col flex-wrap justify-evenly gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-750 rounded border border-gray-500/30"
+    >
       <HomeCounter
         title="Stories"
         icon="carbon:cube"
