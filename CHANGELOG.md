@@ -9,6 +9,51 @@ kept verbatim as the history poveste forked from. Its version numbers are higher
 poveste restarted at `0.1.0` — so the file is newest-first within each half rather than across the
 whole.
 
+## v0.3.0
+
+[compare changes](https://github.com/poveste-dev/poveste/compare/v0.2.1...v0.3.0)
+
+This release moves the supported floors: **Vite 8**, **Nuxt 4.5**, **Svelte 5**. Vite 8 is a hard
+floor rather than a preference — poveste's own build runs on Rolldown — and it is what sets the
+other two, since Nuxt only moved to Vite 8 in 4.5.0 and no `@sveltejs/vite-plugin-svelte` release
+pairs Svelte 4 with Vite 8. See the
+[supported versions](https://poveste.dev/guide/getting-started.html#supported-versions) table
+before upgrading.
+
+### 🚨 Breaking Changes
+
+- Upgrade the poveste UI to Tailwind v4 — the `ptw-` utility prefix is gone ([#71](https://github.com/poveste-dev/poveste/pull/71))
+- Make Nuxt 4 the supported floor and drop the untested Nuxt 3 range ([#72](https://github.com/poveste-dev/poveste/pull/72))
+- Move the Svelte example to Svelte 5 and make it the floor ([#82](https://github.com/poveste-dev/poveste/pull/82))
+- Drop Svelte 4 from the plugin's peer range ([20f5069](https://github.com/poveste-dev/poveste/commit/20f5069))
+
+### 🚀 Enhancements
+
+- Move to Vite 8 — vite-node 6, Rolldown, Svelte 5 verified. Narrows the peer range to `^8.0.0` ([#69](https://github.com/poveste-dev/poveste/pull/69))
+
+### 🩹 Fixes
+
+- Search: cap results, bind Enter once, and stop the pane jumping the page ([#111](https://github.com/poveste-dev/poveste/pull/111))
+- Restore docs code block layout and keep prose styling out of it ([#109](https://github.com/poveste-dev/poveste/pull/109))
+- Apply the story dark class inside the `@scope` root, not only on `<html>` ([#107](https://github.com/poveste-dev/poveste/pull/107))
+- Map `body` onto the scoping root so the chrome type scale applies ([#106](https://github.com/poveste-dev/poveste/pull/106))
+- Keep the manual reset in `@layer base` so border utilities survive ([#104](https://github.com/poveste-dev/poveste/pull/104))
+- Restore the chrome's root-level styles under Tailwind v4 ([a8889b4](https://github.com/poveste-dev/poveste/commit/a8889b4))
+- Only claim a state-sync echo when there will be one ([#97](https://github.com/poveste-dev/poveste/pull/97))
+- Bind the variant unmount hook so state syncs cannot outlive their story ([#94](https://github.com/poveste-dev/poveste/pull/94))
+- Cache the Shiki highlighter instead of creating one per mount ([#86](https://github.com/poveste-dev/poveste/pull/86))
+
+### 📖 Documentation
+
+- Publish a supported-versions table ([#83](https://github.com/poveste-dev/poveste/pull/83))
+- Record that the Vite CJS deprecation warning is gone ([#84](https://github.com/poveste-dev/poveste/pull/84), [#85](https://github.com/poveste-dev/poveste/pull/85))
+
+### 🏡 Chore
+
+- Sweep the low-risk dependencies and the eslint stack ([#87](https://github.com/poveste-dev/poveste/pull/87))
+- Close out the eslint upgrade with type-aware deprecation checking ([#100](https://github.com/poveste-dev/poveste/pull/100))
+- Gate the release script on the full suite and accept a version type ([2400062](https://github.com/poveste-dev/poveste/commit/2400062))
+
 ## v0.2.1
 
 [compare changes](https://github.com/poveste-dev/poveste/compare/v0.2.0...v0.2.1)
