@@ -9,6 +9,32 @@ kept verbatim as the history poveste forked from. Its version numbers are higher
 poveste restarted at `0.1.0` — so the file is newest-first within each half rather than across the
 whole.
 
+## v0.3.1
+
+[compare changes](https://github.com/poveste-dev/poveste/compare/v0.3.0...v0.3.1)
+
+CSS you import from `poveste.setup.ts` is wrapped in `@scope`, which puts `html` and `body` above
+the scoping root. Only `:root` was being rewritten, so `body { font-size: 14px }` and anything like
+it went inert with no error and no warning. All three spellings now resolve to the story root. See
+[Styles & CSS isolation](https://poveste.dev/guide/css.html#root-selectors) for what runs.
+
+### 🚀 Enhancements
+
+- Bring back the home counter count-up, now driven by CSS rather than per-frame DOM writes, and gated on `prefers-reduced-motion` ([#115](https://github.com/poveste-dev/poveste/pull/115))
+
+### 🩹 Fixes
+
+- Rewrite `html` and `body` to `:scope` in wrapped CSS, not just `:root`, so story CSS targeting either can match ([#122](https://github.com/poveste-dev/poveste/pull/122))
+- Bump the StackBlitz "Try it live" starters to Vite 8 — every one of them failed to install against poveste 0.3 ([#112](https://github.com/poveste-dev/poveste/pull/112))
+
+### 📖 Documentation
+
+- Document dark-styling stories from setup CSS, and offer the Nuxt starter alongside Vue and Svelte ([#119](https://github.com/poveste-dev/poveste/pull/119), [#125](https://github.com/poveste-dev/poveste/pull/125))
+
+### 🏡 Chore
+
+- Resolve the StackBlitz starters against the real npm registry on a nightly schedule ([#118](https://github.com/poveste-dev/poveste/pull/118))
+
 ## v0.3.0
 
 [compare changes](https://github.com/poveste-dev/poveste/compare/v0.2.1...v0.3.0)
