@@ -16,7 +16,7 @@ export function wrapUserCss(css: string, opts: WrapOptions): string {
     return css
   }
   const { hoisted, remainder } = extractHoistableAtRules(css)
-  const body = remainder.includes(':root')
+  const body = hasRootSelector(remainder)
     ? rewriteRootToScope(remainder)
     : remainder
   const hoistedBlock = hoisted.length > 0 ? `${hoisted.join('\n')}\n` : ''
@@ -29,10 +29,10 @@ export function wrapChromeCss(css: string, opts: WrapWithLowerOptions): string {
     return css
   }
   const { hoisted, remainder } = extractHoistableAtRules(css)
-  // Rewrite `:root` to `:scope` so source-level `@scope (:root) to (...)`
+  // Rewrite root selectors to `:scope` so source-level `@scope (:root) to (...)`
   // rules nest correctly under the outer scope; without this, the inner
   // `:root` resolves to the document root which is outside the outer scope.
-  const body = remainder.includes(':root')
+  const body = hasRootSelector(remainder)
     ? rewriteRootToScope(remainder)
     : remainder
   const hoistedBlock = hoisted.length > 0 ? `${hoisted.join('\n')}\n` : ''
@@ -46,19 +46,48 @@ export function isGlobalImport(id: string): boolean {
   return parts.includes('global') || parts.some(p => p.startsWith('global='))
 }
 
+// `html` and `body` sit above the scoping root once the sheet is wrapped, so a
+// rule targeting either can never match. Inside a story they mean the same
+// thing `:root` does — the one root there is — which is what `:scope`
+// resolves to. Leaving them out made `body { font-size: 14px }` inert with no
+// error (#116); the chrome wrapper learned the same lesson in #102.
+const ROOT_TYPE_SELECTORS = new Set(['html', 'body'])
+
+// Only a gate on the lightningcss round-trip, so a false positive costs a
+// reparse and nothing else. Word-bounded to skip `.sidebar-body` and friends.
+const ROOT_SELECTOR_RE = /:root|(?:^|[\s,{}>+~])(?:html|body)\b/i
+
+function hasRootSelector(css: string): boolean {
+  return ROOT_SELECTOR_RE.test(css)
+}
+
+// Type selectors are ASCII case-insensitive against HTML and lightningcss
+// reports the name as authored, so `BODY { … }` arrives spelled `BODY`.
+function isRootTypeSelector(name: string): boolean {
+  return ROOT_TYPE_SELECTORS.has(name.toLowerCase())
+}
+
+// Top level of the selector only: lightningcss hands `:is()`/`:where()`/`:not()`
+// over as one part with the inner selectors nested inside, so a root spelled
+// `:is(html, body)` is left alone. Descending needs a decision on `:not()`,
+// where rewriting would change what the rule matches rather than fix it (#124).
 function rewriteRootToScope(css: string): string {
+  const scope = { type: 'pseudo-class', kind: 'scope' } as const
   const processed = lightningcssTransform({
     filename: 'user.css',
     code: Buffer.from(css, 'utf8'),
     minify: false,
     visitor: {
       Selector(selector) {
-        for (const part of selector) {
+        return selector.map((part) => {
           if (part.type === 'pseudo-class' && (part as any).kind === 'root') {
-            ;(part as any).kind = 'scope'
+            return scope as unknown as typeof part
           }
-        }
-        return selector
+          if (part.type === 'type' && isRootTypeSelector(part.name)) {
+            return scope as unknown as typeof part
+          }
+          return part
+        })
       },
     },
   })

@@ -9,7 +9,24 @@ Two CSS scopes:
 - Your CSS, transitively imported via `poveste.setup.ts` (or directly from a story file), is wrapped in `@scope (.__poveste-render-story)`. It only reaches DOM rendered inside a story container.
 - Poveste's own CSS is wrapped in `@scope (.poveste-app-root) to (.__poveste-render-story)`. It only reaches Poveste's chrome and stops at story boundaries.
 
-`:root` selectors in your CSS are auto-rewritten to `:scope`, so design tokens like `:root { --color-primary: blue }` keep working as expected on `.__poveste-render-story`.
+### Root selectors
+
+`:root`, `html` and `body` all sit above the scoping root once your CSS is wrapped, so a rule targeting them could never match. Poveste rewrites all three to `:scope`, which resolves to `.__poveste-render-story` — inside a story that is the only root there is.
+
+| You write | It runs as |
+| --- | --- |
+| `:root { --color-primary: blue }` | `:scope { --color-primary: blue }` |
+| `html { --brand: rebeccapurple }` | `:scope { --brand: rebeccapurple }` |
+| `body { font-size: 14px }` | `:scope { font-size: 14px }` |
+| `body .card { … }` | `:scope .card { … }` |
+| `body.dark .card { … }` | `:scope.dark .card { … }` |
+| `.body-copy { … }` | `.body-copy { … }` — unchanged |
+
+The rewrite reads the selector, not the text, so a class that merely contains the word is left alone.
+
+::: warning A root nested in `:is()` or `:where()` is not rewritten
+`:is(html, body) { … }` and `:where(:root) { … }` stay as written, and stay inert. Spell the root selector at the top level of the rule, or target `:scope` yourself.
+:::
 
 ## Grid iframes
 
