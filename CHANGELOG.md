@@ -9,6 +9,40 @@ kept verbatim as the history poveste forked from. Its version numbers are higher
 poveste restarted at `0.1.0` — so the file is newest-first within each half rather than across the
 whole.
 
+## v0.4.0
+
+[compare changes](https://github.com/poveste-dev/poveste/compare/v0.3.3...v0.4.0)
+
+Vue setup hooks get unnumbered names. `setupVue3` is a name **you** write in your own setup
+file, which makes it public API — it could not be renamed after 1.0 without a major. Adding
+the new spelling now, as an alias, costs nothing; adding it later would cost a major.
+
+**Nothing to do today.** `setupVue3` and `defineSetupVue3` keep working for the whole of 0.x.
+
+### 🚀 Enhancements
+
+- Accept `setupVue` / `defineSetupVue` alongside `setupVue3` / `defineSetupVue3` ([#143](https://github.com/poveste-dev/poveste/pull/143))
+
+### 📢 Deprecations
+
+- `defineSetupVue3` is marked `@deprecated` in favour of `defineSetupVue`, and the `setupVue3`
+  hook name in favour of `setupVue`. Both spellings are supported for all of 0.x. **1.0 is the
+  only release allowed to drop the numbered pair**, so migrating before then is free and saves
+  a migration later.
+
+  ```diff
+  -import { defineSetupVue3 } from '@poveste/plugin-vue'
+  +import { defineSetupVue } from '@poveste/plugin-vue'
+
+  -export const setupVue3 = defineSetupVue3(({ app }) => {
+  +export const setupVue = defineSetupVue(({ app }) => {
+     app.use(createPinia())
+   })
+  ```
+
+  Export **one** of the two, not both. They are aliases for the same hook, so Poveste runs the
+  first it finds (`setupVue3`) and warns about the other rather than running your setup twice.
+
 ## v0.3.3
 
 [compare changes](https://github.com/poveste-dev/poveste/compare/v0.3.2...v0.3.3)
