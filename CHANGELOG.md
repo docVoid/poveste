@@ -9,6 +9,28 @@ kept verbatim as the history poveste forked from. Its version numbers are higher
 poveste restarted at `0.1.0` — so the file is newest-first within each half rather than across the
 whole.
 
+## v0.3.2
+
+[compare changes](https://github.com/poveste-dev/poveste/compare/v0.3.1...v0.3.2)
+
+Follow-ups to the root-selector rewrite in 0.3.1. A namespaced selector such as `*|body` was
+compiled to `*|:scope`, which is invalid CSS — a namespace prefix cannot qualify a pseudo-class —
+so the browser dropped the rule outright. It only occurred in a stylesheet that also contained a
+plain `html`, `body` or `:root` rule.
+
+### 🩹 Fixes
+
+- Leave namespaced root selectors alone instead of emitting invalid `*|:scope` ([#128](https://github.com/poveste-dev/poveste/pull/128))
+- Rewrite roots nested in `:is()` and `:where()` too, at any depth. `:not()` and `:has()` are deliberately left alone, since rewriting inside a negation changes which elements the rule matches rather than fixing it ([#128](https://github.com/poveste-dev/poveste/pull/128))
+
+### 📖 Documentation
+
+- Note that the rewrite raises specificity — `html`/`body` are type selectors, `:scope` is a pseudo-class — and that `:where(html)` keeps the weight at zero ([#128](https://github.com/poveste-dev/poveste/pull/128))
+
+### 🏡 Chore
+
+- Give every CI test job a distinct name, so each framework example suite can gate `main` individually ([#127](https://github.com/poveste-dev/poveste/pull/127))
+
 ## v0.3.1
 
 [compare changes](https://github.com/poveste-dev/poveste/compare/v0.3.0...v0.3.1)
