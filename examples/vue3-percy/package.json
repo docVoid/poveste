@@ -1,7 +1,7 @@
 {
   "name": "poveste-example-vue3-percy",
   "type": "module",
-  "version": "0.4.0",
+  "version": "undefined.undefined.undefined",
   "private": true,
   "scripts": {
     "story:dev": "poveste dev",
