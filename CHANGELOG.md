@@ -9,6 +9,44 @@ kept verbatim as the history poveste forked from. Its version numbers are higher
 poveste restarted at `0.1.0` — so the file is newest-first within each half rather than across the
 whole.
 
+## v0.3.3
+
+[compare changes](https://github.com/poveste-dev/poveste/compare/v0.3.2...v0.3.3)
+
+`@poveste/plugin-svelte` advertised a Svelte range that could not be installed. Poveste requires
+Vite 8, the only `@sveltejs/vite-plugin-svelte` major peering Vite 8 is v7, and v7 requires
+`svelte@^5.46.4` — so Svelte `5.0`–`5.46.3` never worked, while the package declared `^5.0.0`.
+npm rejected those installs already, but the error named `@sveltejs/vite-plugin-svelte`, a package
+the user never chose, with nothing pointing back at the range poveste published.
+
+No working configuration changes: only combinations that were already impossible are now refused
+honestly, and by the package responsible.
+
+### 🩹 Fixes
+
+- Narrow the `svelte` peer range to `^5.46.4`, and declare the two constraints that were missing
+  entirely — `@sveltejs/vite-plugin-svelte@^7.0.0`, and `@sveltejs/kit@^2.53.0` as an *optional*
+  peer, since the same package serves plain Svelte ([#142](https://github.com/poveste-dev/poveste/pull/142))
+
+### 📖 Documentation
+
+- Document SvelteKit properly: a guide section of its own, and a row in the supported-frameworks
+  table it had been missing from while a required CI job built, tested and type-checked it
+  ([#139](https://github.com/poveste-dev/poveste/pull/139))
+- Rename the framework URL segments — `/guide/svelte3/` documented Svelte 5 — to bare framework
+  names, with permanent 301s for the histoire-era paths ([#141](https://github.com/poveste-dev/poveste/pull/141))
+- Drop the stale version numbers from the "Try it live" starter identifiers ([#136](https://github.com/poveste-dev/poveste/pull/136))
+- State what 1.0 promises and what it is waiting for, and that a major is declared rather than
+  derived from the commit log ([#134](https://github.com/poveste-dev/poveste/pull/134))
+- State what picks a release number, and that milestones are not versions ([#133](https://github.com/poveste-dev/poveste/pull/133))
+- Add the Nuxt tile to the homepage framework chooser ([#130](https://github.com/poveste-dev/poveste/pull/130))
+- Explain that `@scope` stops matching, not inheritance ([#129](https://github.com/poveste-dev/poveste/pull/129))
+
+### 🏡 Chore
+
+- Add a pull request template and align the commit convention with what CI enforces ([#132](https://github.com/poveste-dev/poveste/pull/132))
+- Declare an issue type on both issue templates ([#131](https://github.com/poveste-dev/poveste/pull/131))
+
 ## v0.3.2
 
 [compare changes](https://github.com/poveste-dev/poveste/compare/v0.3.1...v0.3.2)
