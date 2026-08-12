@@ -45,6 +45,39 @@ describe('wrapUserCss', () => {
     expect(selectorsIn(out)).toEqual([':scope'])
   })
 
+  // `:is()` and `:where()` are plain selector lists, so a root inside one still
+  // means the root (#124).
+  it.each([
+    [':is(html, body)', ':is(html, body) { --brand: rebeccapurple }', ':is(:scope, :scope)'],
+    [':where(:root)', ':where(:root) { --brand: rebeccapurple }', ':where(:scope)'],
+    // lightningcss collapses a single-argument `:is()`; same specificity.
+    [':is(html)', ':is(html) { --brand: rebeccapurple }', ':scope'],
+    [':is(.a, body) .card', ':is(.a, body) .card { --brand: rebeccapurple }', ':is(.a, :scope) .card'],
+    [':is(.a, :where(body))', ':is(.a, :where(body)) { --brand: rebeccapurple }', ':is(.a, :where(:scope))'],
+  ])('rewrites a root inside %s', (_input, css, expected) => {
+    const out = wrapUserCss(css, { scopeRoot: '.__poveste-render-story' })
+
+    expect(selectorsIn(out)).toEqual([expected])
+  })
+
+  // Rewriting inside a negation would change what the rule matches rather than
+  // fix it, so the walk stops at `:not()`/`:has()` — including an `:is()` nested
+  // inside one. A namespaced root is skipped for a different reason: the prefix
+  // is its own part, and `*|:scope` is invalid CSS the browser drops outright.
+  it.each([
+    [':not()', '.card:not(body) { --brand: rebeccapurple }', '.card:not(body)'],
+    [':has()', '.card:has(body) { --brand: rebeccapurple }', '.card:has(body)'],
+    ['an :is() nested in :not()', '.card:not(:is(html)) { --brand: rebeccapurple }', '.card:not(:is(html))'],
+    ['nth-child(… of S)', 'li:nth-child(1 of body) { --brand: rebeccapurple }', 'li:nth-child(1 of body)'],
+    ['any namespace', 'body { color: red }\n*|body { --brand: rebeccapurple }', '*|body'],
+    ['a named namespace', 'body { color: red }\nsvg|body { --brand: rebeccapurple }', 'svg|body'],
+    ['the empty namespace', 'body { color: red }\n|body { --brand: rebeccapurple }', '|body'],
+  ])('leaves a root inside %s alone', (_input, css, expected) => {
+    const out = wrapUserCss(css, { scopeRoot: '.__poveste-render-story' })
+
+    expect(selectorsIn(out)).toContain(expected)
+  })
+
   it('leaves :scope alone (idempotent)', () => {
     const out = wrapUserCss(':scope { color: red }', {
       scopeRoot: '.__poveste-render-story',
