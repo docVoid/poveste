@@ -1,7 +1,7 @@
 {
   "name": "poveste-example-vue3-themed",
   "type": "module",
-  "version": "undefined.undefined.undefined",
+  "version": "0.4.0",
   "private": true,
   "scripts": {
     "story:dev": "poveste dev",
