@@ -1,52 +1,51 @@
 <script lang="ts">
-  import type { Hst } from '@poveste/plugin-svelte'
+  import type { Hst, StoryState } from '@poveste/plugin-svelte'
   import { logEvent } from 'poveste/client'
   import ColorButton from './ColorButton.svelte'
 
   export let Hst: Hst
 
-  let disabled = false
-  let size = 'medium'
-  let colorselect = '#000000'
+  const initState = () => ({
+    disabled: false,
+    size: 'medium',
+    colorselect: '#000000',
+  })
 
-  let source
-
-  $: {
-    source = `<ColorButton`
-    if (disabled) {
-      source += ` disabled`
-    }
-    source += `>Click me !</ColorButton>`
+  function source(state: StoryState) {
+    const attrs = state.disabled ? ' disabled' : ''
+    return `<ColorButton${attrs}>Click me !</ColorButton>`
   }
 </script>
 
-<Hst.Story title="ColorButton" {source}>
-  <ColorButton {disabled} {colorselect} on:click={event => logEvent('click', event)}>
-    Click me!
-  </ColorButton>
-  <div style="margin-top: 6px;">
-    <label>
-      <input type="checkbox" bind:checked={disabled}>
-      Disabled
-    </label>
-  </div>
+<Hst.Story title="ColorButton" {initState} {source}>
+  {#snippet children({ state })}
+    <ColorButton disabled={state.disabled} colorselect={state.colorselect} on:click={event => logEvent('click', event)}>
+      Click me!
+    </ColorButton>
+    <div style="margin-top: 6px;">
+      <label>
+        <input type="checkbox" bind:checked={state.disabled}>
+        Disabled
+      </label>
+    </div>
+  {/snippet}
 
-  <svelte:fragment slot="controls">
+  {#snippet controls({ state })}
     <Hst.Checkbox
-      bind:value={disabled}
+      bind:value={state.disabled}
       title="Disabled"
     />
     <Hst.Select
-      bind:value={size}
+      bind:value={state.size}
       options={['small', 'medium', 'large']}
       title="Size"
     />
     <Hst.ColorSelect
-      bind:value={colorselect}
+      bind:value={state.colorselect}
       title="Background Color"
     />
-    <pre>{JSON.stringify({ disabled, size }, null, 2)}</pre>
-  </svelte:fragment>
+    <pre>{JSON.stringify({ disabled: state.disabled, size: state.size }, null, 2)}</pre>
+  {/snippet}
 </Hst.Story>
 
 <style>
