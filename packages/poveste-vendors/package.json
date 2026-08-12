@@ -1,7 +1,7 @@
 {
   "name": "@poveste/vendors",
   "type": "module",
-  "version": "0.3.3",
+  "version": "0.4.0",
   "description": "Bundled vendors for histoire",
   "author": {
     "name": "Sorin Gitlan"
