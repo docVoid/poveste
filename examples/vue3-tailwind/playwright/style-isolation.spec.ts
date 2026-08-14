@@ -14,11 +14,11 @@ import { expect, test } from '@playwright/test'
  * everything into cascade layers, a consumer's Tailwind must style their stories
  * without leaking into poveste's UI, and poveste's UI must not leak into stories.
  *
- * Five of the six have been verified to fail with `isolateStyles: false`, so they
- * genuinely exercise the isolation rather than passing incidentally. The sixth
- * ('styles the chrome root itself') is the exception by construction: it guards
- * the wrapper's `html` → `:scope` rewrite, so with no wrapper at all the rule
- * applies natively and the test passes. It can only fail while wrapping is on.
+ * Five have been verified to fail with `isolateStyles: false`, so they genuinely
+ * exercise the isolation rather than passing incidentally. Two cannot be checked
+ * that way: 'styles the chrome root itself' guards the `html` → `:scope` rewrite,
+ * so with no wrapper the rule applies natively; and 'paints the story with the
+ * consumer's body rule' was verified against the `!important` it replaced.
  */
 
 const STORY_URL = '/story/src-components-styleisolation-story-vue?variantId=src-components-styleisolation-story-vue-0'
@@ -60,6 +60,19 @@ test.describe('style isolation (consumer on Tailwind v4)', () => {
 
     // The consumer sets `body { background: var(--user-primary) }`.
     await expect(page.locator('body')).not.toHaveCSS('background-color', CONSUMER_TOMATO)
+  })
+
+  test('paints the story with the consumer\'s body rule', async ({ page }) => {
+    await openStory(page)
+
+    // On `body`, not just the story root: that is what reaches the canvas.
+    await expect(async () => {
+      const bodyBg = await page.evaluate(() => {
+        const doc = (document.querySelector('iframe[data-test-id="preview-iframe"]') as HTMLIFrameElement)?.contentDocument
+        return doc ? getComputedStyle(doc.body).backgroundColor : null
+      })
+      expect(bodyBg).toBe(CONSUMER_TOMATO)
+    }).toPass({ timeout: 15_000 })
   })
 
   test('keeps the consumer\'s universal selector from resetting the chrome', async ({ page }) => {

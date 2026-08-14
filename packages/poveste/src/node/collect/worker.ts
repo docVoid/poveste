@@ -8,7 +8,7 @@ import { createBirpc } from 'birpc'
 import { dirname, resolve } from 'pathe'
 import pc from 'picocolors'
 import { ModuleCacheMap, ViteNodeRunner } from 'vite-node/client'
-import { createDomEnv } from '../dom/env.js'
+import { createDomEnv, resetDomEnv } from '../dom/env.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
@@ -25,6 +25,9 @@ export interface ReturnData {
 
 const _moduleCache = new ModuleCacheMap()
 let _runner: ViteNodeRunner
+// Worker-lifetime: externalised runtimes cache the DOM they first saw, so one
+// per story broke re-collection.
+let _domEnv: ReturnType<typeof createDomEnv> | undefined
 let _rpc: ReturnType<typeof createBirpc<{
   fetchModule: FetchFunction
   resolveId: ResolveIdFunction
@@ -61,7 +64,12 @@ export default async (payload: Payload): Promise<ReturnData> => {
     },
   }))
 
-  const { destroy: destroyDomEnv } = createDomEnv()
+  if (_domEnv) {
+    resetDomEnv(_domEnv)
+  }
+  else {
+    _domEnv = createDomEnv()
+  }
 
   const el = window.document.createElement('div')
 
@@ -85,8 +93,6 @@ export default async (payload: Payload): Promise<ReturnData> => {
       s.docsText = text
     })
   }
-
-  destroyDomEnv()
 
   const endTime = performance.now()
   console.log(pc.dim(`${payload.storyFile.relativePath} ${Math.round(endTime - startTime)}ms (setup:${Math.round(beforeExecuteTime - startTime)}ms, execute:${Math.round(afterExecuteTime - beforeExecuteTime)}ms, run:${Math.round(afterRunTime - afterExecuteTime)}ms)`))

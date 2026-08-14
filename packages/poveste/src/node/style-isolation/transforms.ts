@@ -3,6 +3,8 @@ import { transform as lightningcssTransform } from 'lightningcss'
 
 export interface WrapOptions {
   scopeRoot: string
+  /** Bare class name rewritten roots must not match — the panel shares the scope-root class (#173). */
+  excludeRootClass?: string
 }
 
 export interface WrapWithLowerOptions {
@@ -17,7 +19,7 @@ export function wrapUserCss(css: string, opts: WrapOptions): string {
   }
   const { hoisted, remainder } = extractHoistableAtRules(css)
   const body = hasRootSelector(remainder)
-    ? rewriteRootToScope(remainder)
+    ? rewriteRootToScope(remainder, opts.excludeRootClass)
     : remainder
   const hoistedBlock = hoisted.length > 0 ? `${hoisted.join('\n')}\n` : ''
   return `${hoistedBlock}@scope (${opts.scopeRoot}) {\n${body}\n}\n`
@@ -92,10 +94,22 @@ interface SelectorPart {
   selectors?: SelectorPart[][]
 }
 
-function rewriteSelector(selector: SelectorPart[]): SelectorPart[] {
-  return selector.map((part, index) => {
+// Rewritten roots only, so an author's own classes still apply in the panel.
+function scopeParts(excludeClass?: string): SelectorPart[] {
+  if (!excludeClass) {
+    return [SCOPE_PART]
+  }
+  return [SCOPE_PART, {
+    type: 'pseudo-class',
+    kind: 'not',
+    selectors: [[{ type: 'class', name: excludeClass }]],
+  }]
+}
+
+function rewriteSelector(selector: SelectorPart[], excludeClass?: string): SelectorPart[] {
+  return selector.flatMap((part, index) => {
     if (part.type === 'pseudo-class' && part.kind === 'root') {
-      return SCOPE_PART
+      return scopeParts(excludeClass)
     }
     // A namespace is its own part, immediately before the type selector it
     // qualifies. Rewriting past it emits `*|:scope`, which is invalid — a
@@ -103,22 +117,22 @@ function rewriteSelector(selector: SelectorPart[]): SelectorPart[] {
     // `svg|body` also means a body in the SVG namespace, which is not the
     // document root, so leaving these alone is right on both counts.
     if (part.type === 'type' && isRootTypeSelector(part.name ?? '')) {
-      return selector[index - 1]?.type === 'namespace' ? part : SCOPE_PART
+      return selector[index - 1]?.type === 'namespace' ? [part] : scopeParts(excludeClass)
     }
     if (part.type === 'pseudo-class' && DESCENDABLE_PSEUDO_CLASSES.has(part.kind ?? '') && part.selectors) {
-      return { ...part, selectors: part.selectors.map(rewriteSelector) }
+      return [{ ...part, selectors: part.selectors.map(s => rewriteSelector(s, excludeClass)) }]
     }
-    return part
+    return [part]
   })
 }
 
-function rewriteRootToScope(css: string): string {
+function rewriteRootToScope(css: string, excludeClass?: string): string {
   const processed = lightningcssTransform({
     filename: 'user.css',
     code: Buffer.from(css, 'utf8'),
     minify: false,
     visitor: {
-      Selector: selector => rewriteSelector(selector as SelectorPart[]) as typeof selector,
+      Selector: selector => rewriteSelector(selector as SelectorPart[], excludeClass) as typeof selector,
     },
   })
   return Buffer.from(processed.code).toString('utf8')

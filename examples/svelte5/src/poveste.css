@@ -6,9 +6,10 @@
   --user-accent: deeppink;
 }
 
+/* Custom properties only, as in vue3: a real declaration here restyles every
+   story. Loud cases live in `examples/vue3-tailwind`. */
 body {
-  background: var(--user-accent);
-  font-family: cursive;
+  --user-body-token: 14px;
 }
 
 * {

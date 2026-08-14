@@ -5,8 +5,9 @@
   export let id = null
   export let icon = null
   export let iconColor = null
-  // Declared but unused: collection does not render variant children, and an
-  // undeclared prop would warn on every story that passes one.
+  // Absorbs the prop; collection never renders variant children. `export const`
+  // (the compiler's suggestion) would make passing one an error.
+  // svelte-ignore export_let_unused
   export let initState = null
 
   const story = getContext('__pvtStory')

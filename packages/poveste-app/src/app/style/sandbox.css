@@ -1,8 +1,11 @@
 @import '@poveste/controls/dist/index.es.css';
 
+/* Lets the toolbar's preview background show through. Not `!important`: this
+   file is wrapped in `@layer poveste-defaults` so consumer rules outrank it,
+   and an important declaration would invert that. */
 html,
 body {
-  background: transparent !important;
+  background: transparent;
 }
 
 body {
