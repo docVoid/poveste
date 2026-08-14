@@ -13,6 +13,9 @@ const IFRAME_STORY = '/story/src-components-contrastcolor-story-vue?variantId=_d
 const DARK_STORY = '/story/src-components-darkmode-story-vue?variantId=src-components-darkmode-story-vue-0'
 // `layout: { type: 'single', iframe: false }` — rendered by the app itself.
 const NATIVE_STORY = '/story/src-components-complexparameter-story-vue?variantId=_default'
+// `iframeGrid: false` — grid cells rendered by the app rather than one sandbox
+// each, which is the third render path (#126).
+const INLINE_GRID_STORY = '/story/src-components-inlinegrid-story-vue'
 
 function sandboxHtml(page: Page) {
   return page.frameLocator('iframe[data-test-id="preview-iframe"]').locator('html')
@@ -95,6 +98,44 @@ test.describe('sandbox color scheme', () => {
     await pickColorScheme(page, 'dark')
     await expect(story).toHaveClass(DARK_CLASS)
   })
+
+  test('applies to grid cells rendered without an iframe', async ({ page }) => {
+    await seedChromeScheme(page, 'dark')
+    await page.goto(INLINE_GRID_STORY)
+    const cell = page.locator('.poveste-story-variant-grid-item .poveste-generic-render-story').first()
+    await expect(cell).toBeVisible()
+
+    await pickColorScheme(page, 'light')
+    await expect(cell).not.toHaveClass(DARK_CLASS)
+
+    await pickColorScheme(page, 'dark')
+    await expect(cell).toHaveClass(DARK_CLASS)
+  })
+
+  // #126. The grid emitted `theme.darkClass` alone while the other two also
+  // emitted the deprecated `sandboxDarkClass`, defaulted to `dark`.
+  const DARK_PATHS = [
+    { path: 'inline single preview', url: NATIVE_STORY, story: (page: Page) => page.getByTestId('sandbox-render').locator('.poveste-generic-render-story') },
+    { path: 'inline grid cell', url: INLINE_GRID_STORY, story: (page: Page) => page.locator('.poveste-story-variant-grid-item .poveste-generic-render-story').first() },
+    { path: 'sandbox iframe', url: IFRAME_STORY, story: sandboxHtml },
+  ]
+
+  for (const { path, url, story } of DARK_PATHS) {
+    test(`applies theme.darkClass alone on the ${path}`, async ({ page }) => {
+      await seedChromeScheme(page, 'dark')
+      await seedPreviewSettings(page, { colorScheme: 'dark' })
+      await page.goto(url)
+      // Auto-retries until the sandbox has booted and applied it.
+      await expect(story(page)).toHaveClass(DARK_CLASS)
+
+      const classes = await story(page).evaluate(el => [...el.classList])
+
+      expect(classes).toContain('my-dark')
+      // The deprecated `sandboxDarkClass`. `ptw-dark` is the chrome's own class
+      // and legitimately reaches the sandbox document, so this is exact.
+      expect(classes).not.toContain('dark')
+    })
+  }
 
   test('applies to a sandbox opened in its own tab', async ({ page }) => {
     await seedChromeScheme(page, 'light')

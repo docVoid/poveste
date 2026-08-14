@@ -34,3 +34,16 @@ export function usePreviewDark(settings: PreviewSettings) {
   const prefersDark = usePreferredDark()
   return computed(() => resolvePreviewDark(settings.colorScheme, prefersDark.value, isDark.value))
 }
+
+/**
+ * Classes the story root carries in dark mode, identical on all three render
+ * paths. The deprecated `sandboxDarkClass` is emitted only when a book sets it
+ * (#126).
+ */
+export function previewDarkClasses(): string[] {
+  const { darkClass } = povesteConfig.theme
+  // eslint-disable-next-line ts/no-deprecated
+  const legacy = povesteConfig.sandboxDarkClass
+  // Empty entries are dropped: `classList.toggle('')` throws, during boot.
+  return [...new Set([darkClass, legacy])].filter((name): name is string => !!name)
+}
