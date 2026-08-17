@@ -77,9 +77,9 @@ export function tailwindTokens(options: TailwindTokensOptions = {}): Plugin {
       }
     },
 
-    onDev(api, onCleanup) {
+    async onDev(api, onCleanup) {
       if (tailwindCssFile) {
-        generate(api)
+        await generate(api)
 
         const watcher = api.watcher.watch(tailwindCssFile)
           .on('change', () => generate(api))
