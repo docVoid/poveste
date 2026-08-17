@@ -53,6 +53,8 @@ export function pinceauTokens(_options: PinceauTokensOptions = {}): Plugin {
     },
 
     onDev(api, onCleanup) {
+      generate(api)
+
       const watcher = api.watcher.watch(themePath)
         .on('change', () => generate(api))
         .on('add', () => generate(api))
